@@ -1,0 +1,17 @@
+package com.google.search.app;
+
+message SearchResponse {
+    required string search_id = 1;
+    optional uint32 msg_type = 4;
+    optional SearchResultPart sug = 100;
+    optional SearchResultPart result = 101;
+    optional string unknown102 = 102;
+}
+
+message SearchResultPart {
+    optional uint32 fin_part = 1;
+    optional string text_data = 2;
+    optional string html_data = 7;
+    optional string encoding = 8;
+}
+
