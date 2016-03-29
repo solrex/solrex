@@ -10,10 +10,10 @@ user_info {
     1: "zh_CN"
     2: 2
   }
-  uid: "81ef4fc0-56a1-40f9-8a5a-0404dfe07a62"
+  uid: "******"
   google_now {
     auth_url: "https://www.googleapis.com/auth/googlenow"
-    auth_key: "ya29.qQJzq7Z41EIjuhenHWOzMQxwFDO_QcR-dI6d4lpNtyDY7n4GQrkPsRDRO6IAMg-iI_eW4i_h7Re1cMLb2U-K"
+    auth_key: "******"
     7: 1
   }
   8: "w "

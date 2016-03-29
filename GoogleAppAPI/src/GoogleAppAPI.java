@@ -115,6 +115,10 @@ public class GoogleAppAPI {
 					}
 				}
 			}
+			if (voice_search_request.hasUserInfo()) {
+				builder.getUserInfoBuilder().getGoogleNowBuilder().setAuthKey("******");
+				builder.getUserInfoBuilder().setUid("******");
+			}
 			TextFormat.printUnicode(builder, fpw);
 			
 			fpw.println("\n");
