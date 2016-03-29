@@ -79,7 +79,7 @@ public class GoogleAppAPI {
 					text_builder.clear();
 				}
 			}
-			fpw.println("\n");
+			fpw.println();
 			builder.clear();
 		}
 		fis.close();
@@ -98,7 +98,7 @@ public class GoogleAppAPI {
 		// Read Protobuf block Array
 		while (!cis.isAtEnd()) {
 			int blockOffset = cis.getTotalBytesRead();
-			fpw.print("\n######## Data block info: offset=0x" + Integer.toHexString(blockOffset));
+			fpw.print("######## Data block info: offset=0x" + Integer.toHexString(blockOffset));
 			int blockSize = Integer.reverseBytes(cis.readFixed32());
 			fpw.println(" blockSize=" + blockSize);
 			byte[] msgBuf = cis.readRawBytes(blockSize);
@@ -121,7 +121,7 @@ public class GoogleAppAPI {
 			}
 			TextFormat.printUnicode(builder, fpw);
 			
-			fpw.println("\n");
+			fpw.println();
 			builder.clear();
 		}
 		fis.close();
