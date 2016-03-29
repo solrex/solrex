@@ -13,6 +13,15 @@ public final class Voicesearch {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>optional int32 fin_stream = 3;</code>
+     */
+    boolean hasFinStream();
+    /**
+     * <code>optional int32 fin_stream = 3;</code>
+     */
+    int getFinStream();
+
+    /**
      * <code>optional .com.google.search.app.UserInfo user_info = 293000;</code>
      */
     boolean hasUserInfo();
@@ -26,43 +35,43 @@ public final class Voicesearch {
     com.google.search.app.Voicesearch.UserInfoOrBuilder getUserInfoOrBuilder();
 
     /**
-     * <code>optional .com.google.search.app.VoiceInfo voice_info = 293100;</code>
+     * <code>optional .com.google.search.app.VoiceSampling voice_sampling = 293100;</code>
      */
-    boolean hasVoiceInfo();
+    boolean hasVoiceSampling();
     /**
-     * <code>optional .com.google.search.app.VoiceInfo voice_info = 293100;</code>
+     * <code>optional .com.google.search.app.VoiceSampling voice_sampling = 293100;</code>
      */
-    com.google.search.app.Voicesearch.VoiceInfo getVoiceInfo();
+    com.google.search.app.Voicesearch.VoiceSampling getVoiceSampling();
     /**
-     * <code>optional .com.google.search.app.VoiceInfo voice_info = 293100;</code>
+     * <code>optional .com.google.search.app.VoiceSampling voice_sampling = 293100;</code>
      */
-    com.google.search.app.Voicesearch.VoiceInfoOrBuilder getVoiceInfoOrBuilder();
+    com.google.search.app.Voicesearch.VoiceSamplingOrBuilder getVoiceSamplingOrBuilder();
 
     /**
-     * <code>optional .com.google.search.app.SoundData sound_data = 293101;</code>
+     * <code>optional .com.google.search.app.VoiceData voice_data = 293101;</code>
      */
-    boolean hasSoundData();
+    boolean hasVoiceData();
     /**
-     * <code>optional .com.google.search.app.SoundData sound_data = 293101;</code>
+     * <code>optional .com.google.search.app.VoiceData voice_data = 293101;</code>
      */
-    com.google.search.app.Voicesearch.SoundData getSoundData();
+    com.google.search.app.Voicesearch.VoiceData getVoiceData();
     /**
-     * <code>optional .com.google.search.app.SoundData sound_data = 293101;</code>
+     * <code>optional .com.google.search.app.VoiceData voice_data = 293101;</code>
      */
-    com.google.search.app.Voicesearch.SoundDataOrBuilder getSoundDataOrBuilder();
+    com.google.search.app.Voicesearch.VoiceDataOrBuilder getVoiceDataOrBuilder();
 
     /**
-     * <code>optional .com.google.search.app.PhoneInfo phone_info = 294000;</code>
+     * <code>optional .com.google.search.app.ClientInfo client_info = 294000;</code>
      */
-    boolean hasPhoneInfo();
+    boolean hasClientInfo();
     /**
-     * <code>optional .com.google.search.app.PhoneInfo phone_info = 294000;</code>
+     * <code>optional .com.google.search.app.ClientInfo client_info = 294000;</code>
      */
-    com.google.search.app.Voicesearch.PhoneInfo getPhoneInfo();
+    com.google.search.app.Voicesearch.ClientInfo getClientInfo();
     /**
-     * <code>optional .com.google.search.app.PhoneInfo phone_info = 294000;</code>
+     * <code>optional .com.google.search.app.ClientInfo client_info = 294000;</code>
      */
-    com.google.search.app.Voicesearch.PhoneInfoOrBuilder getPhoneInfoOrBuilder();
+    com.google.search.app.Voicesearch.ClientInfoOrBuilder getClientInfoOrBuilder();
 
     /**
      * <code>optional .com.google.search.app.UserPreference user_preference = 294500;</code>
@@ -78,43 +87,43 @@ public final class Voicesearch {
     com.google.search.app.Voicesearch.UserPreferenceOrBuilder getUserPreferenceOrBuilder();
 
     /**
-     * <code>optional .com.google.search.app.Empty U27301014 = 27301014;</code>
+     * <code>optional .com.google.search.app.Empty VSR27301014 = 27301014;</code>
      */
-    boolean hasU27301014();
+    boolean hasVSR27301014();
     /**
-     * <code>optional .com.google.search.app.Empty U27301014 = 27301014;</code>
+     * <code>optional .com.google.search.app.Empty VSR27301014 = 27301014;</code>
      */
-    com.google.search.app.Voicesearch.Empty getU27301014();
+    com.google.search.app.Voicesearch.Empty getVSR27301014();
     /**
-     * <code>optional .com.google.search.app.Empty U27301014 = 27301014;</code>
+     * <code>optional .com.google.search.app.Empty VSR27301014 = 27301014;</code>
      */
-    com.google.search.app.Voicesearch.EmptyOrBuilder getU27301014OrBuilder();
+    com.google.search.app.Voicesearch.EmptyOrBuilder getVSR27301014OrBuilder();
 
     /**
-     * <code>optional .com.google.search.app.Empty U27423252 = 27423252;</code>
+     * <code>optional .com.google.search.app.Empty VSR27423252 = 27423252;</code>
      */
-    boolean hasU27423252();
+    boolean hasVSR27423252();
     /**
-     * <code>optional .com.google.search.app.Empty U27423252 = 27423252;</code>
+     * <code>optional .com.google.search.app.Empty VSR27423252 = 27423252;</code>
      */
-    com.google.search.app.Voicesearch.Empty getU27423252();
+    com.google.search.app.Voicesearch.Empty getVSR27423252();
     /**
-     * <code>optional .com.google.search.app.Empty U27423252 = 27423252;</code>
+     * <code>optional .com.google.search.app.Empty VSR27423252 = 27423252;</code>
      */
-    com.google.search.app.Voicesearch.EmptyOrBuilder getU27423252OrBuilder();
+    com.google.search.app.Voicesearch.EmptyOrBuilder getVSR27423252OrBuilder();
 
     /**
-     * <code>optional .com.google.search.app.Empty U27801516 = 27801516;</code>
+     * <code>optional .com.google.search.app.Double VSR27801516 = 27801516;</code>
      */
-    boolean hasU27801516();
+    boolean hasVSR27801516();
     /**
-     * <code>optional .com.google.search.app.Empty U27801516 = 27801516;</code>
+     * <code>optional .com.google.search.app.Double VSR27801516 = 27801516;</code>
      */
-    com.google.search.app.Voicesearch.Empty getU27801516();
+    com.google.search.app.Voicesearch.Double getVSR27801516();
     /**
-     * <code>optional .com.google.search.app.Empty U27801516 = 27801516;</code>
+     * <code>optional .com.google.search.app.Double VSR27801516 = 27801516;</code>
      */
-    com.google.search.app.Voicesearch.EmptyOrBuilder getU27801516OrBuilder();
+    com.google.search.app.Voicesearch.DoubleOrBuilder getVSR27801516OrBuilder();
 
     /**
      * <code>optional .com.google.search.app.GetMethod get_method = 34352150;</code>
@@ -130,43 +139,43 @@ public final class Voicesearch {
     com.google.search.app.Voicesearch.GetMethodOrBuilder getGetMethodOrBuilder();
 
     /**
-     * <code>optional .com.google.search.app.Empty U61914024 = 61914024;</code>
+     * <code>optional .com.google.search.app.Empty VSR61914024 = 61914024;</code>
      */
-    boolean hasU61914024();
+    boolean hasVSR61914024();
     /**
-     * <code>optional .com.google.search.app.Empty U61914024 = 61914024;</code>
+     * <code>optional .com.google.search.app.Empty VSR61914024 = 61914024;</code>
      */
-    com.google.search.app.Voicesearch.Empty getU61914024();
+    com.google.search.app.Voicesearch.Empty getVSR61914024();
     /**
-     * <code>optional .com.google.search.app.Empty U61914024 = 61914024;</code>
+     * <code>optional .com.google.search.app.Empty VSR61914024 = 61914024;</code>
      */
-    com.google.search.app.Voicesearch.EmptyOrBuilder getU61914024OrBuilder();
+    com.google.search.app.Voicesearch.EmptyOrBuilder getVSR61914024OrBuilder();
 
     /**
-     * <code>optional .com.google.search.app.Empty U77499489 = 77499489;</code>
+     * <code>optional .com.google.search.app.Empty VSR77499489 = 77499489;</code>
      */
-    boolean hasU77499489();
+    boolean hasVSR77499489();
     /**
-     * <code>optional .com.google.search.app.Empty U77499489 = 77499489;</code>
+     * <code>optional .com.google.search.app.Empty VSR77499489 = 77499489;</code>
      */
-    com.google.search.app.Voicesearch.Empty getU77499489();
+    com.google.search.app.Voicesearch.Empty getVSR77499489();
     /**
-     * <code>optional .com.google.search.app.Empty U77499489 = 77499489;</code>
+     * <code>optional .com.google.search.app.Empty VSR77499489 = 77499489;</code>
      */
-    com.google.search.app.Voicesearch.EmptyOrBuilder getU77499489OrBuilder();
+    com.google.search.app.Voicesearch.EmptyOrBuilder getVSR77499489OrBuilder();
 
     /**
-     * <code>optional .com.google.search.app.Empty U82185720 = 82185720;</code>
+     * <code>optional .com.google.search.app.Empty VSR82185720 = 82185720;</code>
      */
-    boolean hasU82185720();
+    boolean hasVSR82185720();
     /**
-     * <code>optional .com.google.search.app.Empty U82185720 = 82185720;</code>
+     * <code>optional .com.google.search.app.Empty VSR82185720 = 82185720;</code>
      */
-    com.google.search.app.Voicesearch.Empty getU82185720();
+    com.google.search.app.Voicesearch.Empty getVSR82185720();
     /**
-     * <code>optional .com.google.search.app.Empty U82185720 = 82185720;</code>
+     * <code>optional .com.google.search.app.Empty VSR82185720 = 82185720;</code>
      */
-    com.google.search.app.Voicesearch.EmptyOrBuilder getU82185720OrBuilder();
+    com.google.search.app.Voicesearch.EmptyOrBuilder getVSR82185720OrBuilder();
   }
   /**
    * Protobuf type {@code com.google.search.app.VoiceSearchRequest}
@@ -220,9 +229,14 @@ public final class Voicesearch {
               }
               break;
             }
+            case 24: {
+              bitField0_ |= 0x00000001;
+              finStream_ = input.readInt32();
+              break;
+            }
             case 2344002: {
               com.google.search.app.Voicesearch.UserInfo.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
                 subBuilder = userInfo_.toBuilder();
               }
               userInfo_ = input.readMessage(com.google.search.app.Voicesearch.UserInfo.PARSER, extensionRegistry);
@@ -230,51 +244,51 @@ public final class Voicesearch {
                 subBuilder.mergeFrom(userInfo_);
                 userInfo_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000001;
-              break;
-            }
-            case 2344802: {
-              com.google.search.app.Voicesearch.VoiceInfo.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                subBuilder = voiceInfo_.toBuilder();
-              }
-              voiceInfo_ = input.readMessage(com.google.search.app.Voicesearch.VoiceInfo.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(voiceInfo_);
-                voiceInfo_ = subBuilder.buildPartial();
-              }
               bitField0_ |= 0x00000002;
               break;
             }
-            case 2344810: {
-              com.google.search.app.Voicesearch.SoundData.Builder subBuilder = null;
+            case 2344802: {
+              com.google.search.app.Voicesearch.VoiceSampling.Builder subBuilder = null;
               if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                subBuilder = soundData_.toBuilder();
+                subBuilder = voiceSampling_.toBuilder();
               }
-              soundData_ = input.readMessage(com.google.search.app.Voicesearch.SoundData.PARSER, extensionRegistry);
+              voiceSampling_ = input.readMessage(com.google.search.app.Voicesearch.VoiceSampling.PARSER, extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(soundData_);
-                soundData_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(voiceSampling_);
+                voiceSampling_ = subBuilder.buildPartial();
               }
               bitField0_ |= 0x00000004;
               break;
             }
-            case 2352002: {
-              com.google.search.app.Voicesearch.PhoneInfo.Builder subBuilder = null;
+            case 2344810: {
+              com.google.search.app.Voicesearch.VoiceData.Builder subBuilder = null;
               if (((bitField0_ & 0x00000008) == 0x00000008)) {
-                subBuilder = phoneInfo_.toBuilder();
+                subBuilder = voiceData_.toBuilder();
               }
-              phoneInfo_ = input.readMessage(com.google.search.app.Voicesearch.PhoneInfo.PARSER, extensionRegistry);
+              voiceData_ = input.readMessage(com.google.search.app.Voicesearch.VoiceData.PARSER, extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(phoneInfo_);
-                phoneInfo_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(voiceData_);
+                voiceData_ = subBuilder.buildPartial();
               }
               bitField0_ |= 0x00000008;
               break;
             }
+            case 2352002: {
+              com.google.search.app.Voicesearch.ClientInfo.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000010) == 0x00000010)) {
+                subBuilder = clientInfo_.toBuilder();
+              }
+              clientInfo_ = input.readMessage(com.google.search.app.Voicesearch.ClientInfo.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(clientInfo_);
+                clientInfo_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000010;
+              break;
+            }
             case 2356002: {
               com.google.search.app.Voicesearch.UserPreference.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000010) == 0x00000010)) {
+              if (((bitField0_ & 0x00000020) == 0x00000020)) {
                 subBuilder = userPreference_.toBuilder();
               }
               userPreference_ = input.readMessage(com.google.search.app.Voicesearch.UserPreference.PARSER, extensionRegistry);
@@ -282,51 +296,51 @@ public final class Voicesearch {
                 subBuilder.mergeFrom(userPreference_);
                 userPreference_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000010;
+              bitField0_ |= 0x00000020;
               break;
             }
             case 218408114: {
               com.google.search.app.Voicesearch.Empty.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000020) == 0x00000020)) {
-                subBuilder = u27301014_.toBuilder();
-              }
-              u27301014_ = input.readMessage(com.google.search.app.Voicesearch.Empty.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(u27301014_);
-                u27301014_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000020;
-              break;
-            }
-            case 219386018: {
-              com.google.search.app.Voicesearch.Empty.Builder subBuilder = null;
               if (((bitField0_ & 0x00000040) == 0x00000040)) {
-                subBuilder = u27423252_.toBuilder();
+                subBuilder = vSR27301014_.toBuilder();
               }
-              u27423252_ = input.readMessage(com.google.search.app.Voicesearch.Empty.PARSER, extensionRegistry);
+              vSR27301014_ = input.readMessage(com.google.search.app.Voicesearch.Empty.PARSER, extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(u27423252_);
-                u27423252_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(vSR27301014_);
+                vSR27301014_ = subBuilder.buildPartial();
               }
               bitField0_ |= 0x00000040;
               break;
             }
-            case 222412130: {
+            case 219386018: {
               com.google.search.app.Voicesearch.Empty.Builder subBuilder = null;
               if (((bitField0_ & 0x00000080) == 0x00000080)) {
-                subBuilder = u27801516_.toBuilder();
+                subBuilder = vSR27423252_.toBuilder();
               }
-              u27801516_ = input.readMessage(com.google.search.app.Voicesearch.Empty.PARSER, extensionRegistry);
+              vSR27423252_ = input.readMessage(com.google.search.app.Voicesearch.Empty.PARSER, extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(u27801516_);
-                u27801516_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(vSR27423252_);
+                vSR27423252_ = subBuilder.buildPartial();
               }
               bitField0_ |= 0x00000080;
               break;
             }
+            case 222412130: {
+              com.google.search.app.Voicesearch.Double.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000100) == 0x00000100)) {
+                subBuilder = vSR27801516_.toBuilder();
+              }
+              vSR27801516_ = input.readMessage(com.google.search.app.Voicesearch.Double.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(vSR27801516_);
+                vSR27801516_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00000100;
+              break;
+            }
             case 274817202: {
               com.google.search.app.Voicesearch.GetMethod.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000100) == 0x00000100)) {
+              if (((bitField0_ & 0x00000200) == 0x00000200)) {
                 subBuilder = getMethod_.toBuilder();
               }
               getMethod_ = input.readMessage(com.google.search.app.Voicesearch.GetMethod.PARSER, extensionRegistry);
@@ -334,46 +348,46 @@ public final class Voicesearch {
                 subBuilder.mergeFrom(getMethod_);
                 getMethod_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000100;
+              bitField0_ |= 0x00000200;
               break;
             }
             case 495312194: {
               com.google.search.app.Voicesearch.Empty.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000200) == 0x00000200)) {
-                subBuilder = u61914024_.toBuilder();
-              }
-              u61914024_ = input.readMessage(com.google.search.app.Voicesearch.Empty.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(u61914024_);
-                u61914024_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000200;
-              break;
-            }
-            case 619995914: {
-              com.google.search.app.Voicesearch.Empty.Builder subBuilder = null;
               if (((bitField0_ & 0x00000400) == 0x00000400)) {
-                subBuilder = u77499489_.toBuilder();
+                subBuilder = vSR61914024_.toBuilder();
               }
-              u77499489_ = input.readMessage(com.google.search.app.Voicesearch.Empty.PARSER, extensionRegistry);
+              vSR61914024_ = input.readMessage(com.google.search.app.Voicesearch.Empty.PARSER, extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(u77499489_);
-                u77499489_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(vSR61914024_);
+                vSR61914024_ = subBuilder.buildPartial();
               }
               bitField0_ |= 0x00000400;
               break;
             }
-            case 657485762: {
+            case 619995914: {
               com.google.search.app.Voicesearch.Empty.Builder subBuilder = null;
               if (((bitField0_ & 0x00000800) == 0x00000800)) {
-                subBuilder = u82185720_.toBuilder();
+                subBuilder = vSR77499489_.toBuilder();
               }
-              u82185720_ = input.readMessage(com.google.search.app.Voicesearch.Empty.PARSER, extensionRegistry);
+              vSR77499489_ = input.readMessage(com.google.search.app.Voicesearch.Empty.PARSER, extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(u82185720_);
-                u82185720_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(vSR77499489_);
+                vSR77499489_ = subBuilder.buildPartial();
               }
               bitField0_ |= 0x00000800;
+              break;
+            }
+            case 657485762: {
+              com.google.search.app.Voicesearch.Empty.Builder subBuilder = null;
+              if (((bitField0_ & 0x00001000) == 0x00001000)) {
+                subBuilder = vSR82185720_.toBuilder();
+              }
+              vSR82185720_ = input.readMessage(com.google.search.app.Voicesearch.Empty.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(vSR82185720_);
+                vSR82185720_ = subBuilder.buildPartial();
+              }
+              bitField0_ |= 0x00001000;
               break;
             }
           }
@@ -416,13 +430,28 @@ public final class Voicesearch {
     }
 
     private int bitField0_;
+    public static final int FIN_STREAM_FIELD_NUMBER = 3;
+    private int finStream_;
+    /**
+     * <code>optional int32 fin_stream = 3;</code>
+     */
+    public boolean hasFinStream() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional int32 fin_stream = 3;</code>
+     */
+    public int getFinStream() {
+      return finStream_;
+    }
+
     public static final int USER_INFO_FIELD_NUMBER = 293000;
     private com.google.search.app.Voicesearch.UserInfo userInfo_;
     /**
      * <code>optional .com.google.search.app.UserInfo user_info = 293000;</code>
      */
     public boolean hasUserInfo() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>optional .com.google.search.app.UserInfo user_info = 293000;</code>
@@ -437,67 +466,67 @@ public final class Voicesearch {
       return userInfo_;
     }
 
-    public static final int VOICE_INFO_FIELD_NUMBER = 293100;
-    private com.google.search.app.Voicesearch.VoiceInfo voiceInfo_;
+    public static final int VOICE_SAMPLING_FIELD_NUMBER = 293100;
+    private com.google.search.app.Voicesearch.VoiceSampling voiceSampling_;
     /**
-     * <code>optional .com.google.search.app.VoiceInfo voice_info = 293100;</code>
+     * <code>optional .com.google.search.app.VoiceSampling voice_sampling = 293100;</code>
      */
-    public boolean hasVoiceInfo() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional .com.google.search.app.VoiceInfo voice_info = 293100;</code>
-     */
-    public com.google.search.app.Voicesearch.VoiceInfo getVoiceInfo() {
-      return voiceInfo_;
-    }
-    /**
-     * <code>optional .com.google.search.app.VoiceInfo voice_info = 293100;</code>
-     */
-    public com.google.search.app.Voicesearch.VoiceInfoOrBuilder getVoiceInfoOrBuilder() {
-      return voiceInfo_;
-    }
-
-    public static final int SOUND_DATA_FIELD_NUMBER = 293101;
-    private com.google.search.app.Voicesearch.SoundData soundData_;
-    /**
-     * <code>optional .com.google.search.app.SoundData sound_data = 293101;</code>
-     */
-    public boolean hasSoundData() {
+    public boolean hasVoiceSampling() {
       return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional .com.google.search.app.SoundData sound_data = 293101;</code>
+     * <code>optional .com.google.search.app.VoiceSampling voice_sampling = 293100;</code>
      */
-    public com.google.search.app.Voicesearch.SoundData getSoundData() {
-      return soundData_;
+    public com.google.search.app.Voicesearch.VoiceSampling getVoiceSampling() {
+      return voiceSampling_;
     }
     /**
-     * <code>optional .com.google.search.app.SoundData sound_data = 293101;</code>
+     * <code>optional .com.google.search.app.VoiceSampling voice_sampling = 293100;</code>
      */
-    public com.google.search.app.Voicesearch.SoundDataOrBuilder getSoundDataOrBuilder() {
-      return soundData_;
+    public com.google.search.app.Voicesearch.VoiceSamplingOrBuilder getVoiceSamplingOrBuilder() {
+      return voiceSampling_;
     }
 
-    public static final int PHONE_INFO_FIELD_NUMBER = 294000;
-    private com.google.search.app.Voicesearch.PhoneInfo phoneInfo_;
+    public static final int VOICE_DATA_FIELD_NUMBER = 293101;
+    private com.google.search.app.Voicesearch.VoiceData voiceData_;
     /**
-     * <code>optional .com.google.search.app.PhoneInfo phone_info = 294000;</code>
+     * <code>optional .com.google.search.app.VoiceData voice_data = 293101;</code>
      */
-    public boolean hasPhoneInfo() {
+    public boolean hasVoiceData() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>optional .com.google.search.app.PhoneInfo phone_info = 294000;</code>
+     * <code>optional .com.google.search.app.VoiceData voice_data = 293101;</code>
      */
-    public com.google.search.app.Voicesearch.PhoneInfo getPhoneInfo() {
-      return phoneInfo_;
+    public com.google.search.app.Voicesearch.VoiceData getVoiceData() {
+      return voiceData_;
     }
     /**
-     * <code>optional .com.google.search.app.PhoneInfo phone_info = 294000;</code>
+     * <code>optional .com.google.search.app.VoiceData voice_data = 293101;</code>
      */
-    public com.google.search.app.Voicesearch.PhoneInfoOrBuilder getPhoneInfoOrBuilder() {
-      return phoneInfo_;
+    public com.google.search.app.Voicesearch.VoiceDataOrBuilder getVoiceDataOrBuilder() {
+      return voiceData_;
+    }
+
+    public static final int CLIENT_INFO_FIELD_NUMBER = 294000;
+    private com.google.search.app.Voicesearch.ClientInfo clientInfo_;
+    /**
+     * <code>optional .com.google.search.app.ClientInfo client_info = 294000;</code>
+     */
+    public boolean hasClientInfo() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional .com.google.search.app.ClientInfo client_info = 294000;</code>
+     */
+    public com.google.search.app.Voicesearch.ClientInfo getClientInfo() {
+      return clientInfo_;
+    }
+    /**
+     * <code>optional .com.google.search.app.ClientInfo client_info = 294000;</code>
+     */
+    public com.google.search.app.Voicesearch.ClientInfoOrBuilder getClientInfoOrBuilder() {
+      return clientInfo_;
     }
 
     public static final int USER_PREFERENCE_FIELD_NUMBER = 294500;
@@ -506,7 +535,7 @@ public final class Voicesearch {
      * <code>optional .com.google.search.app.UserPreference user_preference = 294500;</code>
      */
     public boolean hasUserPreference() {
-      return ((bitField0_ & 0x00000010) == 0x00000010);
+      return ((bitField0_ & 0x00000020) == 0x00000020);
     }
     /**
      * <code>optional .com.google.search.app.UserPreference user_preference = 294500;</code>
@@ -521,67 +550,67 @@ public final class Voicesearch {
       return userPreference_;
     }
 
-    public static final int U27301014_FIELD_NUMBER = 27301014;
-    private com.google.search.app.Voicesearch.Empty u27301014_;
+    public static final int VSR27301014_FIELD_NUMBER = 27301014;
+    private com.google.search.app.Voicesearch.Empty vSR27301014_;
     /**
-     * <code>optional .com.google.search.app.Empty U27301014 = 27301014;</code>
+     * <code>optional .com.google.search.app.Empty VSR27301014 = 27301014;</code>
      */
-    public boolean hasU27301014() {
-      return ((bitField0_ & 0x00000020) == 0x00000020);
-    }
-    /**
-     * <code>optional .com.google.search.app.Empty U27301014 = 27301014;</code>
-     */
-    public com.google.search.app.Voicesearch.Empty getU27301014() {
-      return u27301014_;
-    }
-    /**
-     * <code>optional .com.google.search.app.Empty U27301014 = 27301014;</code>
-     */
-    public com.google.search.app.Voicesearch.EmptyOrBuilder getU27301014OrBuilder() {
-      return u27301014_;
-    }
-
-    public static final int U27423252_FIELD_NUMBER = 27423252;
-    private com.google.search.app.Voicesearch.Empty u27423252_;
-    /**
-     * <code>optional .com.google.search.app.Empty U27423252 = 27423252;</code>
-     */
-    public boolean hasU27423252() {
+    public boolean hasVSR27301014() {
       return ((bitField0_ & 0x00000040) == 0x00000040);
     }
     /**
-     * <code>optional .com.google.search.app.Empty U27423252 = 27423252;</code>
+     * <code>optional .com.google.search.app.Empty VSR27301014 = 27301014;</code>
      */
-    public com.google.search.app.Voicesearch.Empty getU27423252() {
-      return u27423252_;
+    public com.google.search.app.Voicesearch.Empty getVSR27301014() {
+      return vSR27301014_;
     }
     /**
-     * <code>optional .com.google.search.app.Empty U27423252 = 27423252;</code>
+     * <code>optional .com.google.search.app.Empty VSR27301014 = 27301014;</code>
      */
-    public com.google.search.app.Voicesearch.EmptyOrBuilder getU27423252OrBuilder() {
-      return u27423252_;
+    public com.google.search.app.Voicesearch.EmptyOrBuilder getVSR27301014OrBuilder() {
+      return vSR27301014_;
     }
 
-    public static final int U27801516_FIELD_NUMBER = 27801516;
-    private com.google.search.app.Voicesearch.Empty u27801516_;
+    public static final int VSR27423252_FIELD_NUMBER = 27423252;
+    private com.google.search.app.Voicesearch.Empty vSR27423252_;
     /**
-     * <code>optional .com.google.search.app.Empty U27801516 = 27801516;</code>
+     * <code>optional .com.google.search.app.Empty VSR27423252 = 27423252;</code>
      */
-    public boolean hasU27801516() {
+    public boolean hasVSR27423252() {
       return ((bitField0_ & 0x00000080) == 0x00000080);
     }
     /**
-     * <code>optional .com.google.search.app.Empty U27801516 = 27801516;</code>
+     * <code>optional .com.google.search.app.Empty VSR27423252 = 27423252;</code>
      */
-    public com.google.search.app.Voicesearch.Empty getU27801516() {
-      return u27801516_;
+    public com.google.search.app.Voicesearch.Empty getVSR27423252() {
+      return vSR27423252_;
     }
     /**
-     * <code>optional .com.google.search.app.Empty U27801516 = 27801516;</code>
+     * <code>optional .com.google.search.app.Empty VSR27423252 = 27423252;</code>
      */
-    public com.google.search.app.Voicesearch.EmptyOrBuilder getU27801516OrBuilder() {
-      return u27801516_;
+    public com.google.search.app.Voicesearch.EmptyOrBuilder getVSR27423252OrBuilder() {
+      return vSR27423252_;
+    }
+
+    public static final int VSR27801516_FIELD_NUMBER = 27801516;
+    private com.google.search.app.Voicesearch.Double vSR27801516_;
+    /**
+     * <code>optional .com.google.search.app.Double VSR27801516 = 27801516;</code>
+     */
+    public boolean hasVSR27801516() {
+      return ((bitField0_ & 0x00000100) == 0x00000100);
+    }
+    /**
+     * <code>optional .com.google.search.app.Double VSR27801516 = 27801516;</code>
+     */
+    public com.google.search.app.Voicesearch.Double getVSR27801516() {
+      return vSR27801516_;
+    }
+    /**
+     * <code>optional .com.google.search.app.Double VSR27801516 = 27801516;</code>
+     */
+    public com.google.search.app.Voicesearch.DoubleOrBuilder getVSR27801516OrBuilder() {
+      return vSR27801516_;
     }
 
     public static final int GET_METHOD_FIELD_NUMBER = 34352150;
@@ -590,7 +619,7 @@ public final class Voicesearch {
      * <code>optional .com.google.search.app.GetMethod get_method = 34352150;</code>
      */
     public boolean hasGetMethod() {
-      return ((bitField0_ & 0x00000100) == 0x00000100);
+      return ((bitField0_ & 0x00000200) == 0x00000200);
     }
     /**
      * <code>optional .com.google.search.app.GetMethod get_method = 34352150;</code>
@@ -605,82 +634,83 @@ public final class Voicesearch {
       return getMethod_;
     }
 
-    public static final int U61914024_FIELD_NUMBER = 61914024;
-    private com.google.search.app.Voicesearch.Empty u61914024_;
+    public static final int VSR61914024_FIELD_NUMBER = 61914024;
+    private com.google.search.app.Voicesearch.Empty vSR61914024_;
     /**
-     * <code>optional .com.google.search.app.Empty U61914024 = 61914024;</code>
+     * <code>optional .com.google.search.app.Empty VSR61914024 = 61914024;</code>
      */
-    public boolean hasU61914024() {
-      return ((bitField0_ & 0x00000200) == 0x00000200);
-    }
-    /**
-     * <code>optional .com.google.search.app.Empty U61914024 = 61914024;</code>
-     */
-    public com.google.search.app.Voicesearch.Empty getU61914024() {
-      return u61914024_;
-    }
-    /**
-     * <code>optional .com.google.search.app.Empty U61914024 = 61914024;</code>
-     */
-    public com.google.search.app.Voicesearch.EmptyOrBuilder getU61914024OrBuilder() {
-      return u61914024_;
-    }
-
-    public static final int U77499489_FIELD_NUMBER = 77499489;
-    private com.google.search.app.Voicesearch.Empty u77499489_;
-    /**
-     * <code>optional .com.google.search.app.Empty U77499489 = 77499489;</code>
-     */
-    public boolean hasU77499489() {
+    public boolean hasVSR61914024() {
       return ((bitField0_ & 0x00000400) == 0x00000400);
     }
     /**
-     * <code>optional .com.google.search.app.Empty U77499489 = 77499489;</code>
+     * <code>optional .com.google.search.app.Empty VSR61914024 = 61914024;</code>
      */
-    public com.google.search.app.Voicesearch.Empty getU77499489() {
-      return u77499489_;
+    public com.google.search.app.Voicesearch.Empty getVSR61914024() {
+      return vSR61914024_;
     }
     /**
-     * <code>optional .com.google.search.app.Empty U77499489 = 77499489;</code>
+     * <code>optional .com.google.search.app.Empty VSR61914024 = 61914024;</code>
      */
-    public com.google.search.app.Voicesearch.EmptyOrBuilder getU77499489OrBuilder() {
-      return u77499489_;
+    public com.google.search.app.Voicesearch.EmptyOrBuilder getVSR61914024OrBuilder() {
+      return vSR61914024_;
     }
 
-    public static final int U82185720_FIELD_NUMBER = 82185720;
-    private com.google.search.app.Voicesearch.Empty u82185720_;
+    public static final int VSR77499489_FIELD_NUMBER = 77499489;
+    private com.google.search.app.Voicesearch.Empty vSR77499489_;
     /**
-     * <code>optional .com.google.search.app.Empty U82185720 = 82185720;</code>
+     * <code>optional .com.google.search.app.Empty VSR77499489 = 77499489;</code>
      */
-    public boolean hasU82185720() {
+    public boolean hasVSR77499489() {
       return ((bitField0_ & 0x00000800) == 0x00000800);
     }
     /**
-     * <code>optional .com.google.search.app.Empty U82185720 = 82185720;</code>
+     * <code>optional .com.google.search.app.Empty VSR77499489 = 77499489;</code>
      */
-    public com.google.search.app.Voicesearch.Empty getU82185720() {
-      return u82185720_;
+    public com.google.search.app.Voicesearch.Empty getVSR77499489() {
+      return vSR77499489_;
     }
     /**
-     * <code>optional .com.google.search.app.Empty U82185720 = 82185720;</code>
+     * <code>optional .com.google.search.app.Empty VSR77499489 = 77499489;</code>
      */
-    public com.google.search.app.Voicesearch.EmptyOrBuilder getU82185720OrBuilder() {
-      return u82185720_;
+    public com.google.search.app.Voicesearch.EmptyOrBuilder getVSR77499489OrBuilder() {
+      return vSR77499489_;
+    }
+
+    public static final int VSR82185720_FIELD_NUMBER = 82185720;
+    private com.google.search.app.Voicesearch.Empty vSR82185720_;
+    /**
+     * <code>optional .com.google.search.app.Empty VSR82185720 = 82185720;</code>
+     */
+    public boolean hasVSR82185720() {
+      return ((bitField0_ & 0x00001000) == 0x00001000);
+    }
+    /**
+     * <code>optional .com.google.search.app.Empty VSR82185720 = 82185720;</code>
+     */
+    public com.google.search.app.Voicesearch.Empty getVSR82185720() {
+      return vSR82185720_;
+    }
+    /**
+     * <code>optional .com.google.search.app.Empty VSR82185720 = 82185720;</code>
+     */
+    public com.google.search.app.Voicesearch.EmptyOrBuilder getVSR82185720OrBuilder() {
+      return vSR82185720_;
     }
 
     private void initFields() {
+      finStream_ = 0;
       userInfo_ = com.google.search.app.Voicesearch.UserInfo.getDefaultInstance();
-      voiceInfo_ = com.google.search.app.Voicesearch.VoiceInfo.getDefaultInstance();
-      soundData_ = com.google.search.app.Voicesearch.SoundData.getDefaultInstance();
-      phoneInfo_ = com.google.search.app.Voicesearch.PhoneInfo.getDefaultInstance();
+      voiceSampling_ = com.google.search.app.Voicesearch.VoiceSampling.getDefaultInstance();
+      voiceData_ = com.google.search.app.Voicesearch.VoiceData.getDefaultInstance();
+      clientInfo_ = com.google.search.app.Voicesearch.ClientInfo.getDefaultInstance();
       userPreference_ = com.google.search.app.Voicesearch.UserPreference.getDefaultInstance();
-      u27301014_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
-      u27423252_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
-      u27801516_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
+      vSR27301014_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
+      vSR27423252_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
+      vSR27801516_ = com.google.search.app.Voicesearch.Double.getDefaultInstance();
       getMethod_ = com.google.search.app.Voicesearch.GetMethod.getDefaultInstance();
-      u61914024_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
-      u77499489_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
-      u82185720_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
+      vSR61914024_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
+      vSR77499489_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
+      vSR82185720_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -696,40 +726,43 @@ public final class Voicesearch {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeMessage(293000, userInfo_);
+        output.writeInt32(3, finStream_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeMessage(293100, voiceInfo_);
+        output.writeMessage(293000, userInfo_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeMessage(293101, soundData_);
+        output.writeMessage(293100, voiceSampling_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeMessage(294000, phoneInfo_);
+        output.writeMessage(293101, voiceData_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeMessage(294500, userPreference_);
+        output.writeMessage(294000, clientInfo_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
-        output.writeMessage(27301014, u27301014_);
+        output.writeMessage(294500, userPreference_);
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
-        output.writeMessage(27423252, u27423252_);
+        output.writeMessage(27301014, vSR27301014_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
-        output.writeMessage(27801516, u27801516_);
+        output.writeMessage(27423252, vSR27423252_);
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
-        output.writeMessage(34352150, getMethod_);
+        output.writeMessage(27801516, vSR27801516_);
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
-        output.writeMessage(61914024, u61914024_);
+        output.writeMessage(34352150, getMethod_);
       }
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
-        output.writeMessage(77499489, u77499489_);
+        output.writeMessage(61914024, vSR61914024_);
       }
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
-        output.writeMessage(82185720, u82185720_);
+        output.writeMessage(77499489, vSR77499489_);
+      }
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+        output.writeMessage(82185720, vSR82185720_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -742,51 +775,55 @@ public final class Voicesearch {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(293000, userInfo_);
+          .computeInt32Size(3, finStream_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(293100, voiceInfo_);
+          .computeMessageSize(293000, userInfo_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(293101, soundData_);
+          .computeMessageSize(293100, voiceSampling_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(294000, phoneInfo_);
+          .computeMessageSize(293101, voiceData_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(294500, userPreference_);
+          .computeMessageSize(294000, clientInfo_);
       }
       if (((bitField0_ & 0x00000020) == 0x00000020)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(27301014, u27301014_);
+          .computeMessageSize(294500, userPreference_);
       }
       if (((bitField0_ & 0x00000040) == 0x00000040)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(27423252, u27423252_);
+          .computeMessageSize(27301014, vSR27301014_);
       }
       if (((bitField0_ & 0x00000080) == 0x00000080)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(27801516, u27801516_);
+          .computeMessageSize(27423252, vSR27423252_);
       }
       if (((bitField0_ & 0x00000100) == 0x00000100)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(34352150, getMethod_);
+          .computeMessageSize(27801516, vSR27801516_);
       }
       if (((bitField0_ & 0x00000200) == 0x00000200)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(61914024, u61914024_);
+          .computeMessageSize(34352150, getMethod_);
       }
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(77499489, u77499489_);
+          .computeMessageSize(61914024, vSR61914024_);
       }
       if (((bitField0_ & 0x00000800) == 0x00000800)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(82185720, u82185720_);
+          .computeMessageSize(77499489, vSR77499489_);
+      }
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(82185720, vSR82185720_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -898,17 +935,17 @@ public final class Voicesearch {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           getUserInfoFieldBuilder();
-          getVoiceInfoFieldBuilder();
-          getSoundDataFieldBuilder();
-          getPhoneInfoFieldBuilder();
+          getVoiceSamplingFieldBuilder();
+          getVoiceDataFieldBuilder();
+          getClientInfoFieldBuilder();
           getUserPreferenceFieldBuilder();
-          getU27301014FieldBuilder();
-          getU27423252FieldBuilder();
-          getU27801516FieldBuilder();
+          getVSR27301014FieldBuilder();
+          getVSR27423252FieldBuilder();
+          getVSR27801516FieldBuilder();
           getGetMethodFieldBuilder();
-          getU61914024FieldBuilder();
-          getU77499489FieldBuilder();
-          getU82185720FieldBuilder();
+          getVSR61914024FieldBuilder();
+          getVSR77499489FieldBuilder();
+          getVSR82185720FieldBuilder();
         }
       }
       private static Builder create() {
@@ -917,78 +954,80 @@ public final class Voicesearch {
 
       public Builder clear() {
         super.clear();
+        finStream_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (userInfoBuilder_ == null) {
           userInfo_ = com.google.search.app.Voicesearch.UserInfo.getDefaultInstance();
         } else {
           userInfoBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
-        if (voiceInfoBuilder_ == null) {
-          voiceInfo_ = com.google.search.app.Voicesearch.VoiceInfo.getDefaultInstance();
-        } else {
-          voiceInfoBuilder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000002);
-        if (soundDataBuilder_ == null) {
-          soundData_ = com.google.search.app.Voicesearch.SoundData.getDefaultInstance();
+        if (voiceSamplingBuilder_ == null) {
+          voiceSampling_ = com.google.search.app.Voicesearch.VoiceSampling.getDefaultInstance();
         } else {
-          soundDataBuilder_.clear();
+          voiceSamplingBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000004);
-        if (phoneInfoBuilder_ == null) {
-          phoneInfo_ = com.google.search.app.Voicesearch.PhoneInfo.getDefaultInstance();
+        if (voiceDataBuilder_ == null) {
+          voiceData_ = com.google.search.app.Voicesearch.VoiceData.getDefaultInstance();
         } else {
-          phoneInfoBuilder_.clear();
+          voiceDataBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000008);
+        if (clientInfoBuilder_ == null) {
+          clientInfo_ = com.google.search.app.Voicesearch.ClientInfo.getDefaultInstance();
+        } else {
+          clientInfoBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000010);
         if (userPreferenceBuilder_ == null) {
           userPreference_ = com.google.search.app.Voicesearch.UserPreference.getDefaultInstance();
         } else {
           userPreferenceBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000010);
-        if (u27301014Builder_ == null) {
-          u27301014_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
-        } else {
-          u27301014Builder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000020);
-        if (u27423252Builder_ == null) {
-          u27423252_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
+        if (vSR27301014Builder_ == null) {
+          vSR27301014_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
         } else {
-          u27423252Builder_.clear();
+          vSR27301014Builder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000040);
-        if (u27801516Builder_ == null) {
-          u27801516_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
+        if (vSR27423252Builder_ == null) {
+          vSR27423252_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
         } else {
-          u27801516Builder_.clear();
+          vSR27423252Builder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000080);
+        if (vSR27801516Builder_ == null) {
+          vSR27801516_ = com.google.search.app.Voicesearch.Double.getDefaultInstance();
+        } else {
+          vSR27801516Builder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000100);
         if (getMethodBuilder_ == null) {
           getMethod_ = com.google.search.app.Voicesearch.GetMethod.getDefaultInstance();
         } else {
           getMethodBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000100);
-        if (u61914024Builder_ == null) {
-          u61914024_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
-        } else {
-          u61914024Builder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000200);
-        if (u77499489Builder_ == null) {
-          u77499489_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
+        if (vSR61914024Builder_ == null) {
+          vSR61914024_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
         } else {
-          u77499489Builder_.clear();
+          vSR61914024Builder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000400);
-        if (u82185720Builder_ == null) {
-          u82185720_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
+        if (vSR77499489Builder_ == null) {
+          vSR77499489_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
         } else {
-          u82185720Builder_.clear();
+          vSR77499489Builder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000800);
+        if (vSR82185720Builder_ == null) {
+          vSR82185720_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
+        } else {
+          vSR82185720Builder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00001000);
         return this;
       }
 
@@ -1020,98 +1059,102 @@ public final class Voicesearch {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
+        result.finStream_ = finStream_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
         if (userInfoBuilder_ == null) {
           result.userInfo_ = userInfo_;
         } else {
           result.userInfo_ = userInfoBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        if (voiceInfoBuilder_ == null) {
-          result.voiceInfo_ = voiceInfo_;
-        } else {
-          result.voiceInfo_ = voiceInfoBuilder_.build();
-        }
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
         }
-        if (soundDataBuilder_ == null) {
-          result.soundData_ = soundData_;
+        if (voiceSamplingBuilder_ == null) {
+          result.voiceSampling_ = voiceSampling_;
         } else {
-          result.soundData_ = soundDataBuilder_.build();
+          result.voiceSampling_ = voiceSamplingBuilder_.build();
         }
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000008;
         }
-        if (phoneInfoBuilder_ == null) {
-          result.phoneInfo_ = phoneInfo_;
+        if (voiceDataBuilder_ == null) {
+          result.voiceData_ = voiceData_;
         } else {
-          result.phoneInfo_ = phoneInfoBuilder_.build();
+          result.voiceData_ = voiceDataBuilder_.build();
         }
         if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
+        }
+        if (clientInfoBuilder_ == null) {
+          result.clientInfo_ = clientInfo_;
+        } else {
+          result.clientInfo_ = clientInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
         }
         if (userPreferenceBuilder_ == null) {
           result.userPreference_ = userPreference_;
         } else {
           result.userPreference_ = userPreferenceBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
-          to_bitField0_ |= 0x00000020;
-        }
-        if (u27301014Builder_ == null) {
-          result.u27301014_ = u27301014_;
-        } else {
-          result.u27301014_ = u27301014Builder_.build();
-        }
         if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
           to_bitField0_ |= 0x00000040;
         }
-        if (u27423252Builder_ == null) {
-          result.u27423252_ = u27423252_;
+        if (vSR27301014Builder_ == null) {
+          result.vSR27301014_ = vSR27301014_;
         } else {
-          result.u27423252_ = u27423252Builder_.build();
+          result.vSR27301014_ = vSR27301014Builder_.build();
         }
         if (((from_bitField0_ & 0x00000080) == 0x00000080)) {
           to_bitField0_ |= 0x00000080;
         }
-        if (u27801516Builder_ == null) {
-          result.u27801516_ = u27801516_;
+        if (vSR27423252Builder_ == null) {
+          result.vSR27423252_ = vSR27423252_;
         } else {
-          result.u27801516_ = u27801516Builder_.build();
+          result.vSR27423252_ = vSR27423252Builder_.build();
         }
         if (((from_bitField0_ & 0x00000100) == 0x00000100)) {
           to_bitField0_ |= 0x00000100;
+        }
+        if (vSR27801516Builder_ == null) {
+          result.vSR27801516_ = vSR27801516_;
+        } else {
+          result.vSR27801516_ = vSR27801516Builder_.build();
+        }
+        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
+          to_bitField0_ |= 0x00000200;
         }
         if (getMethodBuilder_ == null) {
           result.getMethod_ = getMethod_;
         } else {
           result.getMethod_ = getMethodBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000200) == 0x00000200)) {
-          to_bitField0_ |= 0x00000200;
-        }
-        if (u61914024Builder_ == null) {
-          result.u61914024_ = u61914024_;
-        } else {
-          result.u61914024_ = u61914024Builder_.build();
-        }
         if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
           to_bitField0_ |= 0x00000400;
         }
-        if (u77499489Builder_ == null) {
-          result.u77499489_ = u77499489_;
+        if (vSR61914024Builder_ == null) {
+          result.vSR61914024_ = vSR61914024_;
         } else {
-          result.u77499489_ = u77499489Builder_.build();
+          result.vSR61914024_ = vSR61914024Builder_.build();
         }
         if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
           to_bitField0_ |= 0x00000800;
         }
-        if (u82185720Builder_ == null) {
-          result.u82185720_ = u82185720_;
+        if (vSR77499489Builder_ == null) {
+          result.vSR77499489_ = vSR77499489_;
         } else {
-          result.u82185720_ = u82185720Builder_.build();
+          result.vSR77499489_ = vSR77499489Builder_.build();
+        }
+        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
+          to_bitField0_ |= 0x00001000;
+        }
+        if (vSR82185720Builder_ == null) {
+          result.vSR82185720_ = vSR82185720_;
+        } else {
+          result.vSR82185720_ = vSR82185720Builder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -1129,41 +1172,44 @@ public final class Voicesearch {
 
       public Builder mergeFrom(com.google.search.app.Voicesearch.VoiceSearchRequest other) {
         if (other == com.google.search.app.Voicesearch.VoiceSearchRequest.getDefaultInstance()) return this;
+        if (other.hasFinStream()) {
+          setFinStream(other.getFinStream());
+        }
         if (other.hasUserInfo()) {
           mergeUserInfo(other.getUserInfo());
         }
-        if (other.hasVoiceInfo()) {
-          mergeVoiceInfo(other.getVoiceInfo());
+        if (other.hasVoiceSampling()) {
+          mergeVoiceSampling(other.getVoiceSampling());
         }
-        if (other.hasSoundData()) {
-          mergeSoundData(other.getSoundData());
+        if (other.hasVoiceData()) {
+          mergeVoiceData(other.getVoiceData());
         }
-        if (other.hasPhoneInfo()) {
-          mergePhoneInfo(other.getPhoneInfo());
+        if (other.hasClientInfo()) {
+          mergeClientInfo(other.getClientInfo());
         }
         if (other.hasUserPreference()) {
           mergeUserPreference(other.getUserPreference());
         }
-        if (other.hasU27301014()) {
-          mergeU27301014(other.getU27301014());
+        if (other.hasVSR27301014()) {
+          mergeVSR27301014(other.getVSR27301014());
         }
-        if (other.hasU27423252()) {
-          mergeU27423252(other.getU27423252());
+        if (other.hasVSR27423252()) {
+          mergeVSR27423252(other.getVSR27423252());
         }
-        if (other.hasU27801516()) {
-          mergeU27801516(other.getU27801516());
+        if (other.hasVSR27801516()) {
+          mergeVSR27801516(other.getVSR27801516());
         }
         if (other.hasGetMethod()) {
           mergeGetMethod(other.getGetMethod());
         }
-        if (other.hasU61914024()) {
-          mergeU61914024(other.getU61914024());
+        if (other.hasVSR61914024()) {
+          mergeVSR61914024(other.getVSR61914024());
         }
-        if (other.hasU77499489()) {
-          mergeU77499489(other.getU77499489());
+        if (other.hasVSR77499489()) {
+          mergeVSR77499489(other.getVSR77499489());
         }
-        if (other.hasU82185720()) {
-          mergeU82185720(other.getU82185720());
+        if (other.hasVSR82185720()) {
+          mergeVSR82185720(other.getVSR82185720());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -1192,6 +1238,38 @@ public final class Voicesearch {
       }
       private int bitField0_;
 
+      private int finStream_ ;
+      /**
+       * <code>optional int32 fin_stream = 3;</code>
+       */
+      public boolean hasFinStream() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional int32 fin_stream = 3;</code>
+       */
+      public int getFinStream() {
+        return finStream_;
+      }
+      /**
+       * <code>optional int32 fin_stream = 3;</code>
+       */
+      public Builder setFinStream(int value) {
+        bitField0_ |= 0x00000001;
+        finStream_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 fin_stream = 3;</code>
+       */
+      public Builder clearFinStream() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        finStream_ = 0;
+        onChanged();
+        return this;
+      }
+
       private com.google.search.app.Voicesearch.UserInfo userInfo_ = com.google.search.app.Voicesearch.UserInfo.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           com.google.search.app.Voicesearch.UserInfo, com.google.search.app.Voicesearch.UserInfo.Builder, com.google.search.app.Voicesearch.UserInfoOrBuilder> userInfoBuilder_;
@@ -1199,7 +1277,7 @@ public final class Voicesearch {
        * <code>optional .com.google.search.app.UserInfo user_info = 293000;</code>
        */
       public boolean hasUserInfo() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>optional .com.google.search.app.UserInfo user_info = 293000;</code>
@@ -1224,7 +1302,7 @@ public final class Voicesearch {
         } else {
           userInfoBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
@@ -1238,7 +1316,7 @@ public final class Voicesearch {
         } else {
           userInfoBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
@@ -1246,7 +1324,7 @@ public final class Voicesearch {
        */
       public Builder mergeUserInfo(com.google.search.app.Voicesearch.UserInfo value) {
         if (userInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
               userInfo_ != com.google.search.app.Voicesearch.UserInfo.getDefaultInstance()) {
             userInfo_ =
               com.google.search.app.Voicesearch.UserInfo.newBuilder(userInfo_).mergeFrom(value).buildPartial();
@@ -1257,7 +1335,7 @@ public final class Voicesearch {
         } else {
           userInfoBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
@@ -1270,14 +1348,14 @@ public final class Voicesearch {
         } else {
           userInfoBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
       /**
        * <code>optional .com.google.search.app.UserInfo user_info = 293000;</code>
        */
       public com.google.search.app.Voicesearch.UserInfo.Builder getUserInfoBuilder() {
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
         return getUserInfoFieldBuilder().getBuilder();
       }
@@ -1308,352 +1386,352 @@ public final class Voicesearch {
         return userInfoBuilder_;
       }
 
-      private com.google.search.app.Voicesearch.VoiceInfo voiceInfo_ = com.google.search.app.Voicesearch.VoiceInfo.getDefaultInstance();
+      private com.google.search.app.Voicesearch.VoiceSampling voiceSampling_ = com.google.search.app.Voicesearch.VoiceSampling.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          com.google.search.app.Voicesearch.VoiceInfo, com.google.search.app.Voicesearch.VoiceInfo.Builder, com.google.search.app.Voicesearch.VoiceInfoOrBuilder> voiceInfoBuilder_;
+          com.google.search.app.Voicesearch.VoiceSampling, com.google.search.app.Voicesearch.VoiceSampling.Builder, com.google.search.app.Voicesearch.VoiceSamplingOrBuilder> voiceSamplingBuilder_;
       /**
-       * <code>optional .com.google.search.app.VoiceInfo voice_info = 293100;</code>
+       * <code>optional .com.google.search.app.VoiceSampling voice_sampling = 293100;</code>
        */
-      public boolean hasVoiceInfo() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>optional .com.google.search.app.VoiceInfo voice_info = 293100;</code>
-       */
-      public com.google.search.app.Voicesearch.VoiceInfo getVoiceInfo() {
-        if (voiceInfoBuilder_ == null) {
-          return voiceInfo_;
-        } else {
-          return voiceInfoBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .com.google.search.app.VoiceInfo voice_info = 293100;</code>
-       */
-      public Builder setVoiceInfo(com.google.search.app.Voicesearch.VoiceInfo value) {
-        if (voiceInfoBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          voiceInfo_ = value;
-          onChanged();
-        } else {
-          voiceInfoBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000002;
-        return this;
-      }
-      /**
-       * <code>optional .com.google.search.app.VoiceInfo voice_info = 293100;</code>
-       */
-      public Builder setVoiceInfo(
-          com.google.search.app.Voicesearch.VoiceInfo.Builder builderForValue) {
-        if (voiceInfoBuilder_ == null) {
-          voiceInfo_ = builderForValue.build();
-          onChanged();
-        } else {
-          voiceInfoBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000002;
-        return this;
-      }
-      /**
-       * <code>optional .com.google.search.app.VoiceInfo voice_info = 293100;</code>
-       */
-      public Builder mergeVoiceInfo(com.google.search.app.Voicesearch.VoiceInfo value) {
-        if (voiceInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002) &&
-              voiceInfo_ != com.google.search.app.Voicesearch.VoiceInfo.getDefaultInstance()) {
-            voiceInfo_ =
-              com.google.search.app.Voicesearch.VoiceInfo.newBuilder(voiceInfo_).mergeFrom(value).buildPartial();
-          } else {
-            voiceInfo_ = value;
-          }
-          onChanged();
-        } else {
-          voiceInfoBuilder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000002;
-        return this;
-      }
-      /**
-       * <code>optional .com.google.search.app.VoiceInfo voice_info = 293100;</code>
-       */
-      public Builder clearVoiceInfo() {
-        if (voiceInfoBuilder_ == null) {
-          voiceInfo_ = com.google.search.app.Voicesearch.VoiceInfo.getDefaultInstance();
-          onChanged();
-        } else {
-          voiceInfoBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000002);
-        return this;
-      }
-      /**
-       * <code>optional .com.google.search.app.VoiceInfo voice_info = 293100;</code>
-       */
-      public com.google.search.app.Voicesearch.VoiceInfo.Builder getVoiceInfoBuilder() {
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return getVoiceInfoFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .com.google.search.app.VoiceInfo voice_info = 293100;</code>
-       */
-      public com.google.search.app.Voicesearch.VoiceInfoOrBuilder getVoiceInfoOrBuilder() {
-        if (voiceInfoBuilder_ != null) {
-          return voiceInfoBuilder_.getMessageOrBuilder();
-        } else {
-          return voiceInfo_;
-        }
-      }
-      /**
-       * <code>optional .com.google.search.app.VoiceInfo voice_info = 293100;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilder<
-          com.google.search.app.Voicesearch.VoiceInfo, com.google.search.app.Voicesearch.VoiceInfo.Builder, com.google.search.app.Voicesearch.VoiceInfoOrBuilder> 
-          getVoiceInfoFieldBuilder() {
-        if (voiceInfoBuilder_ == null) {
-          voiceInfoBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.google.search.app.Voicesearch.VoiceInfo, com.google.search.app.Voicesearch.VoiceInfo.Builder, com.google.search.app.Voicesearch.VoiceInfoOrBuilder>(
-                  getVoiceInfo(),
-                  getParentForChildren(),
-                  isClean());
-          voiceInfo_ = null;
-        }
-        return voiceInfoBuilder_;
-      }
-
-      private com.google.search.app.Voicesearch.SoundData soundData_ = com.google.search.app.Voicesearch.SoundData.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          com.google.search.app.Voicesearch.SoundData, com.google.search.app.Voicesearch.SoundData.Builder, com.google.search.app.Voicesearch.SoundDataOrBuilder> soundDataBuilder_;
-      /**
-       * <code>optional .com.google.search.app.SoundData sound_data = 293101;</code>
-       */
-      public boolean hasSoundData() {
+      public boolean hasVoiceSampling() {
         return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
-       * <code>optional .com.google.search.app.SoundData sound_data = 293101;</code>
+       * <code>optional .com.google.search.app.VoiceSampling voice_sampling = 293100;</code>
        */
-      public com.google.search.app.Voicesearch.SoundData getSoundData() {
-        if (soundDataBuilder_ == null) {
-          return soundData_;
+      public com.google.search.app.Voicesearch.VoiceSampling getVoiceSampling() {
+        if (voiceSamplingBuilder_ == null) {
+          return voiceSampling_;
         } else {
-          return soundDataBuilder_.getMessage();
+          return voiceSamplingBuilder_.getMessage();
         }
       }
       /**
-       * <code>optional .com.google.search.app.SoundData sound_data = 293101;</code>
+       * <code>optional .com.google.search.app.VoiceSampling voice_sampling = 293100;</code>
        */
-      public Builder setSoundData(com.google.search.app.Voicesearch.SoundData value) {
-        if (soundDataBuilder_ == null) {
+      public Builder setVoiceSampling(com.google.search.app.Voicesearch.VoiceSampling value) {
+        if (voiceSamplingBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          soundData_ = value;
+          voiceSampling_ = value;
           onChanged();
         } else {
-          soundDataBuilder_.setMessage(value);
+          voiceSamplingBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000004;
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.SoundData sound_data = 293101;</code>
+       * <code>optional .com.google.search.app.VoiceSampling voice_sampling = 293100;</code>
        */
-      public Builder setSoundData(
-          com.google.search.app.Voicesearch.SoundData.Builder builderForValue) {
-        if (soundDataBuilder_ == null) {
-          soundData_ = builderForValue.build();
+      public Builder setVoiceSampling(
+          com.google.search.app.Voicesearch.VoiceSampling.Builder builderForValue) {
+        if (voiceSamplingBuilder_ == null) {
+          voiceSampling_ = builderForValue.build();
           onChanged();
         } else {
-          soundDataBuilder_.setMessage(builderForValue.build());
+          voiceSamplingBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000004;
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.SoundData sound_data = 293101;</code>
+       * <code>optional .com.google.search.app.VoiceSampling voice_sampling = 293100;</code>
        */
-      public Builder mergeSoundData(com.google.search.app.Voicesearch.SoundData value) {
-        if (soundDataBuilder_ == null) {
+      public Builder mergeVoiceSampling(com.google.search.app.Voicesearch.VoiceSampling value) {
+        if (voiceSamplingBuilder_ == null) {
           if (((bitField0_ & 0x00000004) == 0x00000004) &&
-              soundData_ != com.google.search.app.Voicesearch.SoundData.getDefaultInstance()) {
-            soundData_ =
-              com.google.search.app.Voicesearch.SoundData.newBuilder(soundData_).mergeFrom(value).buildPartial();
+              voiceSampling_ != com.google.search.app.Voicesearch.VoiceSampling.getDefaultInstance()) {
+            voiceSampling_ =
+              com.google.search.app.Voicesearch.VoiceSampling.newBuilder(voiceSampling_).mergeFrom(value).buildPartial();
           } else {
-            soundData_ = value;
+            voiceSampling_ = value;
           }
           onChanged();
         } else {
-          soundDataBuilder_.mergeFrom(value);
+          voiceSamplingBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000004;
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.SoundData sound_data = 293101;</code>
+       * <code>optional .com.google.search.app.VoiceSampling voice_sampling = 293100;</code>
        */
-      public Builder clearSoundData() {
-        if (soundDataBuilder_ == null) {
-          soundData_ = com.google.search.app.Voicesearch.SoundData.getDefaultInstance();
+      public Builder clearVoiceSampling() {
+        if (voiceSamplingBuilder_ == null) {
+          voiceSampling_ = com.google.search.app.Voicesearch.VoiceSampling.getDefaultInstance();
           onChanged();
         } else {
-          soundDataBuilder_.clear();
+          voiceSamplingBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.SoundData sound_data = 293101;</code>
+       * <code>optional .com.google.search.app.VoiceSampling voice_sampling = 293100;</code>
        */
-      public com.google.search.app.Voicesearch.SoundData.Builder getSoundDataBuilder() {
+      public com.google.search.app.Voicesearch.VoiceSampling.Builder getVoiceSamplingBuilder() {
         bitField0_ |= 0x00000004;
         onChanged();
-        return getSoundDataFieldBuilder().getBuilder();
+        return getVoiceSamplingFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .com.google.search.app.SoundData sound_data = 293101;</code>
+       * <code>optional .com.google.search.app.VoiceSampling voice_sampling = 293100;</code>
        */
-      public com.google.search.app.Voicesearch.SoundDataOrBuilder getSoundDataOrBuilder() {
-        if (soundDataBuilder_ != null) {
-          return soundDataBuilder_.getMessageOrBuilder();
+      public com.google.search.app.Voicesearch.VoiceSamplingOrBuilder getVoiceSamplingOrBuilder() {
+        if (voiceSamplingBuilder_ != null) {
+          return voiceSamplingBuilder_.getMessageOrBuilder();
         } else {
-          return soundData_;
+          return voiceSampling_;
         }
       }
       /**
-       * <code>optional .com.google.search.app.SoundData sound_data = 293101;</code>
+       * <code>optional .com.google.search.app.VoiceSampling voice_sampling = 293100;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          com.google.search.app.Voicesearch.SoundData, com.google.search.app.Voicesearch.SoundData.Builder, com.google.search.app.Voicesearch.SoundDataOrBuilder> 
-          getSoundDataFieldBuilder() {
-        if (soundDataBuilder_ == null) {
-          soundDataBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.google.search.app.Voicesearch.SoundData, com.google.search.app.Voicesearch.SoundData.Builder, com.google.search.app.Voicesearch.SoundDataOrBuilder>(
-                  getSoundData(),
+          com.google.search.app.Voicesearch.VoiceSampling, com.google.search.app.Voicesearch.VoiceSampling.Builder, com.google.search.app.Voicesearch.VoiceSamplingOrBuilder> 
+          getVoiceSamplingFieldBuilder() {
+        if (voiceSamplingBuilder_ == null) {
+          voiceSamplingBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.search.app.Voicesearch.VoiceSampling, com.google.search.app.Voicesearch.VoiceSampling.Builder, com.google.search.app.Voicesearch.VoiceSamplingOrBuilder>(
+                  getVoiceSampling(),
                   getParentForChildren(),
                   isClean());
-          soundData_ = null;
+          voiceSampling_ = null;
         }
-        return soundDataBuilder_;
+        return voiceSamplingBuilder_;
       }
 
-      private com.google.search.app.Voicesearch.PhoneInfo phoneInfo_ = com.google.search.app.Voicesearch.PhoneInfo.getDefaultInstance();
+      private com.google.search.app.Voicesearch.VoiceData voiceData_ = com.google.search.app.Voicesearch.VoiceData.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          com.google.search.app.Voicesearch.PhoneInfo, com.google.search.app.Voicesearch.PhoneInfo.Builder, com.google.search.app.Voicesearch.PhoneInfoOrBuilder> phoneInfoBuilder_;
+          com.google.search.app.Voicesearch.VoiceData, com.google.search.app.Voicesearch.VoiceData.Builder, com.google.search.app.Voicesearch.VoiceDataOrBuilder> voiceDataBuilder_;
       /**
-       * <code>optional .com.google.search.app.PhoneInfo phone_info = 294000;</code>
+       * <code>optional .com.google.search.app.VoiceData voice_data = 293101;</code>
        */
-      public boolean hasPhoneInfo() {
+      public boolean hasVoiceData() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>optional .com.google.search.app.PhoneInfo phone_info = 294000;</code>
+       * <code>optional .com.google.search.app.VoiceData voice_data = 293101;</code>
        */
-      public com.google.search.app.Voicesearch.PhoneInfo getPhoneInfo() {
-        if (phoneInfoBuilder_ == null) {
-          return phoneInfo_;
+      public com.google.search.app.Voicesearch.VoiceData getVoiceData() {
+        if (voiceDataBuilder_ == null) {
+          return voiceData_;
         } else {
-          return phoneInfoBuilder_.getMessage();
+          return voiceDataBuilder_.getMessage();
         }
       }
       /**
-       * <code>optional .com.google.search.app.PhoneInfo phone_info = 294000;</code>
+       * <code>optional .com.google.search.app.VoiceData voice_data = 293101;</code>
        */
-      public Builder setPhoneInfo(com.google.search.app.Voicesearch.PhoneInfo value) {
-        if (phoneInfoBuilder_ == null) {
+      public Builder setVoiceData(com.google.search.app.Voicesearch.VoiceData value) {
+        if (voiceDataBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          phoneInfo_ = value;
+          voiceData_ = value;
           onChanged();
         } else {
-          phoneInfoBuilder_.setMessage(value);
+          voiceDataBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000008;
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.PhoneInfo phone_info = 294000;</code>
+       * <code>optional .com.google.search.app.VoiceData voice_data = 293101;</code>
        */
-      public Builder setPhoneInfo(
-          com.google.search.app.Voicesearch.PhoneInfo.Builder builderForValue) {
-        if (phoneInfoBuilder_ == null) {
-          phoneInfo_ = builderForValue.build();
+      public Builder setVoiceData(
+          com.google.search.app.Voicesearch.VoiceData.Builder builderForValue) {
+        if (voiceDataBuilder_ == null) {
+          voiceData_ = builderForValue.build();
           onChanged();
         } else {
-          phoneInfoBuilder_.setMessage(builderForValue.build());
+          voiceDataBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000008;
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.PhoneInfo phone_info = 294000;</code>
+       * <code>optional .com.google.search.app.VoiceData voice_data = 293101;</code>
        */
-      public Builder mergePhoneInfo(com.google.search.app.Voicesearch.PhoneInfo value) {
-        if (phoneInfoBuilder_ == null) {
+      public Builder mergeVoiceData(com.google.search.app.Voicesearch.VoiceData value) {
+        if (voiceDataBuilder_ == null) {
           if (((bitField0_ & 0x00000008) == 0x00000008) &&
-              phoneInfo_ != com.google.search.app.Voicesearch.PhoneInfo.getDefaultInstance()) {
-            phoneInfo_ =
-              com.google.search.app.Voicesearch.PhoneInfo.newBuilder(phoneInfo_).mergeFrom(value).buildPartial();
+              voiceData_ != com.google.search.app.Voicesearch.VoiceData.getDefaultInstance()) {
+            voiceData_ =
+              com.google.search.app.Voicesearch.VoiceData.newBuilder(voiceData_).mergeFrom(value).buildPartial();
           } else {
-            phoneInfo_ = value;
+            voiceData_ = value;
           }
           onChanged();
         } else {
-          phoneInfoBuilder_.mergeFrom(value);
+          voiceDataBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000008;
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.PhoneInfo phone_info = 294000;</code>
+       * <code>optional .com.google.search.app.VoiceData voice_data = 293101;</code>
        */
-      public Builder clearPhoneInfo() {
-        if (phoneInfoBuilder_ == null) {
-          phoneInfo_ = com.google.search.app.Voicesearch.PhoneInfo.getDefaultInstance();
+      public Builder clearVoiceData() {
+        if (voiceDataBuilder_ == null) {
+          voiceData_ = com.google.search.app.Voicesearch.VoiceData.getDefaultInstance();
           onChanged();
         } else {
-          phoneInfoBuilder_.clear();
+          voiceDataBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.PhoneInfo phone_info = 294000;</code>
+       * <code>optional .com.google.search.app.VoiceData voice_data = 293101;</code>
        */
-      public com.google.search.app.Voicesearch.PhoneInfo.Builder getPhoneInfoBuilder() {
+      public com.google.search.app.Voicesearch.VoiceData.Builder getVoiceDataBuilder() {
         bitField0_ |= 0x00000008;
         onChanged();
-        return getPhoneInfoFieldBuilder().getBuilder();
+        return getVoiceDataFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .com.google.search.app.PhoneInfo phone_info = 294000;</code>
+       * <code>optional .com.google.search.app.VoiceData voice_data = 293101;</code>
        */
-      public com.google.search.app.Voicesearch.PhoneInfoOrBuilder getPhoneInfoOrBuilder() {
-        if (phoneInfoBuilder_ != null) {
-          return phoneInfoBuilder_.getMessageOrBuilder();
+      public com.google.search.app.Voicesearch.VoiceDataOrBuilder getVoiceDataOrBuilder() {
+        if (voiceDataBuilder_ != null) {
+          return voiceDataBuilder_.getMessageOrBuilder();
         } else {
-          return phoneInfo_;
+          return voiceData_;
         }
       }
       /**
-       * <code>optional .com.google.search.app.PhoneInfo phone_info = 294000;</code>
+       * <code>optional .com.google.search.app.VoiceData voice_data = 293101;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          com.google.search.app.Voicesearch.PhoneInfo, com.google.search.app.Voicesearch.PhoneInfo.Builder, com.google.search.app.Voicesearch.PhoneInfoOrBuilder> 
-          getPhoneInfoFieldBuilder() {
-        if (phoneInfoBuilder_ == null) {
-          phoneInfoBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.google.search.app.Voicesearch.PhoneInfo, com.google.search.app.Voicesearch.PhoneInfo.Builder, com.google.search.app.Voicesearch.PhoneInfoOrBuilder>(
-                  getPhoneInfo(),
+          com.google.search.app.Voicesearch.VoiceData, com.google.search.app.Voicesearch.VoiceData.Builder, com.google.search.app.Voicesearch.VoiceDataOrBuilder> 
+          getVoiceDataFieldBuilder() {
+        if (voiceDataBuilder_ == null) {
+          voiceDataBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.search.app.Voicesearch.VoiceData, com.google.search.app.Voicesearch.VoiceData.Builder, com.google.search.app.Voicesearch.VoiceDataOrBuilder>(
+                  getVoiceData(),
                   getParentForChildren(),
                   isClean());
-          phoneInfo_ = null;
+          voiceData_ = null;
         }
-        return phoneInfoBuilder_;
+        return voiceDataBuilder_;
+      }
+
+      private com.google.search.app.Voicesearch.ClientInfo clientInfo_ = com.google.search.app.Voicesearch.ClientInfo.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.search.app.Voicesearch.ClientInfo, com.google.search.app.Voicesearch.ClientInfo.Builder, com.google.search.app.Voicesearch.ClientInfoOrBuilder> clientInfoBuilder_;
+      /**
+       * <code>optional .com.google.search.app.ClientInfo client_info = 294000;</code>
+       */
+      public boolean hasClientInfo() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional .com.google.search.app.ClientInfo client_info = 294000;</code>
+       */
+      public com.google.search.app.Voicesearch.ClientInfo getClientInfo() {
+        if (clientInfoBuilder_ == null) {
+          return clientInfo_;
+        } else {
+          return clientInfoBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .com.google.search.app.ClientInfo client_info = 294000;</code>
+       */
+      public Builder setClientInfo(com.google.search.app.Voicesearch.ClientInfo value) {
+        if (clientInfoBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          clientInfo_ = value;
+          onChanged();
+        } else {
+          clientInfoBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .com.google.search.app.ClientInfo client_info = 294000;</code>
+       */
+      public Builder setClientInfo(
+          com.google.search.app.Voicesearch.ClientInfo.Builder builderForValue) {
+        if (clientInfoBuilder_ == null) {
+          clientInfo_ = builderForValue.build();
+          onChanged();
+        } else {
+          clientInfoBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .com.google.search.app.ClientInfo client_info = 294000;</code>
+       */
+      public Builder mergeClientInfo(com.google.search.app.Voicesearch.ClientInfo value) {
+        if (clientInfoBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) == 0x00000010) &&
+              clientInfo_ != com.google.search.app.Voicesearch.ClientInfo.getDefaultInstance()) {
+            clientInfo_ =
+              com.google.search.app.Voicesearch.ClientInfo.newBuilder(clientInfo_).mergeFrom(value).buildPartial();
+          } else {
+            clientInfo_ = value;
+          }
+          onChanged();
+        } else {
+          clientInfoBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .com.google.search.app.ClientInfo client_info = 294000;</code>
+       */
+      public Builder clearClientInfo() {
+        if (clientInfoBuilder_ == null) {
+          clientInfo_ = com.google.search.app.Voicesearch.ClientInfo.getDefaultInstance();
+          onChanged();
+        } else {
+          clientInfoBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000010);
+        return this;
+      }
+      /**
+       * <code>optional .com.google.search.app.ClientInfo client_info = 294000;</code>
+       */
+      public com.google.search.app.Voicesearch.ClientInfo.Builder getClientInfoBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getClientInfoFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .com.google.search.app.ClientInfo client_info = 294000;</code>
+       */
+      public com.google.search.app.Voicesearch.ClientInfoOrBuilder getClientInfoOrBuilder() {
+        if (clientInfoBuilder_ != null) {
+          return clientInfoBuilder_.getMessageOrBuilder();
+        } else {
+          return clientInfo_;
+        }
+      }
+      /**
+       * <code>optional .com.google.search.app.ClientInfo client_info = 294000;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.search.app.Voicesearch.ClientInfo, com.google.search.app.Voicesearch.ClientInfo.Builder, com.google.search.app.Voicesearch.ClientInfoOrBuilder> 
+          getClientInfoFieldBuilder() {
+        if (clientInfoBuilder_ == null) {
+          clientInfoBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.search.app.Voicesearch.ClientInfo, com.google.search.app.Voicesearch.ClientInfo.Builder, com.google.search.app.Voicesearch.ClientInfoOrBuilder>(
+                  getClientInfo(),
+                  getParentForChildren(),
+                  isClean());
+          clientInfo_ = null;
+        }
+        return clientInfoBuilder_;
       }
 
       private com.google.search.app.Voicesearch.UserPreference userPreference_ = com.google.search.app.Voicesearch.UserPreference.getDefaultInstance();
@@ -1663,7 +1741,7 @@ public final class Voicesearch {
        * <code>optional .com.google.search.app.UserPreference user_preference = 294500;</code>
        */
       public boolean hasUserPreference() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
+        return ((bitField0_ & 0x00000020) == 0x00000020);
       }
       /**
        * <code>optional .com.google.search.app.UserPreference user_preference = 294500;</code>
@@ -1688,7 +1766,7 @@ public final class Voicesearch {
         } else {
           userPreferenceBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         return this;
       }
       /**
@@ -1702,7 +1780,7 @@ public final class Voicesearch {
         } else {
           userPreferenceBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         return this;
       }
       /**
@@ -1710,7 +1788,7 @@ public final class Voicesearch {
        */
       public Builder mergeUserPreference(com.google.search.app.Voicesearch.UserPreference value) {
         if (userPreferenceBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) == 0x00000010) &&
+          if (((bitField0_ & 0x00000020) == 0x00000020) &&
               userPreference_ != com.google.search.app.Voicesearch.UserPreference.getDefaultInstance()) {
             userPreference_ =
               com.google.search.app.Voicesearch.UserPreference.newBuilder(userPreference_).mergeFrom(value).buildPartial();
@@ -1721,7 +1799,7 @@ public final class Voicesearch {
         } else {
           userPreferenceBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         return this;
       }
       /**
@@ -1734,14 +1812,14 @@ public final class Voicesearch {
         } else {
           userPreferenceBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
       /**
        * <code>optional .com.google.search.app.UserPreference user_preference = 294500;</code>
        */
       public com.google.search.app.Voicesearch.UserPreference.Builder getUserPreferenceBuilder() {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return getUserPreferenceFieldBuilder().getBuilder();
       }
@@ -1772,352 +1850,352 @@ public final class Voicesearch {
         return userPreferenceBuilder_;
       }
 
-      private com.google.search.app.Voicesearch.Empty u27301014_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
+      private com.google.search.app.Voicesearch.Empty vSR27301014_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder> u27301014Builder_;
+          com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder> vSR27301014Builder_;
       /**
-       * <code>optional .com.google.search.app.Empty U27301014 = 27301014;</code>
+       * <code>optional .com.google.search.app.Empty VSR27301014 = 27301014;</code>
        */
-      public boolean hasU27301014() {
-        return ((bitField0_ & 0x00000020) == 0x00000020);
-      }
-      /**
-       * <code>optional .com.google.search.app.Empty U27301014 = 27301014;</code>
-       */
-      public com.google.search.app.Voicesearch.Empty getU27301014() {
-        if (u27301014Builder_ == null) {
-          return u27301014_;
-        } else {
-          return u27301014Builder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .com.google.search.app.Empty U27301014 = 27301014;</code>
-       */
-      public Builder setU27301014(com.google.search.app.Voicesearch.Empty value) {
-        if (u27301014Builder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          u27301014_ = value;
-          onChanged();
-        } else {
-          u27301014Builder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000020;
-        return this;
-      }
-      /**
-       * <code>optional .com.google.search.app.Empty U27301014 = 27301014;</code>
-       */
-      public Builder setU27301014(
-          com.google.search.app.Voicesearch.Empty.Builder builderForValue) {
-        if (u27301014Builder_ == null) {
-          u27301014_ = builderForValue.build();
-          onChanged();
-        } else {
-          u27301014Builder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000020;
-        return this;
-      }
-      /**
-       * <code>optional .com.google.search.app.Empty U27301014 = 27301014;</code>
-       */
-      public Builder mergeU27301014(com.google.search.app.Voicesearch.Empty value) {
-        if (u27301014Builder_ == null) {
-          if (((bitField0_ & 0x00000020) == 0x00000020) &&
-              u27301014_ != com.google.search.app.Voicesearch.Empty.getDefaultInstance()) {
-            u27301014_ =
-              com.google.search.app.Voicesearch.Empty.newBuilder(u27301014_).mergeFrom(value).buildPartial();
-          } else {
-            u27301014_ = value;
-          }
-          onChanged();
-        } else {
-          u27301014Builder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000020;
-        return this;
-      }
-      /**
-       * <code>optional .com.google.search.app.Empty U27301014 = 27301014;</code>
-       */
-      public Builder clearU27301014() {
-        if (u27301014Builder_ == null) {
-          u27301014_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
-          onChanged();
-        } else {
-          u27301014Builder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000020);
-        return this;
-      }
-      /**
-       * <code>optional .com.google.search.app.Empty U27301014 = 27301014;</code>
-       */
-      public com.google.search.app.Voicesearch.Empty.Builder getU27301014Builder() {
-        bitField0_ |= 0x00000020;
-        onChanged();
-        return getU27301014FieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .com.google.search.app.Empty U27301014 = 27301014;</code>
-       */
-      public com.google.search.app.Voicesearch.EmptyOrBuilder getU27301014OrBuilder() {
-        if (u27301014Builder_ != null) {
-          return u27301014Builder_.getMessageOrBuilder();
-        } else {
-          return u27301014_;
-        }
-      }
-      /**
-       * <code>optional .com.google.search.app.Empty U27301014 = 27301014;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilder<
-          com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder> 
-          getU27301014FieldBuilder() {
-        if (u27301014Builder_ == null) {
-          u27301014Builder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder>(
-                  getU27301014(),
-                  getParentForChildren(),
-                  isClean());
-          u27301014_ = null;
-        }
-        return u27301014Builder_;
-      }
-
-      private com.google.search.app.Voicesearch.Empty u27423252_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder> u27423252Builder_;
-      /**
-       * <code>optional .com.google.search.app.Empty U27423252 = 27423252;</code>
-       */
-      public boolean hasU27423252() {
+      public boolean hasVSR27301014() {
         return ((bitField0_ & 0x00000040) == 0x00000040);
       }
       /**
-       * <code>optional .com.google.search.app.Empty U27423252 = 27423252;</code>
+       * <code>optional .com.google.search.app.Empty VSR27301014 = 27301014;</code>
        */
-      public com.google.search.app.Voicesearch.Empty getU27423252() {
-        if (u27423252Builder_ == null) {
-          return u27423252_;
+      public com.google.search.app.Voicesearch.Empty getVSR27301014() {
+        if (vSR27301014Builder_ == null) {
+          return vSR27301014_;
         } else {
-          return u27423252Builder_.getMessage();
+          return vSR27301014Builder_.getMessage();
         }
       }
       /**
-       * <code>optional .com.google.search.app.Empty U27423252 = 27423252;</code>
+       * <code>optional .com.google.search.app.Empty VSR27301014 = 27301014;</code>
        */
-      public Builder setU27423252(com.google.search.app.Voicesearch.Empty value) {
-        if (u27423252Builder_ == null) {
+      public Builder setVSR27301014(com.google.search.app.Voicesearch.Empty value) {
+        if (vSR27301014Builder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          u27423252_ = value;
+          vSR27301014_ = value;
           onChanged();
         } else {
-          u27423252Builder_.setMessage(value);
+          vSR27301014Builder_.setMessage(value);
         }
         bitField0_ |= 0x00000040;
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.Empty U27423252 = 27423252;</code>
+       * <code>optional .com.google.search.app.Empty VSR27301014 = 27301014;</code>
        */
-      public Builder setU27423252(
+      public Builder setVSR27301014(
           com.google.search.app.Voicesearch.Empty.Builder builderForValue) {
-        if (u27423252Builder_ == null) {
-          u27423252_ = builderForValue.build();
+        if (vSR27301014Builder_ == null) {
+          vSR27301014_ = builderForValue.build();
           onChanged();
         } else {
-          u27423252Builder_.setMessage(builderForValue.build());
+          vSR27301014Builder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000040;
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.Empty U27423252 = 27423252;</code>
+       * <code>optional .com.google.search.app.Empty VSR27301014 = 27301014;</code>
        */
-      public Builder mergeU27423252(com.google.search.app.Voicesearch.Empty value) {
-        if (u27423252Builder_ == null) {
+      public Builder mergeVSR27301014(com.google.search.app.Voicesearch.Empty value) {
+        if (vSR27301014Builder_ == null) {
           if (((bitField0_ & 0x00000040) == 0x00000040) &&
-              u27423252_ != com.google.search.app.Voicesearch.Empty.getDefaultInstance()) {
-            u27423252_ =
-              com.google.search.app.Voicesearch.Empty.newBuilder(u27423252_).mergeFrom(value).buildPartial();
+              vSR27301014_ != com.google.search.app.Voicesearch.Empty.getDefaultInstance()) {
+            vSR27301014_ =
+              com.google.search.app.Voicesearch.Empty.newBuilder(vSR27301014_).mergeFrom(value).buildPartial();
           } else {
-            u27423252_ = value;
+            vSR27301014_ = value;
           }
           onChanged();
         } else {
-          u27423252Builder_.mergeFrom(value);
+          vSR27301014Builder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000040;
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.Empty U27423252 = 27423252;</code>
+       * <code>optional .com.google.search.app.Empty VSR27301014 = 27301014;</code>
        */
-      public Builder clearU27423252() {
-        if (u27423252Builder_ == null) {
-          u27423252_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
+      public Builder clearVSR27301014() {
+        if (vSR27301014Builder_ == null) {
+          vSR27301014_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
           onChanged();
         } else {
-          u27423252Builder_.clear();
+          vSR27301014Builder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.Empty U27423252 = 27423252;</code>
+       * <code>optional .com.google.search.app.Empty VSR27301014 = 27301014;</code>
        */
-      public com.google.search.app.Voicesearch.Empty.Builder getU27423252Builder() {
+      public com.google.search.app.Voicesearch.Empty.Builder getVSR27301014Builder() {
         bitField0_ |= 0x00000040;
         onChanged();
-        return getU27423252FieldBuilder().getBuilder();
+        return getVSR27301014FieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .com.google.search.app.Empty U27423252 = 27423252;</code>
+       * <code>optional .com.google.search.app.Empty VSR27301014 = 27301014;</code>
        */
-      public com.google.search.app.Voicesearch.EmptyOrBuilder getU27423252OrBuilder() {
-        if (u27423252Builder_ != null) {
-          return u27423252Builder_.getMessageOrBuilder();
+      public com.google.search.app.Voicesearch.EmptyOrBuilder getVSR27301014OrBuilder() {
+        if (vSR27301014Builder_ != null) {
+          return vSR27301014Builder_.getMessageOrBuilder();
         } else {
-          return u27423252_;
+          return vSR27301014_;
         }
       }
       /**
-       * <code>optional .com.google.search.app.Empty U27423252 = 27423252;</code>
+       * <code>optional .com.google.search.app.Empty VSR27301014 = 27301014;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder> 
-          getU27423252FieldBuilder() {
-        if (u27423252Builder_ == null) {
-          u27423252Builder_ = new com.google.protobuf.SingleFieldBuilder<
+          getVSR27301014FieldBuilder() {
+        if (vSR27301014Builder_ == null) {
+          vSR27301014Builder_ = new com.google.protobuf.SingleFieldBuilder<
               com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder>(
-                  getU27423252(),
+                  getVSR27301014(),
                   getParentForChildren(),
                   isClean());
-          u27423252_ = null;
+          vSR27301014_ = null;
         }
-        return u27423252Builder_;
+        return vSR27301014Builder_;
       }
 
-      private com.google.search.app.Voicesearch.Empty u27801516_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
+      private com.google.search.app.Voicesearch.Empty vSR27423252_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder> u27801516Builder_;
+          com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder> vSR27423252Builder_;
       /**
-       * <code>optional .com.google.search.app.Empty U27801516 = 27801516;</code>
+       * <code>optional .com.google.search.app.Empty VSR27423252 = 27423252;</code>
        */
-      public boolean hasU27801516() {
+      public boolean hasVSR27423252() {
         return ((bitField0_ & 0x00000080) == 0x00000080);
       }
       /**
-       * <code>optional .com.google.search.app.Empty U27801516 = 27801516;</code>
+       * <code>optional .com.google.search.app.Empty VSR27423252 = 27423252;</code>
        */
-      public com.google.search.app.Voicesearch.Empty getU27801516() {
-        if (u27801516Builder_ == null) {
-          return u27801516_;
+      public com.google.search.app.Voicesearch.Empty getVSR27423252() {
+        if (vSR27423252Builder_ == null) {
+          return vSR27423252_;
         } else {
-          return u27801516Builder_.getMessage();
+          return vSR27423252Builder_.getMessage();
         }
       }
       /**
-       * <code>optional .com.google.search.app.Empty U27801516 = 27801516;</code>
+       * <code>optional .com.google.search.app.Empty VSR27423252 = 27423252;</code>
        */
-      public Builder setU27801516(com.google.search.app.Voicesearch.Empty value) {
-        if (u27801516Builder_ == null) {
+      public Builder setVSR27423252(com.google.search.app.Voicesearch.Empty value) {
+        if (vSR27423252Builder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          u27801516_ = value;
+          vSR27423252_ = value;
           onChanged();
         } else {
-          u27801516Builder_.setMessage(value);
+          vSR27423252Builder_.setMessage(value);
         }
         bitField0_ |= 0x00000080;
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.Empty U27801516 = 27801516;</code>
+       * <code>optional .com.google.search.app.Empty VSR27423252 = 27423252;</code>
        */
-      public Builder setU27801516(
+      public Builder setVSR27423252(
           com.google.search.app.Voicesearch.Empty.Builder builderForValue) {
-        if (u27801516Builder_ == null) {
-          u27801516_ = builderForValue.build();
+        if (vSR27423252Builder_ == null) {
+          vSR27423252_ = builderForValue.build();
           onChanged();
         } else {
-          u27801516Builder_.setMessage(builderForValue.build());
+          vSR27423252Builder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000080;
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.Empty U27801516 = 27801516;</code>
+       * <code>optional .com.google.search.app.Empty VSR27423252 = 27423252;</code>
        */
-      public Builder mergeU27801516(com.google.search.app.Voicesearch.Empty value) {
-        if (u27801516Builder_ == null) {
+      public Builder mergeVSR27423252(com.google.search.app.Voicesearch.Empty value) {
+        if (vSR27423252Builder_ == null) {
           if (((bitField0_ & 0x00000080) == 0x00000080) &&
-              u27801516_ != com.google.search.app.Voicesearch.Empty.getDefaultInstance()) {
-            u27801516_ =
-              com.google.search.app.Voicesearch.Empty.newBuilder(u27801516_).mergeFrom(value).buildPartial();
+              vSR27423252_ != com.google.search.app.Voicesearch.Empty.getDefaultInstance()) {
+            vSR27423252_ =
+              com.google.search.app.Voicesearch.Empty.newBuilder(vSR27423252_).mergeFrom(value).buildPartial();
           } else {
-            u27801516_ = value;
+            vSR27423252_ = value;
           }
           onChanged();
         } else {
-          u27801516Builder_.mergeFrom(value);
+          vSR27423252Builder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000080;
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.Empty U27801516 = 27801516;</code>
+       * <code>optional .com.google.search.app.Empty VSR27423252 = 27423252;</code>
        */
-      public Builder clearU27801516() {
-        if (u27801516Builder_ == null) {
-          u27801516_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
+      public Builder clearVSR27423252() {
+        if (vSR27423252Builder_ == null) {
+          vSR27423252_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
           onChanged();
         } else {
-          u27801516Builder_.clear();
+          vSR27423252Builder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000080);
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.Empty U27801516 = 27801516;</code>
+       * <code>optional .com.google.search.app.Empty VSR27423252 = 27423252;</code>
        */
-      public com.google.search.app.Voicesearch.Empty.Builder getU27801516Builder() {
+      public com.google.search.app.Voicesearch.Empty.Builder getVSR27423252Builder() {
         bitField0_ |= 0x00000080;
         onChanged();
-        return getU27801516FieldBuilder().getBuilder();
+        return getVSR27423252FieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .com.google.search.app.Empty U27801516 = 27801516;</code>
+       * <code>optional .com.google.search.app.Empty VSR27423252 = 27423252;</code>
        */
-      public com.google.search.app.Voicesearch.EmptyOrBuilder getU27801516OrBuilder() {
-        if (u27801516Builder_ != null) {
-          return u27801516Builder_.getMessageOrBuilder();
+      public com.google.search.app.Voicesearch.EmptyOrBuilder getVSR27423252OrBuilder() {
+        if (vSR27423252Builder_ != null) {
+          return vSR27423252Builder_.getMessageOrBuilder();
         } else {
-          return u27801516_;
+          return vSR27423252_;
         }
       }
       /**
-       * <code>optional .com.google.search.app.Empty U27801516 = 27801516;</code>
+       * <code>optional .com.google.search.app.Empty VSR27423252 = 27423252;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder> 
-          getU27801516FieldBuilder() {
-        if (u27801516Builder_ == null) {
-          u27801516Builder_ = new com.google.protobuf.SingleFieldBuilder<
+          getVSR27423252FieldBuilder() {
+        if (vSR27423252Builder_ == null) {
+          vSR27423252Builder_ = new com.google.protobuf.SingleFieldBuilder<
               com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder>(
-                  getU27801516(),
+                  getVSR27423252(),
                   getParentForChildren(),
                   isClean());
-          u27801516_ = null;
+          vSR27423252_ = null;
         }
-        return u27801516Builder_;
+        return vSR27423252Builder_;
+      }
+
+      private com.google.search.app.Voicesearch.Double vSR27801516_ = com.google.search.app.Voicesearch.Double.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.search.app.Voicesearch.Double, com.google.search.app.Voicesearch.Double.Builder, com.google.search.app.Voicesearch.DoubleOrBuilder> vSR27801516Builder_;
+      /**
+       * <code>optional .com.google.search.app.Double VSR27801516 = 27801516;</code>
+       */
+      public boolean hasVSR27801516() {
+        return ((bitField0_ & 0x00000100) == 0x00000100);
+      }
+      /**
+       * <code>optional .com.google.search.app.Double VSR27801516 = 27801516;</code>
+       */
+      public com.google.search.app.Voicesearch.Double getVSR27801516() {
+        if (vSR27801516Builder_ == null) {
+          return vSR27801516_;
+        } else {
+          return vSR27801516Builder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .com.google.search.app.Double VSR27801516 = 27801516;</code>
+       */
+      public Builder setVSR27801516(com.google.search.app.Voicesearch.Double value) {
+        if (vSR27801516Builder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          vSR27801516_ = value;
+          onChanged();
+        } else {
+          vSR27801516Builder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000100;
+        return this;
+      }
+      /**
+       * <code>optional .com.google.search.app.Double VSR27801516 = 27801516;</code>
+       */
+      public Builder setVSR27801516(
+          com.google.search.app.Voicesearch.Double.Builder builderForValue) {
+        if (vSR27801516Builder_ == null) {
+          vSR27801516_ = builderForValue.build();
+          onChanged();
+        } else {
+          vSR27801516Builder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000100;
+        return this;
+      }
+      /**
+       * <code>optional .com.google.search.app.Double VSR27801516 = 27801516;</code>
+       */
+      public Builder mergeVSR27801516(com.google.search.app.Voicesearch.Double value) {
+        if (vSR27801516Builder_ == null) {
+          if (((bitField0_ & 0x00000100) == 0x00000100) &&
+              vSR27801516_ != com.google.search.app.Voicesearch.Double.getDefaultInstance()) {
+            vSR27801516_ =
+              com.google.search.app.Voicesearch.Double.newBuilder(vSR27801516_).mergeFrom(value).buildPartial();
+          } else {
+            vSR27801516_ = value;
+          }
+          onChanged();
+        } else {
+          vSR27801516Builder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000100;
+        return this;
+      }
+      /**
+       * <code>optional .com.google.search.app.Double VSR27801516 = 27801516;</code>
+       */
+      public Builder clearVSR27801516() {
+        if (vSR27801516Builder_ == null) {
+          vSR27801516_ = com.google.search.app.Voicesearch.Double.getDefaultInstance();
+          onChanged();
+        } else {
+          vSR27801516Builder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000100);
+        return this;
+      }
+      /**
+       * <code>optional .com.google.search.app.Double VSR27801516 = 27801516;</code>
+       */
+      public com.google.search.app.Voicesearch.Double.Builder getVSR27801516Builder() {
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return getVSR27801516FieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .com.google.search.app.Double VSR27801516 = 27801516;</code>
+       */
+      public com.google.search.app.Voicesearch.DoubleOrBuilder getVSR27801516OrBuilder() {
+        if (vSR27801516Builder_ != null) {
+          return vSR27801516Builder_.getMessageOrBuilder();
+        } else {
+          return vSR27801516_;
+        }
+      }
+      /**
+       * <code>optional .com.google.search.app.Double VSR27801516 = 27801516;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.search.app.Voicesearch.Double, com.google.search.app.Voicesearch.Double.Builder, com.google.search.app.Voicesearch.DoubleOrBuilder> 
+          getVSR27801516FieldBuilder() {
+        if (vSR27801516Builder_ == null) {
+          vSR27801516Builder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.search.app.Voicesearch.Double, com.google.search.app.Voicesearch.Double.Builder, com.google.search.app.Voicesearch.DoubleOrBuilder>(
+                  getVSR27801516(),
+                  getParentForChildren(),
+                  isClean());
+          vSR27801516_ = null;
+        }
+        return vSR27801516Builder_;
       }
 
       private com.google.search.app.Voicesearch.GetMethod getMethod_ = com.google.search.app.Voicesearch.GetMethod.getDefaultInstance();
@@ -2127,7 +2205,7 @@ public final class Voicesearch {
        * <code>optional .com.google.search.app.GetMethod get_method = 34352150;</code>
        */
       public boolean hasGetMethod() {
-        return ((bitField0_ & 0x00000100) == 0x00000100);
+        return ((bitField0_ & 0x00000200) == 0x00000200);
       }
       /**
        * <code>optional .com.google.search.app.GetMethod get_method = 34352150;</code>
@@ -2152,7 +2230,7 @@ public final class Voicesearch {
         } else {
           getMethodBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         return this;
       }
       /**
@@ -2166,7 +2244,7 @@ public final class Voicesearch {
         } else {
           getMethodBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         return this;
       }
       /**
@@ -2174,7 +2252,7 @@ public final class Voicesearch {
        */
       public Builder mergeGetMethod(com.google.search.app.Voicesearch.GetMethod value) {
         if (getMethodBuilder_ == null) {
-          if (((bitField0_ & 0x00000100) == 0x00000100) &&
+          if (((bitField0_ & 0x00000200) == 0x00000200) &&
               getMethod_ != com.google.search.app.Voicesearch.GetMethod.getDefaultInstance()) {
             getMethod_ =
               com.google.search.app.Voicesearch.GetMethod.newBuilder(getMethod_).mergeFrom(value).buildPartial();
@@ -2185,7 +2263,7 @@ public final class Voicesearch {
         } else {
           getMethodBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         return this;
       }
       /**
@@ -2198,14 +2276,14 @@ public final class Voicesearch {
         } else {
           getMethodBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         return this;
       }
       /**
        * <code>optional .com.google.search.app.GetMethod get_method = 34352150;</code>
        */
       public com.google.search.app.Voicesearch.GetMethod.Builder getGetMethodBuilder() {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
         return getGetMethodFieldBuilder().getBuilder();
       }
@@ -2236,352 +2314,352 @@ public final class Voicesearch {
         return getMethodBuilder_;
       }
 
-      private com.google.search.app.Voicesearch.Empty u61914024_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
+      private com.google.search.app.Voicesearch.Empty vSR61914024_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder> u61914024Builder_;
+          com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder> vSR61914024Builder_;
       /**
-       * <code>optional .com.google.search.app.Empty U61914024 = 61914024;</code>
+       * <code>optional .com.google.search.app.Empty VSR61914024 = 61914024;</code>
        */
-      public boolean hasU61914024() {
-        return ((bitField0_ & 0x00000200) == 0x00000200);
-      }
-      /**
-       * <code>optional .com.google.search.app.Empty U61914024 = 61914024;</code>
-       */
-      public com.google.search.app.Voicesearch.Empty getU61914024() {
-        if (u61914024Builder_ == null) {
-          return u61914024_;
-        } else {
-          return u61914024Builder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .com.google.search.app.Empty U61914024 = 61914024;</code>
-       */
-      public Builder setU61914024(com.google.search.app.Voicesearch.Empty value) {
-        if (u61914024Builder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          u61914024_ = value;
-          onChanged();
-        } else {
-          u61914024Builder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000200;
-        return this;
-      }
-      /**
-       * <code>optional .com.google.search.app.Empty U61914024 = 61914024;</code>
-       */
-      public Builder setU61914024(
-          com.google.search.app.Voicesearch.Empty.Builder builderForValue) {
-        if (u61914024Builder_ == null) {
-          u61914024_ = builderForValue.build();
-          onChanged();
-        } else {
-          u61914024Builder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000200;
-        return this;
-      }
-      /**
-       * <code>optional .com.google.search.app.Empty U61914024 = 61914024;</code>
-       */
-      public Builder mergeU61914024(com.google.search.app.Voicesearch.Empty value) {
-        if (u61914024Builder_ == null) {
-          if (((bitField0_ & 0x00000200) == 0x00000200) &&
-              u61914024_ != com.google.search.app.Voicesearch.Empty.getDefaultInstance()) {
-            u61914024_ =
-              com.google.search.app.Voicesearch.Empty.newBuilder(u61914024_).mergeFrom(value).buildPartial();
-          } else {
-            u61914024_ = value;
-          }
-          onChanged();
-        } else {
-          u61914024Builder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000200;
-        return this;
-      }
-      /**
-       * <code>optional .com.google.search.app.Empty U61914024 = 61914024;</code>
-       */
-      public Builder clearU61914024() {
-        if (u61914024Builder_ == null) {
-          u61914024_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
-          onChanged();
-        } else {
-          u61914024Builder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000200);
-        return this;
-      }
-      /**
-       * <code>optional .com.google.search.app.Empty U61914024 = 61914024;</code>
-       */
-      public com.google.search.app.Voicesearch.Empty.Builder getU61914024Builder() {
-        bitField0_ |= 0x00000200;
-        onChanged();
-        return getU61914024FieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .com.google.search.app.Empty U61914024 = 61914024;</code>
-       */
-      public com.google.search.app.Voicesearch.EmptyOrBuilder getU61914024OrBuilder() {
-        if (u61914024Builder_ != null) {
-          return u61914024Builder_.getMessageOrBuilder();
-        } else {
-          return u61914024_;
-        }
-      }
-      /**
-       * <code>optional .com.google.search.app.Empty U61914024 = 61914024;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilder<
-          com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder> 
-          getU61914024FieldBuilder() {
-        if (u61914024Builder_ == null) {
-          u61914024Builder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder>(
-                  getU61914024(),
-                  getParentForChildren(),
-                  isClean());
-          u61914024_ = null;
-        }
-        return u61914024Builder_;
-      }
-
-      private com.google.search.app.Voicesearch.Empty u77499489_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder> u77499489Builder_;
-      /**
-       * <code>optional .com.google.search.app.Empty U77499489 = 77499489;</code>
-       */
-      public boolean hasU77499489() {
+      public boolean hasVSR61914024() {
         return ((bitField0_ & 0x00000400) == 0x00000400);
       }
       /**
-       * <code>optional .com.google.search.app.Empty U77499489 = 77499489;</code>
+       * <code>optional .com.google.search.app.Empty VSR61914024 = 61914024;</code>
        */
-      public com.google.search.app.Voicesearch.Empty getU77499489() {
-        if (u77499489Builder_ == null) {
-          return u77499489_;
+      public com.google.search.app.Voicesearch.Empty getVSR61914024() {
+        if (vSR61914024Builder_ == null) {
+          return vSR61914024_;
         } else {
-          return u77499489Builder_.getMessage();
+          return vSR61914024Builder_.getMessage();
         }
       }
       /**
-       * <code>optional .com.google.search.app.Empty U77499489 = 77499489;</code>
+       * <code>optional .com.google.search.app.Empty VSR61914024 = 61914024;</code>
        */
-      public Builder setU77499489(com.google.search.app.Voicesearch.Empty value) {
-        if (u77499489Builder_ == null) {
+      public Builder setVSR61914024(com.google.search.app.Voicesearch.Empty value) {
+        if (vSR61914024Builder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          u77499489_ = value;
+          vSR61914024_ = value;
           onChanged();
         } else {
-          u77499489Builder_.setMessage(value);
+          vSR61914024Builder_.setMessage(value);
         }
         bitField0_ |= 0x00000400;
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.Empty U77499489 = 77499489;</code>
+       * <code>optional .com.google.search.app.Empty VSR61914024 = 61914024;</code>
        */
-      public Builder setU77499489(
+      public Builder setVSR61914024(
           com.google.search.app.Voicesearch.Empty.Builder builderForValue) {
-        if (u77499489Builder_ == null) {
-          u77499489_ = builderForValue.build();
+        if (vSR61914024Builder_ == null) {
+          vSR61914024_ = builderForValue.build();
           onChanged();
         } else {
-          u77499489Builder_.setMessage(builderForValue.build());
+          vSR61914024Builder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000400;
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.Empty U77499489 = 77499489;</code>
+       * <code>optional .com.google.search.app.Empty VSR61914024 = 61914024;</code>
        */
-      public Builder mergeU77499489(com.google.search.app.Voicesearch.Empty value) {
-        if (u77499489Builder_ == null) {
+      public Builder mergeVSR61914024(com.google.search.app.Voicesearch.Empty value) {
+        if (vSR61914024Builder_ == null) {
           if (((bitField0_ & 0x00000400) == 0x00000400) &&
-              u77499489_ != com.google.search.app.Voicesearch.Empty.getDefaultInstance()) {
-            u77499489_ =
-              com.google.search.app.Voicesearch.Empty.newBuilder(u77499489_).mergeFrom(value).buildPartial();
+              vSR61914024_ != com.google.search.app.Voicesearch.Empty.getDefaultInstance()) {
+            vSR61914024_ =
+              com.google.search.app.Voicesearch.Empty.newBuilder(vSR61914024_).mergeFrom(value).buildPartial();
           } else {
-            u77499489_ = value;
+            vSR61914024_ = value;
           }
           onChanged();
         } else {
-          u77499489Builder_.mergeFrom(value);
+          vSR61914024Builder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000400;
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.Empty U77499489 = 77499489;</code>
+       * <code>optional .com.google.search.app.Empty VSR61914024 = 61914024;</code>
        */
-      public Builder clearU77499489() {
-        if (u77499489Builder_ == null) {
-          u77499489_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
+      public Builder clearVSR61914024() {
+        if (vSR61914024Builder_ == null) {
+          vSR61914024_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
           onChanged();
         } else {
-          u77499489Builder_.clear();
+          vSR61914024Builder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000400);
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.Empty U77499489 = 77499489;</code>
+       * <code>optional .com.google.search.app.Empty VSR61914024 = 61914024;</code>
        */
-      public com.google.search.app.Voicesearch.Empty.Builder getU77499489Builder() {
+      public com.google.search.app.Voicesearch.Empty.Builder getVSR61914024Builder() {
         bitField0_ |= 0x00000400;
         onChanged();
-        return getU77499489FieldBuilder().getBuilder();
+        return getVSR61914024FieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .com.google.search.app.Empty U77499489 = 77499489;</code>
+       * <code>optional .com.google.search.app.Empty VSR61914024 = 61914024;</code>
        */
-      public com.google.search.app.Voicesearch.EmptyOrBuilder getU77499489OrBuilder() {
-        if (u77499489Builder_ != null) {
-          return u77499489Builder_.getMessageOrBuilder();
+      public com.google.search.app.Voicesearch.EmptyOrBuilder getVSR61914024OrBuilder() {
+        if (vSR61914024Builder_ != null) {
+          return vSR61914024Builder_.getMessageOrBuilder();
         } else {
-          return u77499489_;
+          return vSR61914024_;
         }
       }
       /**
-       * <code>optional .com.google.search.app.Empty U77499489 = 77499489;</code>
+       * <code>optional .com.google.search.app.Empty VSR61914024 = 61914024;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder> 
-          getU77499489FieldBuilder() {
-        if (u77499489Builder_ == null) {
-          u77499489Builder_ = new com.google.protobuf.SingleFieldBuilder<
+          getVSR61914024FieldBuilder() {
+        if (vSR61914024Builder_ == null) {
+          vSR61914024Builder_ = new com.google.protobuf.SingleFieldBuilder<
               com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder>(
-                  getU77499489(),
+                  getVSR61914024(),
                   getParentForChildren(),
                   isClean());
-          u77499489_ = null;
+          vSR61914024_ = null;
         }
-        return u77499489Builder_;
+        return vSR61914024Builder_;
       }
 
-      private com.google.search.app.Voicesearch.Empty u82185720_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
+      private com.google.search.app.Voicesearch.Empty vSR77499489_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder> u82185720Builder_;
+          com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder> vSR77499489Builder_;
       /**
-       * <code>optional .com.google.search.app.Empty U82185720 = 82185720;</code>
+       * <code>optional .com.google.search.app.Empty VSR77499489 = 77499489;</code>
        */
-      public boolean hasU82185720() {
+      public boolean hasVSR77499489() {
         return ((bitField0_ & 0x00000800) == 0x00000800);
       }
       /**
-       * <code>optional .com.google.search.app.Empty U82185720 = 82185720;</code>
+       * <code>optional .com.google.search.app.Empty VSR77499489 = 77499489;</code>
        */
-      public com.google.search.app.Voicesearch.Empty getU82185720() {
-        if (u82185720Builder_ == null) {
-          return u82185720_;
+      public com.google.search.app.Voicesearch.Empty getVSR77499489() {
+        if (vSR77499489Builder_ == null) {
+          return vSR77499489_;
         } else {
-          return u82185720Builder_.getMessage();
+          return vSR77499489Builder_.getMessage();
         }
       }
       /**
-       * <code>optional .com.google.search.app.Empty U82185720 = 82185720;</code>
+       * <code>optional .com.google.search.app.Empty VSR77499489 = 77499489;</code>
        */
-      public Builder setU82185720(com.google.search.app.Voicesearch.Empty value) {
-        if (u82185720Builder_ == null) {
+      public Builder setVSR77499489(com.google.search.app.Voicesearch.Empty value) {
+        if (vSR77499489Builder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          u82185720_ = value;
+          vSR77499489_ = value;
           onChanged();
         } else {
-          u82185720Builder_.setMessage(value);
+          vSR77499489Builder_.setMessage(value);
         }
         bitField0_ |= 0x00000800;
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.Empty U82185720 = 82185720;</code>
+       * <code>optional .com.google.search.app.Empty VSR77499489 = 77499489;</code>
        */
-      public Builder setU82185720(
+      public Builder setVSR77499489(
           com.google.search.app.Voicesearch.Empty.Builder builderForValue) {
-        if (u82185720Builder_ == null) {
-          u82185720_ = builderForValue.build();
+        if (vSR77499489Builder_ == null) {
+          vSR77499489_ = builderForValue.build();
           onChanged();
         } else {
-          u82185720Builder_.setMessage(builderForValue.build());
+          vSR77499489Builder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000800;
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.Empty U82185720 = 82185720;</code>
+       * <code>optional .com.google.search.app.Empty VSR77499489 = 77499489;</code>
        */
-      public Builder mergeU82185720(com.google.search.app.Voicesearch.Empty value) {
-        if (u82185720Builder_ == null) {
+      public Builder mergeVSR77499489(com.google.search.app.Voicesearch.Empty value) {
+        if (vSR77499489Builder_ == null) {
           if (((bitField0_ & 0x00000800) == 0x00000800) &&
-              u82185720_ != com.google.search.app.Voicesearch.Empty.getDefaultInstance()) {
-            u82185720_ =
-              com.google.search.app.Voicesearch.Empty.newBuilder(u82185720_).mergeFrom(value).buildPartial();
+              vSR77499489_ != com.google.search.app.Voicesearch.Empty.getDefaultInstance()) {
+            vSR77499489_ =
+              com.google.search.app.Voicesearch.Empty.newBuilder(vSR77499489_).mergeFrom(value).buildPartial();
           } else {
-            u82185720_ = value;
+            vSR77499489_ = value;
           }
           onChanged();
         } else {
-          u82185720Builder_.mergeFrom(value);
+          vSR77499489Builder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000800;
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.Empty U82185720 = 82185720;</code>
+       * <code>optional .com.google.search.app.Empty VSR77499489 = 77499489;</code>
        */
-      public Builder clearU82185720() {
-        if (u82185720Builder_ == null) {
-          u82185720_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
+      public Builder clearVSR77499489() {
+        if (vSR77499489Builder_ == null) {
+          vSR77499489_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
           onChanged();
         } else {
-          u82185720Builder_.clear();
+          vSR77499489Builder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000800);
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.Empty U82185720 = 82185720;</code>
+       * <code>optional .com.google.search.app.Empty VSR77499489 = 77499489;</code>
        */
-      public com.google.search.app.Voicesearch.Empty.Builder getU82185720Builder() {
+      public com.google.search.app.Voicesearch.Empty.Builder getVSR77499489Builder() {
         bitField0_ |= 0x00000800;
         onChanged();
-        return getU82185720FieldBuilder().getBuilder();
+        return getVSR77499489FieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .com.google.search.app.Empty U82185720 = 82185720;</code>
+       * <code>optional .com.google.search.app.Empty VSR77499489 = 77499489;</code>
        */
-      public com.google.search.app.Voicesearch.EmptyOrBuilder getU82185720OrBuilder() {
-        if (u82185720Builder_ != null) {
-          return u82185720Builder_.getMessageOrBuilder();
+      public com.google.search.app.Voicesearch.EmptyOrBuilder getVSR77499489OrBuilder() {
+        if (vSR77499489Builder_ != null) {
+          return vSR77499489Builder_.getMessageOrBuilder();
         } else {
-          return u82185720_;
+          return vSR77499489_;
         }
       }
       /**
-       * <code>optional .com.google.search.app.Empty U82185720 = 82185720;</code>
+       * <code>optional .com.google.search.app.Empty VSR77499489 = 77499489;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder> 
-          getU82185720FieldBuilder() {
-        if (u82185720Builder_ == null) {
-          u82185720Builder_ = new com.google.protobuf.SingleFieldBuilder<
+          getVSR77499489FieldBuilder() {
+        if (vSR77499489Builder_ == null) {
+          vSR77499489Builder_ = new com.google.protobuf.SingleFieldBuilder<
               com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder>(
-                  getU82185720(),
+                  getVSR77499489(),
                   getParentForChildren(),
                   isClean());
-          u82185720_ = null;
+          vSR77499489_ = null;
         }
-        return u82185720Builder_;
+        return vSR77499489Builder_;
+      }
+
+      private com.google.search.app.Voicesearch.Empty vSR82185720_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder> vSR82185720Builder_;
+      /**
+       * <code>optional .com.google.search.app.Empty VSR82185720 = 82185720;</code>
+       */
+      public boolean hasVSR82185720() {
+        return ((bitField0_ & 0x00001000) == 0x00001000);
+      }
+      /**
+       * <code>optional .com.google.search.app.Empty VSR82185720 = 82185720;</code>
+       */
+      public com.google.search.app.Voicesearch.Empty getVSR82185720() {
+        if (vSR82185720Builder_ == null) {
+          return vSR82185720_;
+        } else {
+          return vSR82185720Builder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .com.google.search.app.Empty VSR82185720 = 82185720;</code>
+       */
+      public Builder setVSR82185720(com.google.search.app.Voicesearch.Empty value) {
+        if (vSR82185720Builder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          vSR82185720_ = value;
+          onChanged();
+        } else {
+          vSR82185720Builder_.setMessage(value);
+        }
+        bitField0_ |= 0x00001000;
+        return this;
+      }
+      /**
+       * <code>optional .com.google.search.app.Empty VSR82185720 = 82185720;</code>
+       */
+      public Builder setVSR82185720(
+          com.google.search.app.Voicesearch.Empty.Builder builderForValue) {
+        if (vSR82185720Builder_ == null) {
+          vSR82185720_ = builderForValue.build();
+          onChanged();
+        } else {
+          vSR82185720Builder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00001000;
+        return this;
+      }
+      /**
+       * <code>optional .com.google.search.app.Empty VSR82185720 = 82185720;</code>
+       */
+      public Builder mergeVSR82185720(com.google.search.app.Voicesearch.Empty value) {
+        if (vSR82185720Builder_ == null) {
+          if (((bitField0_ & 0x00001000) == 0x00001000) &&
+              vSR82185720_ != com.google.search.app.Voicesearch.Empty.getDefaultInstance()) {
+            vSR82185720_ =
+              com.google.search.app.Voicesearch.Empty.newBuilder(vSR82185720_).mergeFrom(value).buildPartial();
+          } else {
+            vSR82185720_ = value;
+          }
+          onChanged();
+        } else {
+          vSR82185720Builder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00001000;
+        return this;
+      }
+      /**
+       * <code>optional .com.google.search.app.Empty VSR82185720 = 82185720;</code>
+       */
+      public Builder clearVSR82185720() {
+        if (vSR82185720Builder_ == null) {
+          vSR82185720_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
+          onChanged();
+        } else {
+          vSR82185720Builder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00001000);
+        return this;
+      }
+      /**
+       * <code>optional .com.google.search.app.Empty VSR82185720 = 82185720;</code>
+       */
+      public com.google.search.app.Voicesearch.Empty.Builder getVSR82185720Builder() {
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return getVSR82185720FieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .com.google.search.app.Empty VSR82185720 = 82185720;</code>
+       */
+      public com.google.search.app.Voicesearch.EmptyOrBuilder getVSR82185720OrBuilder() {
+        if (vSR82185720Builder_ != null) {
+          return vSR82185720Builder_.getMessageOrBuilder();
+        } else {
+          return vSR82185720_;
+        }
+      }
+      /**
+       * <code>optional .com.google.search.app.Empty VSR82185720 = 82185720;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder> 
+          getVSR82185720FieldBuilder() {
+        if (vSR82185720Builder_ == null) {
+          vSR82185720Builder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder>(
+                  getVSR82185720(),
+                  getParentForChildren(),
+                  isClean());
+          vSR82185720_ = null;
+        }
+        return vSR82185720Builder_;
       }
 
       // @@protoc_insertion_point(builder_scope:com.google.search.app.VoiceSearchRequest)
@@ -2598,6 +2676,15 @@ public final class Voicesearch {
   public interface VoiceSearchResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.google.search.app.VoiceSearchResponse)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional int32 fin_stream = 1;</code>
+     */
+    boolean hasFinStream();
+    /**
+     * <code>optional int32 fin_stream = 1;</code>
+     */
+    int getFinStream();
 
     /**
      * <code>optional .com.google.search.app.RecogBlock recog_block = 1253625;</code>
@@ -2626,17 +2713,17 @@ public final class Voicesearch {
     com.google.search.app.Voicesearch.SearchResultOrBuilder getSearchResultOrBuilder();
 
     /**
-     * <code>optional .com.google.search.app.SearchResource G28599812 = 28599812;</code>
+     * <code>optional .com.google.search.app.TtsSound tts_sound = 28599812;</code>
      */
-    boolean hasG28599812();
+    boolean hasTtsSound();
     /**
-     * <code>optional .com.google.search.app.SearchResource G28599812 = 28599812;</code>
+     * <code>optional .com.google.search.app.TtsSound tts_sound = 28599812;</code>
      */
-    com.google.search.app.Voicesearch.SearchResource getG28599812();
+    com.google.search.app.Voicesearch.TtsSound getTtsSound();
     /**
-     * <code>optional .com.google.search.app.SearchResource G28599812 = 28599812;</code>
+     * <code>optional .com.google.search.app.TtsSound tts_sound = 28599812;</code>
      */
-    com.google.search.app.Voicesearch.SearchResourceOrBuilder getG28599812OrBuilder();
+    com.google.search.app.Voicesearch.TtsSoundOrBuilder getTtsSoundOrBuilder();
   }
   /**
    * Protobuf type {@code com.google.search.app.VoiceSearchResponse}
@@ -2690,9 +2777,14 @@ public final class Voicesearch {
               }
               break;
             }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              finStream_ = input.readInt32();
+              break;
+            }
             case 10029002: {
               com.google.search.app.Voicesearch.RecogBlock.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000001) == 0x00000001)) {
+              if (((bitField0_ & 0x00000002) == 0x00000002)) {
                 subBuilder = recogBlock_.toBuilder();
               }
               recogBlock_ = input.readMessage(com.google.search.app.Voicesearch.RecogBlock.PARSER, extensionRegistry);
@@ -2700,25 +2792,25 @@ public final class Voicesearch {
                 subBuilder.mergeFrom(recogBlock_);
                 recogBlock_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000001;
+              bitField0_ |= 0x00000002;
               break;
             }
             case 228798498: {
-              com.google.search.app.Voicesearch.SearchResource.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000004) == 0x00000004)) {
-                subBuilder = g28599812_.toBuilder();
+              com.google.search.app.Voicesearch.TtsSound.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000008) == 0x00000008)) {
+                subBuilder = ttsSound_.toBuilder();
               }
-              g28599812_ = input.readMessage(com.google.search.app.Voicesearch.SearchResource.PARSER, extensionRegistry);
+              ttsSound_ = input.readMessage(com.google.search.app.Voicesearch.TtsSound.PARSER, extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(g28599812_);
-                g28599812_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(ttsSound_);
+                ttsSound_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000008;
               break;
             }
             case 315537450: {
               com.google.search.app.Voicesearch.SearchResult.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000002) == 0x00000002)) {
+              if (((bitField0_ & 0x00000004) == 0x00000004)) {
                 subBuilder = searchResult_.toBuilder();
               }
               searchResult_ = input.readMessage(com.google.search.app.Voicesearch.SearchResult.PARSER, extensionRegistry);
@@ -2726,7 +2818,7 @@ public final class Voicesearch {
                 subBuilder.mergeFrom(searchResult_);
                 searchResult_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000004;
               break;
             }
           }
@@ -2769,13 +2861,28 @@ public final class Voicesearch {
     }
 
     private int bitField0_;
+    public static final int FIN_STREAM_FIELD_NUMBER = 1;
+    private int finStream_;
+    /**
+     * <code>optional int32 fin_stream = 1;</code>
+     */
+    public boolean hasFinStream() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional int32 fin_stream = 1;</code>
+     */
+    public int getFinStream() {
+      return finStream_;
+    }
+
     public static final int RECOG_BLOCK_FIELD_NUMBER = 1253625;
     private com.google.search.app.Voicesearch.RecogBlock recogBlock_;
     /**
      * <code>optional .com.google.search.app.RecogBlock recog_block = 1253625;</code>
      */
     public boolean hasRecogBlock() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
+      return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
      * <code>optional .com.google.search.app.RecogBlock recog_block = 1253625;</code>
@@ -2796,7 +2903,7 @@ public final class Voicesearch {
      * <code>optional .com.google.search.app.SearchResult search_result = 39442181;</code>
      */
     public boolean hasSearchResult() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
      * <code>optional .com.google.search.app.SearchResult search_result = 39442181;</code>
@@ -2811,31 +2918,32 @@ public final class Voicesearch {
       return searchResult_;
     }
 
-    public static final int G28599812_FIELD_NUMBER = 28599812;
-    private com.google.search.app.Voicesearch.SearchResource g28599812_;
+    public static final int TTS_SOUND_FIELD_NUMBER = 28599812;
+    private com.google.search.app.Voicesearch.TtsSound ttsSound_;
     /**
-     * <code>optional .com.google.search.app.SearchResource G28599812 = 28599812;</code>
+     * <code>optional .com.google.search.app.TtsSound tts_sound = 28599812;</code>
      */
-    public boolean hasG28599812() {
-      return ((bitField0_ & 0x00000004) == 0x00000004);
+    public boolean hasTtsSound() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>optional .com.google.search.app.SearchResource G28599812 = 28599812;</code>
+     * <code>optional .com.google.search.app.TtsSound tts_sound = 28599812;</code>
      */
-    public com.google.search.app.Voicesearch.SearchResource getG28599812() {
-      return g28599812_;
+    public com.google.search.app.Voicesearch.TtsSound getTtsSound() {
+      return ttsSound_;
     }
     /**
-     * <code>optional .com.google.search.app.SearchResource G28599812 = 28599812;</code>
+     * <code>optional .com.google.search.app.TtsSound tts_sound = 28599812;</code>
      */
-    public com.google.search.app.Voicesearch.SearchResourceOrBuilder getG28599812OrBuilder() {
-      return g28599812_;
+    public com.google.search.app.Voicesearch.TtsSoundOrBuilder getTtsSoundOrBuilder() {
+      return ttsSound_;
     }
 
     private void initFields() {
+      finStream_ = 0;
       recogBlock_ = com.google.search.app.Voicesearch.RecogBlock.getDefaultInstance();
       searchResult_ = com.google.search.app.Voicesearch.SearchResult.getDefaultInstance();
-      g28599812_ = com.google.search.app.Voicesearch.SearchResource.getDefaultInstance();
+      ttsSound_ = com.google.search.app.Voicesearch.TtsSound.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -2851,12 +2959,15 @@ public final class Voicesearch {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeMessage(1253625, recogBlock_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeMessage(28599812, g28599812_);
+        output.writeInt32(1, finStream_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeMessage(1253625, recogBlock_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeMessage(28599812, ttsSound_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeMessage(39442181, searchResult_);
       }
       getUnknownFields().writeTo(output);
@@ -2870,13 +2981,17 @@ public final class Voicesearch {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1253625, recogBlock_);
-      }
-      if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(28599812, g28599812_);
+          .computeInt32Size(1, finStream_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1253625, recogBlock_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(28599812, ttsSound_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(39442181, searchResult_);
       }
@@ -2991,7 +3106,7 @@ public final class Voicesearch {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           getRecogBlockFieldBuilder();
           getSearchResultFieldBuilder();
-          getG28599812FieldBuilder();
+          getTtsSoundFieldBuilder();
         }
       }
       private static Builder create() {
@@ -3000,24 +3115,26 @@ public final class Voicesearch {
 
       public Builder clear() {
         super.clear();
+        finStream_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (recogBlockBuilder_ == null) {
           recogBlock_ = com.google.search.app.Voicesearch.RecogBlock.getDefaultInstance();
         } else {
           recogBlockBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (searchResultBuilder_ == null) {
           searchResult_ = com.google.search.app.Voicesearch.SearchResult.getDefaultInstance();
         } else {
           searchResultBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
-        if (g28599812Builder_ == null) {
-          g28599812_ = com.google.search.app.Voicesearch.SearchResource.getDefaultInstance();
-        } else {
-          g28599812Builder_.clear();
-        }
         bitField0_ = (bitField0_ & ~0x00000004);
+        if (ttsSoundBuilder_ == null) {
+          ttsSound_ = com.google.search.app.Voicesearch.TtsSound.getDefaultInstance();
+        } else {
+          ttsSoundBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -3049,26 +3166,30 @@ public final class Voicesearch {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
+        result.finStream_ = finStream_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
         if (recogBlockBuilder_ == null) {
           result.recogBlock_ = recogBlock_;
         } else {
           result.recogBlock_ = recogBlockBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
         }
         if (searchResultBuilder_ == null) {
           result.searchResult_ = searchResult_;
         } else {
           result.searchResult_ = searchResultBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-          to_bitField0_ |= 0x00000004;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
         }
-        if (g28599812Builder_ == null) {
-          result.g28599812_ = g28599812_;
+        if (ttsSoundBuilder_ == null) {
+          result.ttsSound_ = ttsSound_;
         } else {
-          result.g28599812_ = g28599812Builder_.build();
+          result.ttsSound_ = ttsSoundBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -3086,14 +3207,17 @@ public final class Voicesearch {
 
       public Builder mergeFrom(com.google.search.app.Voicesearch.VoiceSearchResponse other) {
         if (other == com.google.search.app.Voicesearch.VoiceSearchResponse.getDefaultInstance()) return this;
+        if (other.hasFinStream()) {
+          setFinStream(other.getFinStream());
+        }
         if (other.hasRecogBlock()) {
           mergeRecogBlock(other.getRecogBlock());
         }
         if (other.hasSearchResult()) {
           mergeSearchResult(other.getSearchResult());
         }
-        if (other.hasG28599812()) {
-          mergeG28599812(other.getG28599812());
+        if (other.hasTtsSound()) {
+          mergeTtsSound(other.getTtsSound());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -3122,6 +3246,38 @@ public final class Voicesearch {
       }
       private int bitField0_;
 
+      private int finStream_ ;
+      /**
+       * <code>optional int32 fin_stream = 1;</code>
+       */
+      public boolean hasFinStream() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional int32 fin_stream = 1;</code>
+       */
+      public int getFinStream() {
+        return finStream_;
+      }
+      /**
+       * <code>optional int32 fin_stream = 1;</code>
+       */
+      public Builder setFinStream(int value) {
+        bitField0_ |= 0x00000001;
+        finStream_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 fin_stream = 1;</code>
+       */
+      public Builder clearFinStream() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        finStream_ = 0;
+        onChanged();
+        return this;
+      }
+
       private com.google.search.app.Voicesearch.RecogBlock recogBlock_ = com.google.search.app.Voicesearch.RecogBlock.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           com.google.search.app.Voicesearch.RecogBlock, com.google.search.app.Voicesearch.RecogBlock.Builder, com.google.search.app.Voicesearch.RecogBlockOrBuilder> recogBlockBuilder_;
@@ -3129,7 +3285,7 @@ public final class Voicesearch {
        * <code>optional .com.google.search.app.RecogBlock recog_block = 1253625;</code>
        */
       public boolean hasRecogBlock() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
+        return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
        * <code>optional .com.google.search.app.RecogBlock recog_block = 1253625;</code>
@@ -3154,7 +3310,7 @@ public final class Voicesearch {
         } else {
           recogBlockBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
@@ -3168,7 +3324,7 @@ public final class Voicesearch {
         } else {
           recogBlockBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
@@ -3176,7 +3332,7 @@ public final class Voicesearch {
        */
       public Builder mergeRecogBlock(com.google.search.app.Voicesearch.RecogBlock value) {
         if (recogBlockBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001) &&
+          if (((bitField0_ & 0x00000002) == 0x00000002) &&
               recogBlock_ != com.google.search.app.Voicesearch.RecogBlock.getDefaultInstance()) {
             recogBlock_ =
               com.google.search.app.Voicesearch.RecogBlock.newBuilder(recogBlock_).mergeFrom(value).buildPartial();
@@ -3187,7 +3343,7 @@ public final class Voicesearch {
         } else {
           recogBlockBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
@@ -3200,14 +3356,14 @@ public final class Voicesearch {
         } else {
           recogBlockBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
       /**
        * <code>optional .com.google.search.app.RecogBlock recog_block = 1253625;</code>
        */
       public com.google.search.app.Voicesearch.RecogBlock.Builder getRecogBlockBuilder() {
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
         return getRecogBlockFieldBuilder().getBuilder();
       }
@@ -3245,7 +3401,7 @@ public final class Voicesearch {
        * <code>optional .com.google.search.app.SearchResult search_result = 39442181;</code>
        */
       public boolean hasSearchResult() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
+        return ((bitField0_ & 0x00000004) == 0x00000004);
       }
       /**
        * <code>optional .com.google.search.app.SearchResult search_result = 39442181;</code>
@@ -3270,7 +3426,7 @@ public final class Voicesearch {
         } else {
           searchResultBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
@@ -3284,7 +3440,7 @@ public final class Voicesearch {
         } else {
           searchResultBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
@@ -3292,7 +3448,7 @@ public final class Voicesearch {
        */
       public Builder mergeSearchResult(com.google.search.app.Voicesearch.SearchResult value) {
         if (searchResultBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002) &&
+          if (((bitField0_ & 0x00000004) == 0x00000004) &&
               searchResult_ != com.google.search.app.Voicesearch.SearchResult.getDefaultInstance()) {
             searchResult_ =
               com.google.search.app.Voicesearch.SearchResult.newBuilder(searchResult_).mergeFrom(value).buildPartial();
@@ -3303,7 +3459,7 @@ public final class Voicesearch {
         } else {
           searchResultBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
@@ -3316,14 +3472,14 @@ public final class Voicesearch {
         } else {
           searchResultBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
       /**
        * <code>optional .com.google.search.app.SearchResult search_result = 39442181;</code>
        */
       public com.google.search.app.Voicesearch.SearchResult.Builder getSearchResultBuilder() {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return getSearchResultFieldBuilder().getBuilder();
       }
@@ -3354,120 +3510,120 @@ public final class Voicesearch {
         return searchResultBuilder_;
       }
 
-      private com.google.search.app.Voicesearch.SearchResource g28599812_ = com.google.search.app.Voicesearch.SearchResource.getDefaultInstance();
+      private com.google.search.app.Voicesearch.TtsSound ttsSound_ = com.google.search.app.Voicesearch.TtsSound.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          com.google.search.app.Voicesearch.SearchResource, com.google.search.app.Voicesearch.SearchResource.Builder, com.google.search.app.Voicesearch.SearchResourceOrBuilder> g28599812Builder_;
+          com.google.search.app.Voicesearch.TtsSound, com.google.search.app.Voicesearch.TtsSound.Builder, com.google.search.app.Voicesearch.TtsSoundOrBuilder> ttsSoundBuilder_;
       /**
-       * <code>optional .com.google.search.app.SearchResource G28599812 = 28599812;</code>
+       * <code>optional .com.google.search.app.TtsSound tts_sound = 28599812;</code>
        */
-      public boolean hasG28599812() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
+      public boolean hasTtsSound() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>optional .com.google.search.app.SearchResource G28599812 = 28599812;</code>
+       * <code>optional .com.google.search.app.TtsSound tts_sound = 28599812;</code>
        */
-      public com.google.search.app.Voicesearch.SearchResource getG28599812() {
-        if (g28599812Builder_ == null) {
-          return g28599812_;
+      public com.google.search.app.Voicesearch.TtsSound getTtsSound() {
+        if (ttsSoundBuilder_ == null) {
+          return ttsSound_;
         } else {
-          return g28599812Builder_.getMessage();
+          return ttsSoundBuilder_.getMessage();
         }
       }
       /**
-       * <code>optional .com.google.search.app.SearchResource G28599812 = 28599812;</code>
+       * <code>optional .com.google.search.app.TtsSound tts_sound = 28599812;</code>
        */
-      public Builder setG28599812(com.google.search.app.Voicesearch.SearchResource value) {
-        if (g28599812Builder_ == null) {
+      public Builder setTtsSound(com.google.search.app.Voicesearch.TtsSound value) {
+        if (ttsSoundBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          g28599812_ = value;
+          ttsSound_ = value;
           onChanged();
         } else {
-          g28599812Builder_.setMessage(value);
+          ttsSoundBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.SearchResource G28599812 = 28599812;</code>
+       * <code>optional .com.google.search.app.TtsSound tts_sound = 28599812;</code>
        */
-      public Builder setG28599812(
-          com.google.search.app.Voicesearch.SearchResource.Builder builderForValue) {
-        if (g28599812Builder_ == null) {
-          g28599812_ = builderForValue.build();
+      public Builder setTtsSound(
+          com.google.search.app.Voicesearch.TtsSound.Builder builderForValue) {
+        if (ttsSoundBuilder_ == null) {
+          ttsSound_ = builderForValue.build();
           onChanged();
         } else {
-          g28599812Builder_.setMessage(builderForValue.build());
+          ttsSoundBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.SearchResource G28599812 = 28599812;</code>
+       * <code>optional .com.google.search.app.TtsSound tts_sound = 28599812;</code>
        */
-      public Builder mergeG28599812(com.google.search.app.Voicesearch.SearchResource value) {
-        if (g28599812Builder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004) &&
-              g28599812_ != com.google.search.app.Voicesearch.SearchResource.getDefaultInstance()) {
-            g28599812_ =
-              com.google.search.app.Voicesearch.SearchResource.newBuilder(g28599812_).mergeFrom(value).buildPartial();
+      public Builder mergeTtsSound(com.google.search.app.Voicesearch.TtsSound value) {
+        if (ttsSoundBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) == 0x00000008) &&
+              ttsSound_ != com.google.search.app.Voicesearch.TtsSound.getDefaultInstance()) {
+            ttsSound_ =
+              com.google.search.app.Voicesearch.TtsSound.newBuilder(ttsSound_).mergeFrom(value).buildPartial();
           } else {
-            g28599812_ = value;
+            ttsSound_ = value;
           }
           onChanged();
         } else {
-          g28599812Builder_.mergeFrom(value);
+          ttsSoundBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.SearchResource G28599812 = 28599812;</code>
+       * <code>optional .com.google.search.app.TtsSound tts_sound = 28599812;</code>
        */
-      public Builder clearG28599812() {
-        if (g28599812Builder_ == null) {
-          g28599812_ = com.google.search.app.Voicesearch.SearchResource.getDefaultInstance();
+      public Builder clearTtsSound() {
+        if (ttsSoundBuilder_ == null) {
+          ttsSound_ = com.google.search.app.Voicesearch.TtsSound.getDefaultInstance();
           onChanged();
         } else {
-          g28599812Builder_.clear();
+          ttsSoundBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.SearchResource G28599812 = 28599812;</code>
+       * <code>optional .com.google.search.app.TtsSound tts_sound = 28599812;</code>
        */
-      public com.google.search.app.Voicesearch.SearchResource.Builder getG28599812Builder() {
-        bitField0_ |= 0x00000004;
+      public com.google.search.app.Voicesearch.TtsSound.Builder getTtsSoundBuilder() {
+        bitField0_ |= 0x00000008;
         onChanged();
-        return getG28599812FieldBuilder().getBuilder();
+        return getTtsSoundFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .com.google.search.app.SearchResource G28599812 = 28599812;</code>
+       * <code>optional .com.google.search.app.TtsSound tts_sound = 28599812;</code>
        */
-      public com.google.search.app.Voicesearch.SearchResourceOrBuilder getG28599812OrBuilder() {
-        if (g28599812Builder_ != null) {
-          return g28599812Builder_.getMessageOrBuilder();
+      public com.google.search.app.Voicesearch.TtsSoundOrBuilder getTtsSoundOrBuilder() {
+        if (ttsSoundBuilder_ != null) {
+          return ttsSoundBuilder_.getMessageOrBuilder();
         } else {
-          return g28599812_;
+          return ttsSound_;
         }
       }
       /**
-       * <code>optional .com.google.search.app.SearchResource G28599812 = 28599812;</code>
+       * <code>optional .com.google.search.app.TtsSound tts_sound = 28599812;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          com.google.search.app.Voicesearch.SearchResource, com.google.search.app.Voicesearch.SearchResource.Builder, com.google.search.app.Voicesearch.SearchResourceOrBuilder> 
-          getG28599812FieldBuilder() {
-        if (g28599812Builder_ == null) {
-          g28599812Builder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.google.search.app.Voicesearch.SearchResource, com.google.search.app.Voicesearch.SearchResource.Builder, com.google.search.app.Voicesearch.SearchResourceOrBuilder>(
-                  getG28599812(),
+          com.google.search.app.Voicesearch.TtsSound, com.google.search.app.Voicesearch.TtsSound.Builder, com.google.search.app.Voicesearch.TtsSoundOrBuilder> 
+          getTtsSoundFieldBuilder() {
+        if (ttsSoundBuilder_ == null) {
+          ttsSoundBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.search.app.Voicesearch.TtsSound, com.google.search.app.Voicesearch.TtsSound.Builder, com.google.search.app.Voicesearch.TtsSoundOrBuilder>(
+                  getTtsSound(),
                   getParentForChildren(),
                   isClean());
-          g28599812_ = null;
+          ttsSound_ = null;
         }
-        return g28599812Builder_;
+        return ttsSoundBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:com.google.search.app.VoiceSearchResponse)
@@ -5157,8 +5313,8 @@ public final class Voicesearch {
     // @@protoc_insertion_point(class_scope:com.google.search.app.GoogleNow)
   }
 
-  public interface VoiceInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.google.search.app.VoiceInfo)
+  public interface VoiceSamplingOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.google.search.app.VoiceSampling)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -5171,25 +5327,25 @@ public final class Voicesearch {
     float getSampleRate();
   }
   /**
-   * Protobuf type {@code com.google.search.app.VoiceInfo}
+   * Protobuf type {@code com.google.search.app.VoiceSampling}
    */
-  public static final class VoiceInfo extends
+  public static final class VoiceSampling extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:com.google.search.app.VoiceInfo)
-      VoiceInfoOrBuilder {
-    // Use VoiceInfo.newBuilder() to construct.
-    private VoiceInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:com.google.search.app.VoiceSampling)
+      VoiceSamplingOrBuilder {
+    // Use VoiceSampling.newBuilder() to construct.
+    private VoiceSampling(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
       this.unknownFields = builder.getUnknownFields();
     }
-    private VoiceInfo(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+    private VoiceSampling(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
-    private static final VoiceInfo defaultInstance;
-    public static VoiceInfo getDefaultInstance() {
+    private static final VoiceSampling defaultInstance;
+    public static VoiceSampling getDefaultInstance() {
       return defaultInstance;
     }
 
-    public VoiceInfo getDefaultInstanceForType() {
+    public VoiceSampling getDefaultInstanceForType() {
       return defaultInstance;
     }
 
@@ -5199,7 +5355,7 @@ public final class Voicesearch {
         getUnknownFields() {
       return this.unknownFields;
     }
-    private VoiceInfo(
+    private VoiceSampling(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5241,28 +5397,28 @@ public final class Voicesearch {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.google.search.app.Voicesearch.internal_static_com_google_search_app_VoiceInfo_descriptor;
+      return com.google.search.app.Voicesearch.internal_static_com_google_search_app_VoiceSampling_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.search.app.Voicesearch.internal_static_com_google_search_app_VoiceInfo_fieldAccessorTable
+      return com.google.search.app.Voicesearch.internal_static_com_google_search_app_VoiceSampling_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.search.app.Voicesearch.VoiceInfo.class, com.google.search.app.Voicesearch.VoiceInfo.Builder.class);
+              com.google.search.app.Voicesearch.VoiceSampling.class, com.google.search.app.Voicesearch.VoiceSampling.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<VoiceInfo> PARSER =
-        new com.google.protobuf.AbstractParser<VoiceInfo>() {
-      public VoiceInfo parsePartialFrom(
+    public static com.google.protobuf.Parser<VoiceSampling> PARSER =
+        new com.google.protobuf.AbstractParser<VoiceSampling>() {
+      public VoiceSampling parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new VoiceInfo(input, extensionRegistry);
+        return new VoiceSampling(input, extensionRegistry);
       }
     };
 
     @java.lang.Override
-    public com.google.protobuf.Parser<VoiceInfo> getParserForType() {
+    public com.google.protobuf.Parser<VoiceSampling> getParserForType() {
       return PARSER;
     }
 
@@ -5326,53 +5482,53 @@ public final class Voicesearch {
       return super.writeReplace();
     }
 
-    public static com.google.search.app.Voicesearch.VoiceInfo parseFrom(
+    public static com.google.search.app.Voicesearch.VoiceSampling parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.search.app.Voicesearch.VoiceInfo parseFrom(
+    public static com.google.search.app.Voicesearch.VoiceSampling parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.search.app.Voicesearch.VoiceInfo parseFrom(byte[] data)
+    public static com.google.search.app.Voicesearch.VoiceSampling parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.search.app.Voicesearch.VoiceInfo parseFrom(
+    public static com.google.search.app.Voicesearch.VoiceSampling parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.search.app.Voicesearch.VoiceInfo parseFrom(java.io.InputStream input)
+    public static com.google.search.app.Voicesearch.VoiceSampling parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.google.search.app.Voicesearch.VoiceInfo parseFrom(
+    public static com.google.search.app.Voicesearch.VoiceSampling parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.google.search.app.Voicesearch.VoiceInfo parseDelimitedFrom(java.io.InputStream input)
+    public static com.google.search.app.Voicesearch.VoiceSampling parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.google.search.app.Voicesearch.VoiceInfo parseDelimitedFrom(
+    public static com.google.search.app.Voicesearch.VoiceSampling parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.google.search.app.Voicesearch.VoiceInfo parseFrom(
+    public static com.google.search.app.Voicesearch.VoiceSampling parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.google.search.app.Voicesearch.VoiceInfo parseFrom(
+    public static com.google.search.app.Voicesearch.VoiceSampling parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5381,7 +5537,7 @@ public final class Voicesearch {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.google.search.app.Voicesearch.VoiceInfo prototype) {
+    public static Builder newBuilder(com.google.search.app.Voicesearch.VoiceSampling prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -5393,25 +5549,25 @@ public final class Voicesearch {
       return builder;
     }
     /**
-     * Protobuf type {@code com.google.search.app.VoiceInfo}
+     * Protobuf type {@code com.google.search.app.VoiceSampling}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.google.search.app.VoiceInfo)
-        com.google.search.app.Voicesearch.VoiceInfoOrBuilder {
+        // @@protoc_insertion_point(builder_implements:com.google.search.app.VoiceSampling)
+        com.google.search.app.Voicesearch.VoiceSamplingOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_VoiceInfo_descriptor;
+        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_VoiceSampling_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_VoiceInfo_fieldAccessorTable
+        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_VoiceSampling_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.search.app.Voicesearch.VoiceInfo.class, com.google.search.app.Voicesearch.VoiceInfo.Builder.class);
+                com.google.search.app.Voicesearch.VoiceSampling.class, com.google.search.app.Voicesearch.VoiceSampling.Builder.class);
       }
 
-      // Construct using com.google.search.app.Voicesearch.VoiceInfo.newBuilder()
+      // Construct using com.google.search.app.Voicesearch.VoiceSampling.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -5442,23 +5598,23 @@ public final class Voicesearch {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_VoiceInfo_descriptor;
+        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_VoiceSampling_descriptor;
       }
 
-      public com.google.search.app.Voicesearch.VoiceInfo getDefaultInstanceForType() {
-        return com.google.search.app.Voicesearch.VoiceInfo.getDefaultInstance();
+      public com.google.search.app.Voicesearch.VoiceSampling getDefaultInstanceForType() {
+        return com.google.search.app.Voicesearch.VoiceSampling.getDefaultInstance();
       }
 
-      public com.google.search.app.Voicesearch.VoiceInfo build() {
-        com.google.search.app.Voicesearch.VoiceInfo result = buildPartial();
+      public com.google.search.app.Voicesearch.VoiceSampling build() {
+        com.google.search.app.Voicesearch.VoiceSampling result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.google.search.app.Voicesearch.VoiceInfo buildPartial() {
-        com.google.search.app.Voicesearch.VoiceInfo result = new com.google.search.app.Voicesearch.VoiceInfo(this);
+      public com.google.search.app.Voicesearch.VoiceSampling buildPartial() {
+        com.google.search.app.Voicesearch.VoiceSampling result = new com.google.search.app.Voicesearch.VoiceSampling(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -5471,16 +5627,16 @@ public final class Voicesearch {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.search.app.Voicesearch.VoiceInfo) {
-          return mergeFrom((com.google.search.app.Voicesearch.VoiceInfo)other);
+        if (other instanceof com.google.search.app.Voicesearch.VoiceSampling) {
+          return mergeFrom((com.google.search.app.Voicesearch.VoiceSampling)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.google.search.app.Voicesearch.VoiceInfo other) {
-        if (other == com.google.search.app.Voicesearch.VoiceInfo.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.google.search.app.Voicesearch.VoiceSampling other) {
+        if (other == com.google.search.app.Voicesearch.VoiceSampling.getDefaultInstance()) return this;
         if (other.hasSampleRate()) {
           setSampleRate(other.getSampleRate());
         }
@@ -5496,11 +5652,11 @@ public final class Voicesearch {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.search.app.Voicesearch.VoiceInfo parsedMessage = null;
+        com.google.search.app.Voicesearch.VoiceSampling parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.search.app.Voicesearch.VoiceInfo) e.getUnfinishedMessage();
+          parsedMessage = (com.google.search.app.Voicesearch.VoiceSampling) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -5543,19 +5699,19 @@ public final class Voicesearch {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:com.google.search.app.VoiceInfo)
+      // @@protoc_insertion_point(builder_scope:com.google.search.app.VoiceSampling)
     }
 
     static {
-      defaultInstance = new VoiceInfo(true);
+      defaultInstance = new VoiceSampling(true);
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:com.google.search.app.VoiceInfo)
+    // @@protoc_insertion_point(class_scope:com.google.search.app.VoiceSampling)
   }
 
-  public interface SoundDataOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.google.search.app.SoundData)
+  public interface VoiceDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.google.search.app.VoiceData)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -5568,25 +5724,25 @@ public final class Voicesearch {
     com.google.protobuf.ByteString getAmrStream();
   }
   /**
-   * Protobuf type {@code com.google.search.app.SoundData}
+   * Protobuf type {@code com.google.search.app.VoiceData}
    */
-  public static final class SoundData extends
+  public static final class VoiceData extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:com.google.search.app.SoundData)
-      SoundDataOrBuilder {
-    // Use SoundData.newBuilder() to construct.
-    private SoundData(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:com.google.search.app.VoiceData)
+      VoiceDataOrBuilder {
+    // Use VoiceData.newBuilder() to construct.
+    private VoiceData(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
       this.unknownFields = builder.getUnknownFields();
     }
-    private SoundData(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+    private VoiceData(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
-    private static final SoundData defaultInstance;
-    public static SoundData getDefaultInstance() {
+    private static final VoiceData defaultInstance;
+    public static VoiceData getDefaultInstance() {
       return defaultInstance;
     }
 
-    public SoundData getDefaultInstanceForType() {
+    public VoiceData getDefaultInstanceForType() {
       return defaultInstance;
     }
 
@@ -5596,7 +5752,7 @@ public final class Voicesearch {
         getUnknownFields() {
       return this.unknownFields;
     }
-    private SoundData(
+    private VoiceData(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5638,28 +5794,28 @@ public final class Voicesearch {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.google.search.app.Voicesearch.internal_static_com_google_search_app_SoundData_descriptor;
+      return com.google.search.app.Voicesearch.internal_static_com_google_search_app_VoiceData_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.search.app.Voicesearch.internal_static_com_google_search_app_SoundData_fieldAccessorTable
+      return com.google.search.app.Voicesearch.internal_static_com_google_search_app_VoiceData_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.search.app.Voicesearch.SoundData.class, com.google.search.app.Voicesearch.SoundData.Builder.class);
+              com.google.search.app.Voicesearch.VoiceData.class, com.google.search.app.Voicesearch.VoiceData.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<SoundData> PARSER =
-        new com.google.protobuf.AbstractParser<SoundData>() {
-      public SoundData parsePartialFrom(
+    public static com.google.protobuf.Parser<VoiceData> PARSER =
+        new com.google.protobuf.AbstractParser<VoiceData>() {
+      public VoiceData parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SoundData(input, extensionRegistry);
+        return new VoiceData(input, extensionRegistry);
       }
     };
 
     @java.lang.Override
-    public com.google.protobuf.Parser<SoundData> getParserForType() {
+    public com.google.protobuf.Parser<VoiceData> getParserForType() {
       return PARSER;
     }
 
@@ -5723,53 +5879,53 @@ public final class Voicesearch {
       return super.writeReplace();
     }
 
-    public static com.google.search.app.Voicesearch.SoundData parseFrom(
+    public static com.google.search.app.Voicesearch.VoiceData parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.search.app.Voicesearch.SoundData parseFrom(
+    public static com.google.search.app.Voicesearch.VoiceData parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.search.app.Voicesearch.SoundData parseFrom(byte[] data)
+    public static com.google.search.app.Voicesearch.VoiceData parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.search.app.Voicesearch.SoundData parseFrom(
+    public static com.google.search.app.Voicesearch.VoiceData parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.search.app.Voicesearch.SoundData parseFrom(java.io.InputStream input)
+    public static com.google.search.app.Voicesearch.VoiceData parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.google.search.app.Voicesearch.SoundData parseFrom(
+    public static com.google.search.app.Voicesearch.VoiceData parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.google.search.app.Voicesearch.SoundData parseDelimitedFrom(java.io.InputStream input)
+    public static com.google.search.app.Voicesearch.VoiceData parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.google.search.app.Voicesearch.SoundData parseDelimitedFrom(
+    public static com.google.search.app.Voicesearch.VoiceData parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.google.search.app.Voicesearch.SoundData parseFrom(
+    public static com.google.search.app.Voicesearch.VoiceData parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.google.search.app.Voicesearch.SoundData parseFrom(
+    public static com.google.search.app.Voicesearch.VoiceData parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5778,7 +5934,7 @@ public final class Voicesearch {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.google.search.app.Voicesearch.SoundData prototype) {
+    public static Builder newBuilder(com.google.search.app.Voicesearch.VoiceData prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -5790,25 +5946,25 @@ public final class Voicesearch {
       return builder;
     }
     /**
-     * Protobuf type {@code com.google.search.app.SoundData}
+     * Protobuf type {@code com.google.search.app.VoiceData}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.google.search.app.SoundData)
-        com.google.search.app.Voicesearch.SoundDataOrBuilder {
+        // @@protoc_insertion_point(builder_implements:com.google.search.app.VoiceData)
+        com.google.search.app.Voicesearch.VoiceDataOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_SoundData_descriptor;
+        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_VoiceData_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_SoundData_fieldAccessorTable
+        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_VoiceData_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.search.app.Voicesearch.SoundData.class, com.google.search.app.Voicesearch.SoundData.Builder.class);
+                com.google.search.app.Voicesearch.VoiceData.class, com.google.search.app.Voicesearch.VoiceData.Builder.class);
       }
 
-      // Construct using com.google.search.app.Voicesearch.SoundData.newBuilder()
+      // Construct using com.google.search.app.Voicesearch.VoiceData.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -5839,23 +5995,23 @@ public final class Voicesearch {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_SoundData_descriptor;
+        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_VoiceData_descriptor;
       }
 
-      public com.google.search.app.Voicesearch.SoundData getDefaultInstanceForType() {
-        return com.google.search.app.Voicesearch.SoundData.getDefaultInstance();
+      public com.google.search.app.Voicesearch.VoiceData getDefaultInstanceForType() {
+        return com.google.search.app.Voicesearch.VoiceData.getDefaultInstance();
       }
 
-      public com.google.search.app.Voicesearch.SoundData build() {
-        com.google.search.app.Voicesearch.SoundData result = buildPartial();
+      public com.google.search.app.Voicesearch.VoiceData build() {
+        com.google.search.app.Voicesearch.VoiceData result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.google.search.app.Voicesearch.SoundData buildPartial() {
-        com.google.search.app.Voicesearch.SoundData result = new com.google.search.app.Voicesearch.SoundData(this);
+      public com.google.search.app.Voicesearch.VoiceData buildPartial() {
+        com.google.search.app.Voicesearch.VoiceData result = new com.google.search.app.Voicesearch.VoiceData(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -5868,16 +6024,16 @@ public final class Voicesearch {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.search.app.Voicesearch.SoundData) {
-          return mergeFrom((com.google.search.app.Voicesearch.SoundData)other);
+        if (other instanceof com.google.search.app.Voicesearch.VoiceData) {
+          return mergeFrom((com.google.search.app.Voicesearch.VoiceData)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.google.search.app.Voicesearch.SoundData other) {
-        if (other == com.google.search.app.Voicesearch.SoundData.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.google.search.app.Voicesearch.VoiceData other) {
+        if (other == com.google.search.app.Voicesearch.VoiceData.getDefaultInstance()) return this;
         if (other.hasAmrStream()) {
           setAmrStream(other.getAmrStream());
         }
@@ -5893,11 +6049,11 @@ public final class Voicesearch {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.search.app.Voicesearch.SoundData parsedMessage = null;
+        com.google.search.app.Voicesearch.VoiceData parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.search.app.Voicesearch.SoundData) e.getUnfinishedMessage();
+          parsedMessage = (com.google.search.app.Voicesearch.VoiceData) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -5943,19 +6099,19 @@ public final class Voicesearch {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:com.google.search.app.SoundData)
+      // @@protoc_insertion_point(builder_scope:com.google.search.app.VoiceData)
     }
 
     static {
-      defaultInstance = new SoundData(true);
+      defaultInstance = new VoiceData(true);
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:com.google.search.app.SoundData)
+    // @@protoc_insertion_point(class_scope:com.google.search.app.VoiceData)
   }
 
-  public interface PhoneInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.google.search.app.PhoneInfo)
+  public interface ClientInfoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.google.search.app.ClientInfo)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -5987,23 +6143,23 @@ public final class Voicesearch {
         getUserAgentBytes();
 
     /**
-     * <code>repeated string support_lang = 5;</code>
+     * <code>repeated string expids = 5;</code>
      */
     com.google.protobuf.ProtocolStringList
-        getSupportLangList();
+        getExpidsList();
     /**
-     * <code>repeated string support_lang = 5;</code>
+     * <code>repeated string expids = 5;</code>
      */
-    int getSupportLangCount();
+    int getExpidsCount();
     /**
-     * <code>repeated string support_lang = 5;</code>
+     * <code>repeated string expids = 5;</code>
      */
-    java.lang.String getSupportLang(int index);
+    java.lang.String getExpids(int index);
     /**
-     * <code>repeated string support_lang = 5;</code>
+     * <code>repeated string expids = 5;</code>
      */
     com.google.protobuf.ByteString
-        getSupportLangBytes(int index);
+        getExpidsBytes(int index);
 
     /**
      * <code>optional string os = 8;</code>
@@ -6048,25 +6204,25 @@ public final class Voicesearch {
         getBrandBytes();
   }
   /**
-   * Protobuf type {@code com.google.search.app.PhoneInfo}
+   * Protobuf type {@code com.google.search.app.ClientInfo}
    */
-  public static final class PhoneInfo extends
+  public static final class ClientInfo extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:com.google.search.app.PhoneInfo)
-      PhoneInfoOrBuilder {
-    // Use PhoneInfo.newBuilder() to construct.
-    private PhoneInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:com.google.search.app.ClientInfo)
+      ClientInfoOrBuilder {
+    // Use ClientInfo.newBuilder() to construct.
+    private ClientInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
       this.unknownFields = builder.getUnknownFields();
     }
-    private PhoneInfo(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+    private ClientInfo(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
-    private static final PhoneInfo defaultInstance;
-    public static PhoneInfo getDefaultInstance() {
+    private static final ClientInfo defaultInstance;
+    public static ClientInfo getDefaultInstance() {
       return defaultInstance;
     }
 
-    public PhoneInfo getDefaultInstanceForType() {
+    public ClientInfo getDefaultInstanceForType() {
       return defaultInstance;
     }
 
@@ -6076,7 +6232,7 @@ public final class Voicesearch {
         getUnknownFields() {
       return this.unknownFields;
     }
-    private PhoneInfo(
+    private ClientInfo(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6114,10 +6270,10 @@ public final class Voicesearch {
             case 42: {
               com.google.protobuf.ByteString bs = input.readBytes();
               if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                supportLang_ = new com.google.protobuf.LazyStringArrayList();
+                expids_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000004;
               }
-              supportLang_.add(bs);
+              expids_.add(bs);
               break;
             }
             case 66: {
@@ -6147,7 +6303,7 @@ public final class Voicesearch {
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-          supportLang_ = supportLang_.getUnmodifiableView();
+          expids_ = expids_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -6155,28 +6311,28 @@ public final class Voicesearch {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.google.search.app.Voicesearch.internal_static_com_google_search_app_PhoneInfo_descriptor;
+      return com.google.search.app.Voicesearch.internal_static_com_google_search_app_ClientInfo_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.search.app.Voicesearch.internal_static_com_google_search_app_PhoneInfo_fieldAccessorTable
+      return com.google.search.app.Voicesearch.internal_static_com_google_search_app_ClientInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.search.app.Voicesearch.PhoneInfo.class, com.google.search.app.Voicesearch.PhoneInfo.Builder.class);
+              com.google.search.app.Voicesearch.ClientInfo.class, com.google.search.app.Voicesearch.ClientInfo.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<PhoneInfo> PARSER =
-        new com.google.protobuf.AbstractParser<PhoneInfo>() {
-      public PhoneInfo parsePartialFrom(
+    public static com.google.protobuf.Parser<ClientInfo> PARSER =
+        new com.google.protobuf.AbstractParser<ClientInfo>() {
+      public ClientInfo parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PhoneInfo(input, extensionRegistry);
+        return new ClientInfo(input, extensionRegistry);
       }
     };
 
     @java.lang.Override
-    public com.google.protobuf.Parser<PhoneInfo> getParserForType() {
+    public com.google.protobuf.Parser<ClientInfo> getParserForType() {
       return PARSER;
     }
 
@@ -6265,33 +6421,33 @@ public final class Voicesearch {
       }
     }
 
-    public static final int SUPPORT_LANG_FIELD_NUMBER = 5;
-    private com.google.protobuf.LazyStringList supportLang_;
+    public static final int EXPIDS_FIELD_NUMBER = 5;
+    private com.google.protobuf.LazyStringList expids_;
     /**
-     * <code>repeated string support_lang = 5;</code>
+     * <code>repeated string expids = 5;</code>
      */
     public com.google.protobuf.ProtocolStringList
-        getSupportLangList() {
-      return supportLang_;
+        getExpidsList() {
+      return expids_;
     }
     /**
-     * <code>repeated string support_lang = 5;</code>
+     * <code>repeated string expids = 5;</code>
      */
-    public int getSupportLangCount() {
-      return supportLang_.size();
+    public int getExpidsCount() {
+      return expids_.size();
     }
     /**
-     * <code>repeated string support_lang = 5;</code>
+     * <code>repeated string expids = 5;</code>
      */
-    public java.lang.String getSupportLang(int index) {
-      return supportLang_.get(index);
+    public java.lang.String getExpids(int index) {
+      return expids_.get(index);
     }
     /**
-     * <code>repeated string support_lang = 5;</code>
+     * <code>repeated string expids = 5;</code>
      */
     public com.google.protobuf.ByteString
-        getSupportLangBytes(int index) {
-      return supportLang_.getByteString(index);
+        getExpidsBytes(int index) {
+      return expids_.getByteString(index);
     }
 
     public static final int OS_FIELD_NUMBER = 8;
@@ -6423,7 +6579,7 @@ public final class Voicesearch {
     private void initFields() {
       type_ = "";
       userAgent_ = "";
-      supportLang_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      expids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       os_ = "";
       model_ = "";
       brand_ = "";
@@ -6447,8 +6603,8 @@ public final class Voicesearch {
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBytes(4, getUserAgentBytes());
       }
-      for (int i = 0; i < supportLang_.size(); i++) {
-        output.writeBytes(5, supportLang_.getByteString(i));
+      for (int i = 0; i < expids_.size(); i++) {
+        output.writeBytes(5, expids_.getByteString(i));
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeBytes(8, getOsBytes());
@@ -6478,12 +6634,12 @@ public final class Voicesearch {
       }
       {
         int dataSize = 0;
-        for (int i = 0; i < supportLang_.size(); i++) {
+        for (int i = 0; i < expids_.size(); i++) {
           dataSize += com.google.protobuf.CodedOutputStream
-            .computeBytesSizeNoTag(supportLang_.getByteString(i));
+            .computeBytesSizeNoTag(expids_.getByteString(i));
         }
         size += dataSize;
-        size += 1 * getSupportLangList().size();
+        size += 1 * getExpidsList().size();
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
@@ -6509,53 +6665,53 @@ public final class Voicesearch {
       return super.writeReplace();
     }
 
-    public static com.google.search.app.Voicesearch.PhoneInfo parseFrom(
+    public static com.google.search.app.Voicesearch.ClientInfo parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.search.app.Voicesearch.PhoneInfo parseFrom(
+    public static com.google.search.app.Voicesearch.ClientInfo parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.search.app.Voicesearch.PhoneInfo parseFrom(byte[] data)
+    public static com.google.search.app.Voicesearch.ClientInfo parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.search.app.Voicesearch.PhoneInfo parseFrom(
+    public static com.google.search.app.Voicesearch.ClientInfo parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.search.app.Voicesearch.PhoneInfo parseFrom(java.io.InputStream input)
+    public static com.google.search.app.Voicesearch.ClientInfo parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.google.search.app.Voicesearch.PhoneInfo parseFrom(
+    public static com.google.search.app.Voicesearch.ClientInfo parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.google.search.app.Voicesearch.PhoneInfo parseDelimitedFrom(java.io.InputStream input)
+    public static com.google.search.app.Voicesearch.ClientInfo parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.google.search.app.Voicesearch.PhoneInfo parseDelimitedFrom(
+    public static com.google.search.app.Voicesearch.ClientInfo parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.google.search.app.Voicesearch.PhoneInfo parseFrom(
+    public static com.google.search.app.Voicesearch.ClientInfo parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.google.search.app.Voicesearch.PhoneInfo parseFrom(
+    public static com.google.search.app.Voicesearch.ClientInfo parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6564,7 +6720,7 @@ public final class Voicesearch {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.google.search.app.Voicesearch.PhoneInfo prototype) {
+    public static Builder newBuilder(com.google.search.app.Voicesearch.ClientInfo prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -6576,25 +6732,25 @@ public final class Voicesearch {
       return builder;
     }
     /**
-     * Protobuf type {@code com.google.search.app.PhoneInfo}
+     * Protobuf type {@code com.google.search.app.ClientInfo}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.google.search.app.PhoneInfo)
-        com.google.search.app.Voicesearch.PhoneInfoOrBuilder {
+        // @@protoc_insertion_point(builder_implements:com.google.search.app.ClientInfo)
+        com.google.search.app.Voicesearch.ClientInfoOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_PhoneInfo_descriptor;
+        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_ClientInfo_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_PhoneInfo_fieldAccessorTable
+        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_ClientInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.search.app.Voicesearch.PhoneInfo.class, com.google.search.app.Voicesearch.PhoneInfo.Builder.class);
+                com.google.search.app.Voicesearch.ClientInfo.class, com.google.search.app.Voicesearch.ClientInfo.Builder.class);
       }
 
-      // Construct using com.google.search.app.Voicesearch.PhoneInfo.newBuilder()
+      // Construct using com.google.search.app.Voicesearch.ClientInfo.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -6618,7 +6774,7 @@ public final class Voicesearch {
         bitField0_ = (bitField0_ & ~0x00000001);
         userAgent_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
-        supportLang_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        expids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000004);
         os_ = "";
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -6635,23 +6791,23 @@ public final class Voicesearch {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_PhoneInfo_descriptor;
+        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_ClientInfo_descriptor;
       }
 
-      public com.google.search.app.Voicesearch.PhoneInfo getDefaultInstanceForType() {
-        return com.google.search.app.Voicesearch.PhoneInfo.getDefaultInstance();
+      public com.google.search.app.Voicesearch.ClientInfo getDefaultInstanceForType() {
+        return com.google.search.app.Voicesearch.ClientInfo.getDefaultInstance();
       }
 
-      public com.google.search.app.Voicesearch.PhoneInfo build() {
-        com.google.search.app.Voicesearch.PhoneInfo result = buildPartial();
+      public com.google.search.app.Voicesearch.ClientInfo build() {
+        com.google.search.app.Voicesearch.ClientInfo result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.google.search.app.Voicesearch.PhoneInfo buildPartial() {
-        com.google.search.app.Voicesearch.PhoneInfo result = new com.google.search.app.Voicesearch.PhoneInfo(this);
+      public com.google.search.app.Voicesearch.ClientInfo buildPartial() {
+        com.google.search.app.Voicesearch.ClientInfo result = new com.google.search.app.Voicesearch.ClientInfo(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -6663,10 +6819,10 @@ public final class Voicesearch {
         }
         result.userAgent_ = userAgent_;
         if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          supportLang_ = supportLang_.getUnmodifiableView();
+          expids_ = expids_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000004);
         }
-        result.supportLang_ = supportLang_;
+        result.expids_ = expids_;
         if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
           to_bitField0_ |= 0x00000004;
         }
@@ -6685,16 +6841,16 @@ public final class Voicesearch {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.search.app.Voicesearch.PhoneInfo) {
-          return mergeFrom((com.google.search.app.Voicesearch.PhoneInfo)other);
+        if (other instanceof com.google.search.app.Voicesearch.ClientInfo) {
+          return mergeFrom((com.google.search.app.Voicesearch.ClientInfo)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.google.search.app.Voicesearch.PhoneInfo other) {
-        if (other == com.google.search.app.Voicesearch.PhoneInfo.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.google.search.app.Voicesearch.ClientInfo other) {
+        if (other == com.google.search.app.Voicesearch.ClientInfo.getDefaultInstance()) return this;
         if (other.hasType()) {
           bitField0_ |= 0x00000001;
           type_ = other.type_;
@@ -6705,13 +6861,13 @@ public final class Voicesearch {
           userAgent_ = other.userAgent_;
           onChanged();
         }
-        if (!other.supportLang_.isEmpty()) {
-          if (supportLang_.isEmpty()) {
-            supportLang_ = other.supportLang_;
+        if (!other.expids_.isEmpty()) {
+          if (expids_.isEmpty()) {
+            expids_ = other.expids_;
             bitField0_ = (bitField0_ & ~0x00000004);
           } else {
-            ensureSupportLangIsMutable();
-            supportLang_.addAll(other.supportLang_);
+            ensureExpidsIsMutable();
+            expids_.addAll(other.expids_);
           }
           onChanged();
         }
@@ -6742,11 +6898,11 @@ public final class Voicesearch {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.search.app.Voicesearch.PhoneInfo parsedMessage = null;
+        com.google.search.app.Voicesearch.ClientInfo parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.search.app.Voicesearch.PhoneInfo) e.getUnfinishedMessage();
+          parsedMessage = (com.google.search.app.Voicesearch.ClientInfo) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -6909,95 +7065,95 @@ public final class Voicesearch {
         return this;
       }
 
-      private com.google.protobuf.LazyStringList supportLang_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureSupportLangIsMutable() {
+      private com.google.protobuf.LazyStringList expids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureExpidsIsMutable() {
         if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          supportLang_ = new com.google.protobuf.LazyStringArrayList(supportLang_);
+          expids_ = new com.google.protobuf.LazyStringArrayList(expids_);
           bitField0_ |= 0x00000004;
          }
       }
       /**
-       * <code>repeated string support_lang = 5;</code>
+       * <code>repeated string expids = 5;</code>
        */
       public com.google.protobuf.ProtocolStringList
-          getSupportLangList() {
-        return supportLang_.getUnmodifiableView();
+          getExpidsList() {
+        return expids_.getUnmodifiableView();
       }
       /**
-       * <code>repeated string support_lang = 5;</code>
+       * <code>repeated string expids = 5;</code>
        */
-      public int getSupportLangCount() {
-        return supportLang_.size();
+      public int getExpidsCount() {
+        return expids_.size();
       }
       /**
-       * <code>repeated string support_lang = 5;</code>
+       * <code>repeated string expids = 5;</code>
        */
-      public java.lang.String getSupportLang(int index) {
-        return supportLang_.get(index);
+      public java.lang.String getExpids(int index) {
+        return expids_.get(index);
       }
       /**
-       * <code>repeated string support_lang = 5;</code>
+       * <code>repeated string expids = 5;</code>
        */
       public com.google.protobuf.ByteString
-          getSupportLangBytes(int index) {
-        return supportLang_.getByteString(index);
+          getExpidsBytes(int index) {
+        return expids_.getByteString(index);
       }
       /**
-       * <code>repeated string support_lang = 5;</code>
+       * <code>repeated string expids = 5;</code>
        */
-      public Builder setSupportLang(
+      public Builder setExpids(
           int index, java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureSupportLangIsMutable();
-        supportLang_.set(index, value);
+  ensureExpidsIsMutable();
+        expids_.set(index, value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string support_lang = 5;</code>
+       * <code>repeated string expids = 5;</code>
        */
-      public Builder addSupportLang(
+      public Builder addExpids(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureSupportLangIsMutable();
-        supportLang_.add(value);
+  ensureExpidsIsMutable();
+        expids_.add(value);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string support_lang = 5;</code>
+       * <code>repeated string expids = 5;</code>
        */
-      public Builder addAllSupportLang(
+      public Builder addAllExpids(
           java.lang.Iterable<java.lang.String> values) {
-        ensureSupportLangIsMutable();
+        ensureExpidsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, supportLang_);
+            values, expids_);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string support_lang = 5;</code>
+       * <code>repeated string expids = 5;</code>
        */
-      public Builder clearSupportLang() {
-        supportLang_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      public Builder clearExpids() {
+        expids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string support_lang = 5;</code>
+       * <code>repeated string expids = 5;</code>
        */
-      public Builder addSupportLangBytes(
+      public Builder addExpidsBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureSupportLangIsMutable();
-        supportLang_.add(value);
+  ensureExpidsIsMutable();
+        expids_.add(value);
         onChanged();
         return this;
       }
@@ -7230,15 +7386,15 @@ public final class Voicesearch {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:com.google.search.app.PhoneInfo)
+      // @@protoc_insertion_point(builder_scope:com.google.search.app.ClientInfo)
     }
 
     static {
-      defaultInstance = new PhoneInfo(true);
+      defaultInstance = new ClientInfo(true);
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:com.google.search.app.PhoneInfo)
+    // @@protoc_insertion_point(class_scope:com.google.search.app.ClientInfo)
   }
 
   public interface UserPreferenceOrBuilder extends
@@ -10665,17 +10821,17 @@ public final class Voicesearch {
     com.google.search.app.Voicesearch.RecogResultOrBuilder getRecogResultOrBuilder();
 
     /**
-     * <code>optional .com.google.search.app.SoundInfo sound_info = 2;</code>
+     * <code>optional .com.google.search.app.VoiceRecording voice_recording = 2;</code>
      */
-    boolean hasSoundInfo();
+    boolean hasVoiceRecording();
     /**
-     * <code>optional .com.google.search.app.SoundInfo sound_info = 2;</code>
+     * <code>optional .com.google.search.app.VoiceRecording voice_recording = 2;</code>
      */
-    com.google.search.app.Voicesearch.SoundInfo getSoundInfo();
+    com.google.search.app.Voicesearch.VoiceRecording getVoiceRecording();
     /**
-     * <code>optional .com.google.search.app.SoundInfo sound_info = 2;</code>
+     * <code>optional .com.google.search.app.VoiceRecording voice_recording = 2;</code>
      */
-    com.google.search.app.Voicesearch.SoundInfoOrBuilder getSoundInfoOrBuilder();
+    com.google.search.app.Voicesearch.VoiceRecordingOrBuilder getVoiceRecordingOrBuilder();
 
     /**
      * <code>optional string inputLang = 3;</code>
@@ -10771,14 +10927,14 @@ public final class Voicesearch {
               break;
             }
             case 18: {
-              com.google.search.app.Voicesearch.SoundInfo.Builder subBuilder = null;
+              com.google.search.app.Voicesearch.VoiceRecording.Builder subBuilder = null;
               if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                subBuilder = soundInfo_.toBuilder();
+                subBuilder = voiceRecording_.toBuilder();
               }
-              soundInfo_ = input.readMessage(com.google.search.app.Voicesearch.SoundInfo.PARSER, extensionRegistry);
+              voiceRecording_ = input.readMessage(com.google.search.app.Voicesearch.VoiceRecording.PARSER, extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(soundInfo_);
-                soundInfo_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(voiceRecording_);
+                voiceRecording_ = subBuilder.buildPartial();
               }
               bitField0_ |= 0x00000002;
               break;
@@ -10856,25 +11012,25 @@ public final class Voicesearch {
       return recogResult_;
     }
 
-    public static final int SOUND_INFO_FIELD_NUMBER = 2;
-    private com.google.search.app.Voicesearch.SoundInfo soundInfo_;
+    public static final int VOICE_RECORDING_FIELD_NUMBER = 2;
+    private com.google.search.app.Voicesearch.VoiceRecording voiceRecording_;
     /**
-     * <code>optional .com.google.search.app.SoundInfo sound_info = 2;</code>
+     * <code>optional .com.google.search.app.VoiceRecording voice_recording = 2;</code>
      */
-    public boolean hasSoundInfo() {
+    public boolean hasVoiceRecording() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>optional .com.google.search.app.SoundInfo sound_info = 2;</code>
+     * <code>optional .com.google.search.app.VoiceRecording voice_recording = 2;</code>
      */
-    public com.google.search.app.Voicesearch.SoundInfo getSoundInfo() {
-      return soundInfo_;
+    public com.google.search.app.Voicesearch.VoiceRecording getVoiceRecording() {
+      return voiceRecording_;
     }
     /**
-     * <code>optional .com.google.search.app.SoundInfo sound_info = 2;</code>
+     * <code>optional .com.google.search.app.VoiceRecording voice_recording = 2;</code>
      */
-    public com.google.search.app.Voicesearch.SoundInfoOrBuilder getSoundInfoOrBuilder() {
-      return soundInfo_;
+    public com.google.search.app.Voicesearch.VoiceRecordingOrBuilder getVoiceRecordingOrBuilder() {
+      return voiceRecording_;
     }
 
     public static final int INPUTLANG_FIELD_NUMBER = 3;
@@ -10963,7 +11119,7 @@ public final class Voicesearch {
 
     private void initFields() {
       recogResult_ = com.google.search.app.Voicesearch.RecogResult.getDefaultInstance();
-      soundInfo_ = com.google.search.app.Voicesearch.SoundInfo.getDefaultInstance();
+      voiceRecording_ = com.google.search.app.Voicesearch.VoiceRecording.getDefaultInstance();
       inputLang_ = "";
       searchLang_ = "";
     }
@@ -10984,7 +11140,7 @@ public final class Voicesearch {
         output.writeMessage(1, recogResult_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeMessage(2, soundInfo_);
+        output.writeMessage(2, voiceRecording_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeBytes(3, getInputLangBytes());
@@ -11007,7 +11163,7 @@ public final class Voicesearch {
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, soundInfo_);
+          .computeMessageSize(2, voiceRecording_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
@@ -11127,7 +11283,7 @@ public final class Voicesearch {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           getRecogResultFieldBuilder();
-          getSoundInfoFieldBuilder();
+          getVoiceRecordingFieldBuilder();
         }
       }
       private static Builder create() {
@@ -11142,10 +11298,10 @@ public final class Voicesearch {
           recogResultBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
-        if (soundInfoBuilder_ == null) {
-          soundInfo_ = com.google.search.app.Voicesearch.SoundInfo.getDefaultInstance();
+        if (voiceRecordingBuilder_ == null) {
+          voiceRecording_ = com.google.search.app.Voicesearch.VoiceRecording.getDefaultInstance();
         } else {
-          soundInfoBuilder_.clear();
+          voiceRecordingBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000002);
         inputLang_ = "";
@@ -11191,10 +11347,10 @@ public final class Voicesearch {
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        if (soundInfoBuilder_ == null) {
-          result.soundInfo_ = soundInfo_;
+        if (voiceRecordingBuilder_ == null) {
+          result.voiceRecording_ = voiceRecording_;
         } else {
-          result.soundInfo_ = soundInfoBuilder_.build();
+          result.voiceRecording_ = voiceRecordingBuilder_.build();
         }
         if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
           to_bitField0_ |= 0x00000004;
@@ -11223,8 +11379,8 @@ public final class Voicesearch {
         if (other.hasRecogResult()) {
           mergeRecogResult(other.getRecogResult());
         }
-        if (other.hasSoundInfo()) {
-          mergeSoundInfo(other.getSoundInfo());
+        if (other.hasVoiceRecording()) {
+          mergeVoiceRecording(other.getVoiceRecording());
         }
         if (other.hasInputLang()) {
           bitField0_ |= 0x00000004;
@@ -11379,120 +11535,120 @@ public final class Voicesearch {
         return recogResultBuilder_;
       }
 
-      private com.google.search.app.Voicesearch.SoundInfo soundInfo_ = com.google.search.app.Voicesearch.SoundInfo.getDefaultInstance();
+      private com.google.search.app.Voicesearch.VoiceRecording voiceRecording_ = com.google.search.app.Voicesearch.VoiceRecording.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          com.google.search.app.Voicesearch.SoundInfo, com.google.search.app.Voicesearch.SoundInfo.Builder, com.google.search.app.Voicesearch.SoundInfoOrBuilder> soundInfoBuilder_;
+          com.google.search.app.Voicesearch.VoiceRecording, com.google.search.app.Voicesearch.VoiceRecording.Builder, com.google.search.app.Voicesearch.VoiceRecordingOrBuilder> voiceRecordingBuilder_;
       /**
-       * <code>optional .com.google.search.app.SoundInfo sound_info = 2;</code>
+       * <code>optional .com.google.search.app.VoiceRecording voice_recording = 2;</code>
        */
-      public boolean hasSoundInfo() {
+      public boolean hasVoiceRecording() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>optional .com.google.search.app.SoundInfo sound_info = 2;</code>
+       * <code>optional .com.google.search.app.VoiceRecording voice_recording = 2;</code>
        */
-      public com.google.search.app.Voicesearch.SoundInfo getSoundInfo() {
-        if (soundInfoBuilder_ == null) {
-          return soundInfo_;
+      public com.google.search.app.Voicesearch.VoiceRecording getVoiceRecording() {
+        if (voiceRecordingBuilder_ == null) {
+          return voiceRecording_;
         } else {
-          return soundInfoBuilder_.getMessage();
+          return voiceRecordingBuilder_.getMessage();
         }
       }
       /**
-       * <code>optional .com.google.search.app.SoundInfo sound_info = 2;</code>
+       * <code>optional .com.google.search.app.VoiceRecording voice_recording = 2;</code>
        */
-      public Builder setSoundInfo(com.google.search.app.Voicesearch.SoundInfo value) {
-        if (soundInfoBuilder_ == null) {
+      public Builder setVoiceRecording(com.google.search.app.Voicesearch.VoiceRecording value) {
+        if (voiceRecordingBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          soundInfo_ = value;
+          voiceRecording_ = value;
           onChanged();
         } else {
-          soundInfoBuilder_.setMessage(value);
+          voiceRecordingBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000002;
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.SoundInfo sound_info = 2;</code>
+       * <code>optional .com.google.search.app.VoiceRecording voice_recording = 2;</code>
        */
-      public Builder setSoundInfo(
-          com.google.search.app.Voicesearch.SoundInfo.Builder builderForValue) {
-        if (soundInfoBuilder_ == null) {
-          soundInfo_ = builderForValue.build();
+      public Builder setVoiceRecording(
+          com.google.search.app.Voicesearch.VoiceRecording.Builder builderForValue) {
+        if (voiceRecordingBuilder_ == null) {
+          voiceRecording_ = builderForValue.build();
           onChanged();
         } else {
-          soundInfoBuilder_.setMessage(builderForValue.build());
+          voiceRecordingBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000002;
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.SoundInfo sound_info = 2;</code>
+       * <code>optional .com.google.search.app.VoiceRecording voice_recording = 2;</code>
        */
-      public Builder mergeSoundInfo(com.google.search.app.Voicesearch.SoundInfo value) {
-        if (soundInfoBuilder_ == null) {
+      public Builder mergeVoiceRecording(com.google.search.app.Voicesearch.VoiceRecording value) {
+        if (voiceRecordingBuilder_ == null) {
           if (((bitField0_ & 0x00000002) == 0x00000002) &&
-              soundInfo_ != com.google.search.app.Voicesearch.SoundInfo.getDefaultInstance()) {
-            soundInfo_ =
-              com.google.search.app.Voicesearch.SoundInfo.newBuilder(soundInfo_).mergeFrom(value).buildPartial();
+              voiceRecording_ != com.google.search.app.Voicesearch.VoiceRecording.getDefaultInstance()) {
+            voiceRecording_ =
+              com.google.search.app.Voicesearch.VoiceRecording.newBuilder(voiceRecording_).mergeFrom(value).buildPartial();
           } else {
-            soundInfo_ = value;
+            voiceRecording_ = value;
           }
           onChanged();
         } else {
-          soundInfoBuilder_.mergeFrom(value);
+          voiceRecordingBuilder_.mergeFrom(value);
         }
         bitField0_ |= 0x00000002;
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.SoundInfo sound_info = 2;</code>
+       * <code>optional .com.google.search.app.VoiceRecording voice_recording = 2;</code>
        */
-      public Builder clearSoundInfo() {
-        if (soundInfoBuilder_ == null) {
-          soundInfo_ = com.google.search.app.Voicesearch.SoundInfo.getDefaultInstance();
+      public Builder clearVoiceRecording() {
+        if (voiceRecordingBuilder_ == null) {
+          voiceRecording_ = com.google.search.app.Voicesearch.VoiceRecording.getDefaultInstance();
           onChanged();
         } else {
-          soundInfoBuilder_.clear();
+          voiceRecordingBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.SoundInfo sound_info = 2;</code>
+       * <code>optional .com.google.search.app.VoiceRecording voice_recording = 2;</code>
        */
-      public com.google.search.app.Voicesearch.SoundInfo.Builder getSoundInfoBuilder() {
+      public com.google.search.app.Voicesearch.VoiceRecording.Builder getVoiceRecordingBuilder() {
         bitField0_ |= 0x00000002;
         onChanged();
-        return getSoundInfoFieldBuilder().getBuilder();
+        return getVoiceRecordingFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .com.google.search.app.SoundInfo sound_info = 2;</code>
+       * <code>optional .com.google.search.app.VoiceRecording voice_recording = 2;</code>
        */
-      public com.google.search.app.Voicesearch.SoundInfoOrBuilder getSoundInfoOrBuilder() {
-        if (soundInfoBuilder_ != null) {
-          return soundInfoBuilder_.getMessageOrBuilder();
+      public com.google.search.app.Voicesearch.VoiceRecordingOrBuilder getVoiceRecordingOrBuilder() {
+        if (voiceRecordingBuilder_ != null) {
+          return voiceRecordingBuilder_.getMessageOrBuilder();
         } else {
-          return soundInfo_;
+          return voiceRecording_;
         }
       }
       /**
-       * <code>optional .com.google.search.app.SoundInfo sound_info = 2;</code>
+       * <code>optional .com.google.search.app.VoiceRecording voice_recording = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          com.google.search.app.Voicesearch.SoundInfo, com.google.search.app.Voicesearch.SoundInfo.Builder, com.google.search.app.Voicesearch.SoundInfoOrBuilder> 
-          getSoundInfoFieldBuilder() {
-        if (soundInfoBuilder_ == null) {
-          soundInfoBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.google.search.app.Voicesearch.SoundInfo, com.google.search.app.Voicesearch.SoundInfo.Builder, com.google.search.app.Voicesearch.SoundInfoOrBuilder>(
-                  getSoundInfo(),
+          com.google.search.app.Voicesearch.VoiceRecording, com.google.search.app.Voicesearch.VoiceRecording.Builder, com.google.search.app.Voicesearch.VoiceRecordingOrBuilder> 
+          getVoiceRecordingFieldBuilder() {
+        if (voiceRecordingBuilder_ == null) {
+          voiceRecordingBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.search.app.Voicesearch.VoiceRecording, com.google.search.app.Voicesearch.VoiceRecording.Builder, com.google.search.app.Voicesearch.VoiceRecordingOrBuilder>(
+                  getVoiceRecording(),
                   getParentForChildren(),
                   isClean());
-          soundInfo_ = null;
+          voiceRecording_ = null;
         }
-        return soundInfoBuilder_;
+        return voiceRecordingBuilder_;
       }
 
       private java.lang.Object inputLang_ = "";
@@ -12715,8 +12871,8 @@ public final class Voicesearch {
     // @@protoc_insertion_point(class_scope:com.google.search.app.RecogResult)
   }
 
-  public interface SoundInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.google.search.app.SoundInfo)
+  public interface VoiceRecordingOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.google.search.app.VoiceRecording)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -12729,25 +12885,25 @@ public final class Voicesearch {
     int getRecordInterval();
   }
   /**
-   * Protobuf type {@code com.google.search.app.SoundInfo}
+   * Protobuf type {@code com.google.search.app.VoiceRecording}
    */
-  public static final class SoundInfo extends
+  public static final class VoiceRecording extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:com.google.search.app.SoundInfo)
-      SoundInfoOrBuilder {
-    // Use SoundInfo.newBuilder() to construct.
-    private SoundInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:com.google.search.app.VoiceRecording)
+      VoiceRecordingOrBuilder {
+    // Use VoiceRecording.newBuilder() to construct.
+    private VoiceRecording(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
       this.unknownFields = builder.getUnknownFields();
     }
-    private SoundInfo(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+    private VoiceRecording(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
-    private static final SoundInfo defaultInstance;
-    public static SoundInfo getDefaultInstance() {
+    private static final VoiceRecording defaultInstance;
+    public static VoiceRecording getDefaultInstance() {
       return defaultInstance;
     }
 
-    public SoundInfo getDefaultInstanceForType() {
+    public VoiceRecording getDefaultInstanceForType() {
       return defaultInstance;
     }
 
@@ -12757,7 +12913,7 @@ public final class Voicesearch {
         getUnknownFields() {
       return this.unknownFields;
     }
-    private SoundInfo(
+    private VoiceRecording(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -12799,28 +12955,28 @@ public final class Voicesearch {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.google.search.app.Voicesearch.internal_static_com_google_search_app_SoundInfo_descriptor;
+      return com.google.search.app.Voicesearch.internal_static_com_google_search_app_VoiceRecording_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.search.app.Voicesearch.internal_static_com_google_search_app_SoundInfo_fieldAccessorTable
+      return com.google.search.app.Voicesearch.internal_static_com_google_search_app_VoiceRecording_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.search.app.Voicesearch.SoundInfo.class, com.google.search.app.Voicesearch.SoundInfo.Builder.class);
+              com.google.search.app.Voicesearch.VoiceRecording.class, com.google.search.app.Voicesearch.VoiceRecording.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<SoundInfo> PARSER =
-        new com.google.protobuf.AbstractParser<SoundInfo>() {
-      public SoundInfo parsePartialFrom(
+    public static com.google.protobuf.Parser<VoiceRecording> PARSER =
+        new com.google.protobuf.AbstractParser<VoiceRecording>() {
+      public VoiceRecording parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SoundInfo(input, extensionRegistry);
+        return new VoiceRecording(input, extensionRegistry);
       }
     };
 
     @java.lang.Override
-    public com.google.protobuf.Parser<SoundInfo> getParserForType() {
+    public com.google.protobuf.Parser<VoiceRecording> getParserForType() {
       return PARSER;
     }
 
@@ -12884,53 +13040,53 @@ public final class Voicesearch {
       return super.writeReplace();
     }
 
-    public static com.google.search.app.Voicesearch.SoundInfo parseFrom(
+    public static com.google.search.app.Voicesearch.VoiceRecording parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.search.app.Voicesearch.SoundInfo parseFrom(
+    public static com.google.search.app.Voicesearch.VoiceRecording parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.search.app.Voicesearch.SoundInfo parseFrom(byte[] data)
+    public static com.google.search.app.Voicesearch.VoiceRecording parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.search.app.Voicesearch.SoundInfo parseFrom(
+    public static com.google.search.app.Voicesearch.VoiceRecording parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.search.app.Voicesearch.SoundInfo parseFrom(java.io.InputStream input)
+    public static com.google.search.app.Voicesearch.VoiceRecording parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.google.search.app.Voicesearch.SoundInfo parseFrom(
+    public static com.google.search.app.Voicesearch.VoiceRecording parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.google.search.app.Voicesearch.SoundInfo parseDelimitedFrom(java.io.InputStream input)
+    public static com.google.search.app.Voicesearch.VoiceRecording parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.google.search.app.Voicesearch.SoundInfo parseDelimitedFrom(
+    public static com.google.search.app.Voicesearch.VoiceRecording parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.google.search.app.Voicesearch.SoundInfo parseFrom(
+    public static com.google.search.app.Voicesearch.VoiceRecording parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.google.search.app.Voicesearch.SoundInfo parseFrom(
+    public static com.google.search.app.Voicesearch.VoiceRecording parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -12939,7 +13095,7 @@ public final class Voicesearch {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.google.search.app.Voicesearch.SoundInfo prototype) {
+    public static Builder newBuilder(com.google.search.app.Voicesearch.VoiceRecording prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -12951,25 +13107,25 @@ public final class Voicesearch {
       return builder;
     }
     /**
-     * Protobuf type {@code com.google.search.app.SoundInfo}
+     * Protobuf type {@code com.google.search.app.VoiceRecording}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.google.search.app.SoundInfo)
-        com.google.search.app.Voicesearch.SoundInfoOrBuilder {
+        // @@protoc_insertion_point(builder_implements:com.google.search.app.VoiceRecording)
+        com.google.search.app.Voicesearch.VoiceRecordingOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_SoundInfo_descriptor;
+        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_VoiceRecording_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_SoundInfo_fieldAccessorTable
+        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_VoiceRecording_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.search.app.Voicesearch.SoundInfo.class, com.google.search.app.Voicesearch.SoundInfo.Builder.class);
+                com.google.search.app.Voicesearch.VoiceRecording.class, com.google.search.app.Voicesearch.VoiceRecording.Builder.class);
       }
 
-      // Construct using com.google.search.app.Voicesearch.SoundInfo.newBuilder()
+      // Construct using com.google.search.app.Voicesearch.VoiceRecording.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -13000,23 +13156,23 @@ public final class Voicesearch {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_SoundInfo_descriptor;
+        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_VoiceRecording_descriptor;
       }
 
-      public com.google.search.app.Voicesearch.SoundInfo getDefaultInstanceForType() {
-        return com.google.search.app.Voicesearch.SoundInfo.getDefaultInstance();
+      public com.google.search.app.Voicesearch.VoiceRecording getDefaultInstanceForType() {
+        return com.google.search.app.Voicesearch.VoiceRecording.getDefaultInstance();
       }
 
-      public com.google.search.app.Voicesearch.SoundInfo build() {
-        com.google.search.app.Voicesearch.SoundInfo result = buildPartial();
+      public com.google.search.app.Voicesearch.VoiceRecording build() {
+        com.google.search.app.Voicesearch.VoiceRecording result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.google.search.app.Voicesearch.SoundInfo buildPartial() {
-        com.google.search.app.Voicesearch.SoundInfo result = new com.google.search.app.Voicesearch.SoundInfo(this);
+      public com.google.search.app.Voicesearch.VoiceRecording buildPartial() {
+        com.google.search.app.Voicesearch.VoiceRecording result = new com.google.search.app.Voicesearch.VoiceRecording(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -13029,16 +13185,16 @@ public final class Voicesearch {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.search.app.Voicesearch.SoundInfo) {
-          return mergeFrom((com.google.search.app.Voicesearch.SoundInfo)other);
+        if (other instanceof com.google.search.app.Voicesearch.VoiceRecording) {
+          return mergeFrom((com.google.search.app.Voicesearch.VoiceRecording)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.google.search.app.Voicesearch.SoundInfo other) {
-        if (other == com.google.search.app.Voicesearch.SoundInfo.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.google.search.app.Voicesearch.VoiceRecording other) {
+        if (other == com.google.search.app.Voicesearch.VoiceRecording.getDefaultInstance()) return this;
         if (other.hasRecordInterval()) {
           setRecordInterval(other.getRecordInterval());
         }
@@ -13054,11 +13210,11 @@ public final class Voicesearch {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.search.app.Voicesearch.SoundInfo parsedMessage = null;
+        com.google.search.app.Voicesearch.VoiceRecording parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.search.app.Voicesearch.SoundInfo) e.getUnfinishedMessage();
+          parsedMessage = (com.google.search.app.Voicesearch.VoiceRecording) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -13101,15 +13257,15 @@ public final class Voicesearch {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:com.google.search.app.SoundInfo)
+      // @@protoc_insertion_point(builder_scope:com.google.search.app.VoiceRecording)
     }
 
     static {
-      defaultInstance = new SoundInfo(true);
+      defaultInstance = new VoiceRecording(true);
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:com.google.search.app.SoundInfo)
+    // @@protoc_insertion_point(class_scope:com.google.search.app.VoiceRecording)
   }
 
   public interface RecogSegmentOrBuilder extends
@@ -19335,52 +19491,61 @@ public final class Voicesearch {
     // @@protoc_insertion_point(class_scope:com.google.search.app.SearchResult)
   }
 
-  public interface SearchResourceOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.google.search.app.SearchResource)
+  public interface TtsSoundOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.google.search.app.TtsSound)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional bytes SR1 = 1;</code>
+     * <code>optional bytes sound_data = 1;</code>
      */
-    boolean hasSR1();
+    boolean hasSoundData();
     /**
-     * <code>optional bytes SR1 = 1;</code>
+     * <code>optional bytes sound_data = 1;</code>
      */
-    com.google.protobuf.ByteString getSR1();
+    com.google.protobuf.ByteString getSoundData();
 
     /**
-     * <code>optional .com.google.search.app.Empty SR3 = 3;</code>
+     * <code>optional int32 fin_stream = 2;</code>
      */
-    boolean hasSR3();
+    boolean hasFinStream();
     /**
-     * <code>optional .com.google.search.app.Empty SR3 = 3;</code>
+     * <code>optional int32 fin_stream = 2;</code>
      */
-    com.google.search.app.Voicesearch.Empty getSR3();
+    int getFinStream();
+
     /**
-     * <code>optional .com.google.search.app.Empty SR3 = 3;</code>
+     * <code>optional .com.google.search.app.Empty code_rate = 3;</code>
      */
-    com.google.search.app.Voicesearch.EmptyOrBuilder getSR3OrBuilder();
+    boolean hasCodeRate();
+    /**
+     * <code>optional .com.google.search.app.Empty code_rate = 3;</code>
+     */
+    com.google.search.app.Voicesearch.Empty getCodeRate();
+    /**
+     * <code>optional .com.google.search.app.Empty code_rate = 3;</code>
+     */
+    com.google.search.app.Voicesearch.EmptyOrBuilder getCodeRateOrBuilder();
   }
   /**
-   * Protobuf type {@code com.google.search.app.SearchResource}
+   * Protobuf type {@code com.google.search.app.TtsSound}
    */
-  public static final class SearchResource extends
+  public static final class TtsSound extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:com.google.search.app.SearchResource)
-      SearchResourceOrBuilder {
-    // Use SearchResource.newBuilder() to construct.
-    private SearchResource(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      // @@protoc_insertion_point(message_implements:com.google.search.app.TtsSound)
+      TtsSoundOrBuilder {
+    // Use TtsSound.newBuilder() to construct.
+    private TtsSound(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
       this.unknownFields = builder.getUnknownFields();
     }
-    private SearchResource(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+    private TtsSound(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
-    private static final SearchResource defaultInstance;
-    public static SearchResource getDefaultInstance() {
+    private static final TtsSound defaultInstance;
+    public static TtsSound getDefaultInstance() {
       return defaultInstance;
     }
 
-    public SearchResource getDefaultInstanceForType() {
+    public TtsSound getDefaultInstanceForType() {
       return defaultInstance;
     }
 
@@ -19390,7 +19555,7 @@ public final class Voicesearch {
         getUnknownFields() {
       return this.unknownFields;
     }
-    private SearchResource(
+    private TtsSound(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -19415,20 +19580,25 @@ public final class Voicesearch {
             }
             case 10: {
               bitField0_ |= 0x00000001;
-              sR1_ = input.readBytes();
+              soundData_ = input.readBytes();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              finStream_ = input.readInt32();
               break;
             }
             case 26: {
               com.google.search.app.Voicesearch.Empty.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                subBuilder = sR3_.toBuilder();
+              if (((bitField0_ & 0x00000004) == 0x00000004)) {
+                subBuilder = codeRate_.toBuilder();
               }
-              sR3_ = input.readMessage(com.google.search.app.Voicesearch.Empty.PARSER, extensionRegistry);
+              codeRate_ = input.readMessage(com.google.search.app.Voicesearch.Empty.PARSER, extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(sR3_);
-                sR3_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(codeRate_);
+                codeRate_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000004;
               break;
             }
           }
@@ -19445,71 +19615,87 @@ public final class Voicesearch {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.google.search.app.Voicesearch.internal_static_com_google_search_app_SearchResource_descriptor;
+      return com.google.search.app.Voicesearch.internal_static_com_google_search_app_TtsSound_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.search.app.Voicesearch.internal_static_com_google_search_app_SearchResource_fieldAccessorTable
+      return com.google.search.app.Voicesearch.internal_static_com_google_search_app_TtsSound_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.search.app.Voicesearch.SearchResource.class, com.google.search.app.Voicesearch.SearchResource.Builder.class);
+              com.google.search.app.Voicesearch.TtsSound.class, com.google.search.app.Voicesearch.TtsSound.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<SearchResource> PARSER =
-        new com.google.protobuf.AbstractParser<SearchResource>() {
-      public SearchResource parsePartialFrom(
+    public static com.google.protobuf.Parser<TtsSound> PARSER =
+        new com.google.protobuf.AbstractParser<TtsSound>() {
+      public TtsSound parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SearchResource(input, extensionRegistry);
+        return new TtsSound(input, extensionRegistry);
       }
     };
 
     @java.lang.Override
-    public com.google.protobuf.Parser<SearchResource> getParserForType() {
+    public com.google.protobuf.Parser<TtsSound> getParserForType() {
       return PARSER;
     }
 
     private int bitField0_;
-    public static final int SR1_FIELD_NUMBER = 1;
-    private com.google.protobuf.ByteString sR1_;
+    public static final int SOUND_DATA_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString soundData_;
     /**
-     * <code>optional bytes SR1 = 1;</code>
+     * <code>optional bytes sound_data = 1;</code>
      */
-    public boolean hasSR1() {
+    public boolean hasSoundData() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>optional bytes SR1 = 1;</code>
+     * <code>optional bytes sound_data = 1;</code>
      */
-    public com.google.protobuf.ByteString getSR1() {
-      return sR1_;
+    public com.google.protobuf.ByteString getSoundData() {
+      return soundData_;
     }
 
-    public static final int SR3_FIELD_NUMBER = 3;
-    private com.google.search.app.Voicesearch.Empty sR3_;
+    public static final int FIN_STREAM_FIELD_NUMBER = 2;
+    private int finStream_;
     /**
-     * <code>optional .com.google.search.app.Empty SR3 = 3;</code>
+     * <code>optional int32 fin_stream = 2;</code>
      */
-    public boolean hasSR3() {
+    public boolean hasFinStream() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>optional .com.google.search.app.Empty SR3 = 3;</code>
+     * <code>optional int32 fin_stream = 2;</code>
      */
-    public com.google.search.app.Voicesearch.Empty getSR3() {
-      return sR3_;
+    public int getFinStream() {
+      return finStream_;
+    }
+
+    public static final int CODE_RATE_FIELD_NUMBER = 3;
+    private com.google.search.app.Voicesearch.Empty codeRate_;
+    /**
+     * <code>optional .com.google.search.app.Empty code_rate = 3;</code>
+     */
+    public boolean hasCodeRate() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
     }
     /**
-     * <code>optional .com.google.search.app.Empty SR3 = 3;</code>
+     * <code>optional .com.google.search.app.Empty code_rate = 3;</code>
      */
-    public com.google.search.app.Voicesearch.EmptyOrBuilder getSR3OrBuilder() {
-      return sR3_;
+    public com.google.search.app.Voicesearch.Empty getCodeRate() {
+      return codeRate_;
+    }
+    /**
+     * <code>optional .com.google.search.app.Empty code_rate = 3;</code>
+     */
+    public com.google.search.app.Voicesearch.EmptyOrBuilder getCodeRateOrBuilder() {
+      return codeRate_;
     }
 
     private void initFields() {
-      sR1_ = com.google.protobuf.ByteString.EMPTY;
-      sR3_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
+      soundData_ = com.google.protobuf.ByteString.EMPTY;
+      finStream_ = 0;
+      codeRate_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -19525,10 +19711,13 @@ public final class Voicesearch {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBytes(1, sR1_);
+        output.writeBytes(1, soundData_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeMessage(3, sR3_);
+        output.writeInt32(2, finStream_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeMessage(3, codeRate_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -19541,11 +19730,15 @@ public final class Voicesearch {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, sR1_);
+          .computeBytesSize(1, soundData_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, sR3_);
+          .computeInt32Size(2, finStream_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, codeRate_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -19559,53 +19752,53 @@ public final class Voicesearch {
       return super.writeReplace();
     }
 
-    public static com.google.search.app.Voicesearch.SearchResource parseFrom(
+    public static com.google.search.app.Voicesearch.TtsSound parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.search.app.Voicesearch.SearchResource parseFrom(
+    public static com.google.search.app.Voicesearch.TtsSound parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.search.app.Voicesearch.SearchResource parseFrom(byte[] data)
+    public static com.google.search.app.Voicesearch.TtsSound parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.google.search.app.Voicesearch.SearchResource parseFrom(
+    public static com.google.search.app.Voicesearch.TtsSound parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.search.app.Voicesearch.SearchResource parseFrom(java.io.InputStream input)
+    public static com.google.search.app.Voicesearch.TtsSound parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.google.search.app.Voicesearch.SearchResource parseFrom(
+    public static com.google.search.app.Voicesearch.TtsSound parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.google.search.app.Voicesearch.SearchResource parseDelimitedFrom(java.io.InputStream input)
+    public static com.google.search.app.Voicesearch.TtsSound parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.google.search.app.Voicesearch.SearchResource parseDelimitedFrom(
+    public static com.google.search.app.Voicesearch.TtsSound parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.google.search.app.Voicesearch.SearchResource parseFrom(
+    public static com.google.search.app.Voicesearch.TtsSound parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.google.search.app.Voicesearch.SearchResource parseFrom(
+    public static com.google.search.app.Voicesearch.TtsSound parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -19614,7 +19807,7 @@ public final class Voicesearch {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.google.search.app.Voicesearch.SearchResource prototype) {
+    public static Builder newBuilder(com.google.search.app.Voicesearch.TtsSound prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -19626,25 +19819,25 @@ public final class Voicesearch {
       return builder;
     }
     /**
-     * Protobuf type {@code com.google.search.app.SearchResource}
+     * Protobuf type {@code com.google.search.app.TtsSound}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.google.search.app.SearchResource)
-        com.google.search.app.Voicesearch.SearchResourceOrBuilder {
+        // @@protoc_insertion_point(builder_implements:com.google.search.app.TtsSound)
+        com.google.search.app.Voicesearch.TtsSoundOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_SearchResource_descriptor;
+        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_TtsSound_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_SearchResource_fieldAccessorTable
+        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_TtsSound_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.search.app.Voicesearch.SearchResource.class, com.google.search.app.Voicesearch.SearchResource.Builder.class);
+                com.google.search.app.Voicesearch.TtsSound.class, com.google.search.app.Voicesearch.TtsSound.Builder.class);
       }
 
-      // Construct using com.google.search.app.Voicesearch.SearchResource.newBuilder()
+      // Construct using com.google.search.app.Voicesearch.TtsSound.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -19656,7 +19849,7 @@ public final class Voicesearch {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-          getSR3FieldBuilder();
+          getCodeRateFieldBuilder();
         }
       }
       private static Builder create() {
@@ -19665,14 +19858,16 @@ public final class Voicesearch {
 
       public Builder clear() {
         super.clear();
-        sR1_ = com.google.protobuf.ByteString.EMPTY;
+        soundData_ = com.google.protobuf.ByteString.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000001);
-        if (sR3Builder_ == null) {
-          sR3_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
-        } else {
-          sR3Builder_.clear();
-        }
+        finStream_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
+        if (codeRateBuilder_ == null) {
+          codeRate_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
+        } else {
+          codeRateBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -19682,36 +19877,40 @@ public final class Voicesearch {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_SearchResource_descriptor;
+        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_TtsSound_descriptor;
       }
 
-      public com.google.search.app.Voicesearch.SearchResource getDefaultInstanceForType() {
-        return com.google.search.app.Voicesearch.SearchResource.getDefaultInstance();
+      public com.google.search.app.Voicesearch.TtsSound getDefaultInstanceForType() {
+        return com.google.search.app.Voicesearch.TtsSound.getDefaultInstance();
       }
 
-      public com.google.search.app.Voicesearch.SearchResource build() {
-        com.google.search.app.Voicesearch.SearchResource result = buildPartial();
+      public com.google.search.app.Voicesearch.TtsSound build() {
+        com.google.search.app.Voicesearch.TtsSound result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.google.search.app.Voicesearch.SearchResource buildPartial() {
-        com.google.search.app.Voicesearch.SearchResource result = new com.google.search.app.Voicesearch.SearchResource(this);
+      public com.google.search.app.Voicesearch.TtsSound buildPartial() {
+        com.google.search.app.Voicesearch.TtsSound result = new com.google.search.app.Voicesearch.TtsSound(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.sR1_ = sR1_;
+        result.soundData_ = soundData_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
-        if (sR3Builder_ == null) {
-          result.sR3_ = sR3_;
+        result.finStream_ = finStream_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        if (codeRateBuilder_ == null) {
+          result.codeRate_ = codeRate_;
         } else {
-          result.sR3_ = sR3Builder_.build();
+          result.codeRate_ = codeRateBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -19719,21 +19918,24 @@ public final class Voicesearch {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.search.app.Voicesearch.SearchResource) {
-          return mergeFrom((com.google.search.app.Voicesearch.SearchResource)other);
+        if (other instanceof com.google.search.app.Voicesearch.TtsSound) {
+          return mergeFrom((com.google.search.app.Voicesearch.TtsSound)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.google.search.app.Voicesearch.SearchResource other) {
-        if (other == com.google.search.app.Voicesearch.SearchResource.getDefaultInstance()) return this;
-        if (other.hasSR1()) {
-          setSR1(other.getSR1());
+      public Builder mergeFrom(com.google.search.app.Voicesearch.TtsSound other) {
+        if (other == com.google.search.app.Voicesearch.TtsSound.getDefaultInstance()) return this;
+        if (other.hasSoundData()) {
+          setSoundData(other.getSoundData());
         }
-        if (other.hasSR3()) {
-          mergeSR3(other.getSR3());
+        if (other.hasFinStream()) {
+          setFinStream(other.getFinStream());
+        }
+        if (other.hasCodeRate()) {
+          mergeCodeRate(other.getCodeRate());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -19747,11 +19949,11 @@ public final class Voicesearch {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.google.search.app.Voicesearch.SearchResource parsedMessage = null;
+        com.google.search.app.Voicesearch.TtsSound parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.search.app.Voicesearch.SearchResource) e.getUnfinishedMessage();
+          parsedMessage = (com.google.search.app.Voicesearch.TtsSound) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -19762,755 +19964,198 @@ public final class Voicesearch {
       }
       private int bitField0_;
 
-      private com.google.protobuf.ByteString sR1_ = com.google.protobuf.ByteString.EMPTY;
+      private com.google.protobuf.ByteString soundData_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>optional bytes SR1 = 1;</code>
+       * <code>optional bytes sound_data = 1;</code>
        */
-      public boolean hasSR1() {
+      public boolean hasSoundData() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>optional bytes SR1 = 1;</code>
+       * <code>optional bytes sound_data = 1;</code>
        */
-      public com.google.protobuf.ByteString getSR1() {
-        return sR1_;
+      public com.google.protobuf.ByteString getSoundData() {
+        return soundData_;
       }
       /**
-       * <code>optional bytes SR1 = 1;</code>
+       * <code>optional bytes sound_data = 1;</code>
        */
-      public Builder setSR1(com.google.protobuf.ByteString value) {
+      public Builder setSoundData(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000001;
-        sR1_ = value;
+        soundData_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bytes SR1 = 1;</code>
+       * <code>optional bytes sound_data = 1;</code>
        */
-      public Builder clearSR1() {
+      public Builder clearSoundData() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        sR1_ = getDefaultInstance().getSR1();
+        soundData_ = getDefaultInstance().getSoundData();
         onChanged();
         return this;
       }
 
-      private com.google.search.app.Voicesearch.Empty sR3_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder> sR3Builder_;
+      private int finStream_ ;
       /**
-       * <code>optional .com.google.search.app.Empty SR3 = 3;</code>
+       * <code>optional int32 fin_stream = 2;</code>
        */
-      public boolean hasSR3() {
+      public boolean hasFinStream() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>optional .com.google.search.app.Empty SR3 = 3;</code>
+       * <code>optional int32 fin_stream = 2;</code>
        */
-      public com.google.search.app.Voicesearch.Empty getSR3() {
-        if (sR3Builder_ == null) {
-          return sR3_;
+      public int getFinStream() {
+        return finStream_;
+      }
+      /**
+       * <code>optional int32 fin_stream = 2;</code>
+       */
+      public Builder setFinStream(int value) {
+        bitField0_ |= 0x00000002;
+        finStream_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 fin_stream = 2;</code>
+       */
+      public Builder clearFinStream() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        finStream_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.search.app.Voicesearch.Empty codeRate_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder> codeRateBuilder_;
+      /**
+       * <code>optional .com.google.search.app.Empty code_rate = 3;</code>
+       */
+      public boolean hasCodeRate() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional .com.google.search.app.Empty code_rate = 3;</code>
+       */
+      public com.google.search.app.Voicesearch.Empty getCodeRate() {
+        if (codeRateBuilder_ == null) {
+          return codeRate_;
         } else {
-          return sR3Builder_.getMessage();
+          return codeRateBuilder_.getMessage();
         }
       }
       /**
-       * <code>optional .com.google.search.app.Empty SR3 = 3;</code>
+       * <code>optional .com.google.search.app.Empty code_rate = 3;</code>
        */
-      public Builder setSR3(com.google.search.app.Voicesearch.Empty value) {
-        if (sR3Builder_ == null) {
+      public Builder setCodeRate(com.google.search.app.Voicesearch.Empty value) {
+        if (codeRateBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          sR3_ = value;
+          codeRate_ = value;
           onChanged();
         } else {
-          sR3Builder_.setMessage(value);
+          codeRateBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.Empty SR3 = 3;</code>
+       * <code>optional .com.google.search.app.Empty code_rate = 3;</code>
        */
-      public Builder setSR3(
+      public Builder setCodeRate(
           com.google.search.app.Voicesearch.Empty.Builder builderForValue) {
-        if (sR3Builder_ == null) {
-          sR3_ = builderForValue.build();
+        if (codeRateBuilder_ == null) {
+          codeRate_ = builderForValue.build();
           onChanged();
         } else {
-          sR3Builder_.setMessage(builderForValue.build());
+          codeRateBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.Empty SR3 = 3;</code>
+       * <code>optional .com.google.search.app.Empty code_rate = 3;</code>
        */
-      public Builder mergeSR3(com.google.search.app.Voicesearch.Empty value) {
-        if (sR3Builder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002) &&
-              sR3_ != com.google.search.app.Voicesearch.Empty.getDefaultInstance()) {
-            sR3_ =
-              com.google.search.app.Voicesearch.Empty.newBuilder(sR3_).mergeFrom(value).buildPartial();
+      public Builder mergeCodeRate(com.google.search.app.Voicesearch.Empty value) {
+        if (codeRateBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004) &&
+              codeRate_ != com.google.search.app.Voicesearch.Empty.getDefaultInstance()) {
+            codeRate_ =
+              com.google.search.app.Voicesearch.Empty.newBuilder(codeRate_).mergeFrom(value).buildPartial();
           } else {
-            sR3_ = value;
+            codeRate_ = value;
           }
           onChanged();
         } else {
-          sR3Builder_.mergeFrom(value);
+          codeRateBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.Empty SR3 = 3;</code>
+       * <code>optional .com.google.search.app.Empty code_rate = 3;</code>
        */
-      public Builder clearSR3() {
-        if (sR3Builder_ == null) {
-          sR3_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
+      public Builder clearCodeRate() {
+        if (codeRateBuilder_ == null) {
+          codeRate_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
           onChanged();
         } else {
-          sR3Builder_.clear();
+          codeRateBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
       /**
-       * <code>optional .com.google.search.app.Empty SR3 = 3;</code>
+       * <code>optional .com.google.search.app.Empty code_rate = 3;</code>
        */
-      public com.google.search.app.Voicesearch.Empty.Builder getSR3Builder() {
-        bitField0_ |= 0x00000002;
+      public com.google.search.app.Voicesearch.Empty.Builder getCodeRateBuilder() {
+        bitField0_ |= 0x00000004;
         onChanged();
-        return getSR3FieldBuilder().getBuilder();
+        return getCodeRateFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .com.google.search.app.Empty SR3 = 3;</code>
+       * <code>optional .com.google.search.app.Empty code_rate = 3;</code>
        */
-      public com.google.search.app.Voicesearch.EmptyOrBuilder getSR3OrBuilder() {
-        if (sR3Builder_ != null) {
-          return sR3Builder_.getMessageOrBuilder();
+      public com.google.search.app.Voicesearch.EmptyOrBuilder getCodeRateOrBuilder() {
+        if (codeRateBuilder_ != null) {
+          return codeRateBuilder_.getMessageOrBuilder();
         } else {
-          return sR3_;
+          return codeRate_;
         }
       }
       /**
-       * <code>optional .com.google.search.app.Empty SR3 = 3;</code>
+       * <code>optional .com.google.search.app.Empty code_rate = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder> 
-          getSR3FieldBuilder() {
-        if (sR3Builder_ == null) {
-          sR3Builder_ = new com.google.protobuf.SingleFieldBuilder<
+          getCodeRateFieldBuilder() {
+        if (codeRateBuilder_ == null) {
+          codeRateBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder>(
-                  getSR3(),
+                  getCodeRate(),
                   getParentForChildren(),
                   isClean());
-          sR3_ = null;
+          codeRate_ = null;
         }
-        return sR3Builder_;
+        return codeRateBuilder_;
       }
 
-      // @@protoc_insertion_point(builder_scope:com.google.search.app.SearchResource)
+      // @@protoc_insertion_point(builder_scope:com.google.search.app.TtsSound)
     }
 
     static {
-      defaultInstance = new SearchResource(true);
+      defaultInstance = new TtsSound(true);
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:com.google.search.app.SearchResource)
-  }
-
-  public interface VSExInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.google.search.app.VSExInfo)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>optional bytes info1 = 1;</code>
-     */
-    boolean hasInfo1();
-    /**
-     * <code>optional bytes info1 = 1;</code>
-     */
-    com.google.protobuf.ByteString getInfo1();
-
-    /**
-     * <code>optional .com.google.search.app.Empty info3 = 3;</code>
-     */
-    boolean hasInfo3();
-    /**
-     * <code>optional .com.google.search.app.Empty info3 = 3;</code>
-     */
-    com.google.search.app.Voicesearch.Empty getInfo3();
-    /**
-     * <code>optional .com.google.search.app.Empty info3 = 3;</code>
-     */
-    com.google.search.app.Voicesearch.EmptyOrBuilder getInfo3OrBuilder();
-  }
-  /**
-   * Protobuf type {@code com.google.search.app.VSExInfo}
-   */
-  public static final class VSExInfo extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:com.google.search.app.VSExInfo)
-      VSExInfoOrBuilder {
-    // Use VSExInfo.newBuilder() to construct.
-    private VSExInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-      super(builder);
-      this.unknownFields = builder.getUnknownFields();
-    }
-    private VSExInfo(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final VSExInfo defaultInstance;
-    public static VSExInfo getDefaultInstance() {
-      return defaultInstance;
-    }
-
-    public VSExInfo getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
-      return this.unknownFields;
-    }
-    private VSExInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              bitField0_ |= 0x00000001;
-              info1_ = input.readBytes();
-              break;
-            }
-            case 26: {
-              com.google.search.app.Voicesearch.Empty.Builder subBuilder = null;
-              if (((bitField0_ & 0x00000002) == 0x00000002)) {
-                subBuilder = info3_.toBuilder();
-              }
-              info3_ = input.readMessage(com.google.search.app.Voicesearch.Empty.PARSER, extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(info3_);
-                info3_ = subBuilder.buildPartial();
-              }
-              bitField0_ |= 0x00000002;
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.search.app.Voicesearch.internal_static_com_google_search_app_VSExInfo_descriptor;
-    }
-
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.search.app.Voicesearch.internal_static_com_google_search_app_VSExInfo_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.search.app.Voicesearch.VSExInfo.class, com.google.search.app.Voicesearch.VSExInfo.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<VSExInfo> PARSER =
-        new com.google.protobuf.AbstractParser<VSExInfo>() {
-      public VSExInfo parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new VSExInfo(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<VSExInfo> getParserForType() {
-      return PARSER;
-    }
-
-    private int bitField0_;
-    public static final int INFO1_FIELD_NUMBER = 1;
-    private com.google.protobuf.ByteString info1_;
-    /**
-     * <code>optional bytes info1 = 1;</code>
-     */
-    public boolean hasInfo1() {
-      return ((bitField0_ & 0x00000001) == 0x00000001);
-    }
-    /**
-     * <code>optional bytes info1 = 1;</code>
-     */
-    public com.google.protobuf.ByteString getInfo1() {
-      return info1_;
-    }
-
-    public static final int INFO3_FIELD_NUMBER = 3;
-    private com.google.search.app.Voicesearch.Empty info3_;
-    /**
-     * <code>optional .com.google.search.app.Empty info3 = 3;</code>
-     */
-    public boolean hasInfo3() {
-      return ((bitField0_ & 0x00000002) == 0x00000002);
-    }
-    /**
-     * <code>optional .com.google.search.app.Empty info3 = 3;</code>
-     */
-    public com.google.search.app.Voicesearch.Empty getInfo3() {
-      return info3_;
-    }
-    /**
-     * <code>optional .com.google.search.app.Empty info3 = 3;</code>
-     */
-    public com.google.search.app.Voicesearch.EmptyOrBuilder getInfo3OrBuilder() {
-      return info3_;
-    }
-
-    private void initFields() {
-      info1_ = com.google.protobuf.ByteString.EMPTY;
-      info3_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
-    }
-    private byte memoizedIsInitialized = -1;
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      getSerializedSize();
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeBytes(1, info1_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeMessage(3, info3_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    private int memoizedSerializedSize = -1;
-    public int getSerializedSize() {
-      int size = memoizedSerializedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(1, info1_);
-      }
-      if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, info3_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
-      return size;
-    }
-
-    private static final long serialVersionUID = 0L;
-    @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
-    }
-
-    public static com.google.search.app.Voicesearch.VSExInfo parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.search.app.Voicesearch.VSExInfo parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.search.app.Voicesearch.VSExInfo parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.search.app.Voicesearch.VSExInfo parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.search.app.Voicesearch.VSExInfo parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static com.google.search.app.Voicesearch.VSExInfo parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-    public static com.google.search.app.Voicesearch.VSExInfo parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
-    }
-    public static com.google.search.app.Voicesearch.VSExInfo parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
-    }
-    public static com.google.search.app.Voicesearch.VSExInfo parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input);
-    }
-    public static com.google.search.app.Voicesearch.VSExInfo parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
-    }
-
-    public static Builder newBuilder() { return Builder.create(); }
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.google.search.app.Voicesearch.VSExInfo prototype) {
-      return newBuilder().mergeFrom(prototype);
-    }
-    public Builder toBuilder() { return newBuilder(this); }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code com.google.search.app.VSExInfo}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.google.search.app.VSExInfo)
-        com.google.search.app.Voicesearch.VSExInfoOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_VSExInfo_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_VSExInfo_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.search.app.Voicesearch.VSExInfo.class, com.google.search.app.Voicesearch.VSExInfo.Builder.class);
-      }
-
-      // Construct using com.google.search.app.Voicesearch.VSExInfo.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-          getInfo3FieldBuilder();
-        }
-      }
-      private static Builder create() {
-        return new Builder();
-      }
-
-      public Builder clear() {
-        super.clear();
-        info1_ = com.google.protobuf.ByteString.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        if (info3Builder_ == null) {
-          info3_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
-        } else {
-          info3Builder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000002);
-        return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
-      }
-
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_VSExInfo_descriptor;
-      }
-
-      public com.google.search.app.Voicesearch.VSExInfo getDefaultInstanceForType() {
-        return com.google.search.app.Voicesearch.VSExInfo.getDefaultInstance();
-      }
-
-      public com.google.search.app.Voicesearch.VSExInfo build() {
-        com.google.search.app.Voicesearch.VSExInfo result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      public com.google.search.app.Voicesearch.VSExInfo buildPartial() {
-        com.google.search.app.Voicesearch.VSExInfo result = new com.google.search.app.Voicesearch.VSExInfo(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-          to_bitField0_ |= 0x00000001;
-        }
-        result.info1_ = info1_;
-        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-          to_bitField0_ |= 0x00000002;
-        }
-        if (info3Builder_ == null) {
-          result.info3_ = info3_;
-        } else {
-          result.info3_ = info3Builder_.build();
-        }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.search.app.Voicesearch.VSExInfo) {
-          return mergeFrom((com.google.search.app.Voicesearch.VSExInfo)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.google.search.app.Voicesearch.VSExInfo other) {
-        if (other == com.google.search.app.Voicesearch.VSExInfo.getDefaultInstance()) return this;
-        if (other.hasInfo1()) {
-          setInfo1(other.getInfo1());
-        }
-        if (other.hasInfo3()) {
-          mergeInfo3(other.getInfo3());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        return this;
-      }
-
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.search.app.Voicesearch.VSExInfo parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.search.app.Voicesearch.VSExInfo) e.getUnfinishedMessage();
-          throw e;
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private com.google.protobuf.ByteString info1_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <code>optional bytes info1 = 1;</code>
-       */
-      public boolean hasInfo1() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>optional bytes info1 = 1;</code>
-       */
-      public com.google.protobuf.ByteString getInfo1() {
-        return info1_;
-      }
-      /**
-       * <code>optional bytes info1 = 1;</code>
-       */
-      public Builder setInfo1(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-        info1_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional bytes info1 = 1;</code>
-       */
-      public Builder clearInfo1() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        info1_ = getDefaultInstance().getInfo1();
-        onChanged();
-        return this;
-      }
-
-      private com.google.search.app.Voicesearch.Empty info3_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
-          com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder> info3Builder_;
-      /**
-       * <code>optional .com.google.search.app.Empty info3 = 3;</code>
-       */
-      public boolean hasInfo3() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>optional .com.google.search.app.Empty info3 = 3;</code>
-       */
-      public com.google.search.app.Voicesearch.Empty getInfo3() {
-        if (info3Builder_ == null) {
-          return info3_;
-        } else {
-          return info3Builder_.getMessage();
-        }
-      }
-      /**
-       * <code>optional .com.google.search.app.Empty info3 = 3;</code>
-       */
-      public Builder setInfo3(com.google.search.app.Voicesearch.Empty value) {
-        if (info3Builder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          info3_ = value;
-          onChanged();
-        } else {
-          info3Builder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000002;
-        return this;
-      }
-      /**
-       * <code>optional .com.google.search.app.Empty info3 = 3;</code>
-       */
-      public Builder setInfo3(
-          com.google.search.app.Voicesearch.Empty.Builder builderForValue) {
-        if (info3Builder_ == null) {
-          info3_ = builderForValue.build();
-          onChanged();
-        } else {
-          info3Builder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000002;
-        return this;
-      }
-      /**
-       * <code>optional .com.google.search.app.Empty info3 = 3;</code>
-       */
-      public Builder mergeInfo3(com.google.search.app.Voicesearch.Empty value) {
-        if (info3Builder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002) &&
-              info3_ != com.google.search.app.Voicesearch.Empty.getDefaultInstance()) {
-            info3_ =
-              com.google.search.app.Voicesearch.Empty.newBuilder(info3_).mergeFrom(value).buildPartial();
-          } else {
-            info3_ = value;
-          }
-          onChanged();
-        } else {
-          info3Builder_.mergeFrom(value);
-        }
-        bitField0_ |= 0x00000002;
-        return this;
-      }
-      /**
-       * <code>optional .com.google.search.app.Empty info3 = 3;</code>
-       */
-      public Builder clearInfo3() {
-        if (info3Builder_ == null) {
-          info3_ = com.google.search.app.Voicesearch.Empty.getDefaultInstance();
-          onChanged();
-        } else {
-          info3Builder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000002);
-        return this;
-      }
-      /**
-       * <code>optional .com.google.search.app.Empty info3 = 3;</code>
-       */
-      public com.google.search.app.Voicesearch.Empty.Builder getInfo3Builder() {
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return getInfo3FieldBuilder().getBuilder();
-      }
-      /**
-       * <code>optional .com.google.search.app.Empty info3 = 3;</code>
-       */
-      public com.google.search.app.Voicesearch.EmptyOrBuilder getInfo3OrBuilder() {
-        if (info3Builder_ != null) {
-          return info3Builder_.getMessageOrBuilder();
-        } else {
-          return info3_;
-        }
-      }
-      /**
-       * <code>optional .com.google.search.app.Empty info3 = 3;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilder<
-          com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder> 
-          getInfo3FieldBuilder() {
-        if (info3Builder_ == null) {
-          info3Builder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.google.search.app.Voicesearch.Empty, com.google.search.app.Voicesearch.Empty.Builder, com.google.search.app.Voicesearch.EmptyOrBuilder>(
-                  getInfo3(),
-                  getParentForChildren(),
-                  isClean());
-          info3_ = null;
-        }
-        return info3Builder_;
-      }
-
-      // @@protoc_insertion_point(builder_scope:com.google.search.app.VSExInfo)
-    }
-
-    static {
-      defaultInstance = new VSExInfo(true);
-      defaultInstance.initFields();
-    }
-
-    // @@protoc_insertion_point(class_scope:com.google.search.app.VSExInfo)
+    // @@protoc_insertion_point(class_scope:com.google.search.app.TtsSound)
   }
 
   public interface EmptyOrBuilder extends
@@ -20826,6 +20471,403 @@ public final class Voicesearch {
     // @@protoc_insertion_point(class_scope:com.google.search.app.Empty)
   }
 
+  public interface DoubleOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.google.search.app.Double)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional double d7 = 7;</code>
+     */
+    boolean hasD7();
+    /**
+     * <code>optional double d7 = 7;</code>
+     */
+    double getD7();
+  }
+  /**
+   * Protobuf type {@code com.google.search.app.Double}
+   */
+  public static final class Double extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.google.search.app.Double)
+      DoubleOrBuilder {
+    // Use Double.newBuilder() to construct.
+    private Double(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private Double(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final Double defaultInstance;
+    public static Double getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public Double getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Double(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 57: {
+              bitField0_ |= 0x00000001;
+              d7_ = input.readDouble();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.google.search.app.Voicesearch.internal_static_com_google_search_app_Double_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.search.app.Voicesearch.internal_static_com_google_search_app_Double_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.search.app.Voicesearch.Double.class, com.google.search.app.Voicesearch.Double.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<Double> PARSER =
+        new com.google.protobuf.AbstractParser<Double>() {
+      public Double parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Double(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Double> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int D7_FIELD_NUMBER = 7;
+    private double d7_;
+    /**
+     * <code>optional double d7 = 7;</code>
+     */
+    public boolean hasD7() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional double d7 = 7;</code>
+     */
+    public double getD7() {
+      return d7_;
+    }
+
+    private void initFields() {
+      d7_ = 0D;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeDouble(7, d7_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(7, d7_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.google.search.app.Voicesearch.Double parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.search.app.Voicesearch.Double parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.search.app.Voicesearch.Double parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.search.app.Voicesearch.Double parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.search.app.Voicesearch.Double parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.google.search.app.Voicesearch.Double parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.google.search.app.Voicesearch.Double parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.google.search.app.Voicesearch.Double parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.google.search.app.Voicesearch.Double parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.google.search.app.Voicesearch.Double parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.google.search.app.Voicesearch.Double prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.google.search.app.Double}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.google.search.app.Double)
+        com.google.search.app.Voicesearch.DoubleOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_Double_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_Double_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.search.app.Voicesearch.Double.class, com.google.search.app.Voicesearch.Double.Builder.class);
+      }
+
+      // Construct using com.google.search.app.Voicesearch.Double.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        d7_ = 0D;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.google.search.app.Voicesearch.internal_static_com_google_search_app_Double_descriptor;
+      }
+
+      public com.google.search.app.Voicesearch.Double getDefaultInstanceForType() {
+        return com.google.search.app.Voicesearch.Double.getDefaultInstance();
+      }
+
+      public com.google.search.app.Voicesearch.Double build() {
+        com.google.search.app.Voicesearch.Double result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.google.search.app.Voicesearch.Double buildPartial() {
+        com.google.search.app.Voicesearch.Double result = new com.google.search.app.Voicesearch.Double(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.d7_ = d7_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.search.app.Voicesearch.Double) {
+          return mergeFrom((com.google.search.app.Voicesearch.Double)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.search.app.Voicesearch.Double other) {
+        if (other == com.google.search.app.Voicesearch.Double.getDefaultInstance()) return this;
+        if (other.hasD7()) {
+          setD7(other.getD7());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.search.app.Voicesearch.Double parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.google.search.app.Voicesearch.Double) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private double d7_ ;
+      /**
+       * <code>optional double d7 = 7;</code>
+       */
+      public boolean hasD7() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional double d7 = 7;</code>
+       */
+      public double getD7() {
+        return d7_;
+      }
+      /**
+       * <code>optional double d7 = 7;</code>
+       */
+      public Builder setD7(double value) {
+        bitField0_ |= 0x00000001;
+        d7_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional double d7 = 7;</code>
+       */
+      public Builder clearD7() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        d7_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.google.search.app.Double)
+    }
+
+    static {
+      defaultInstance = new Double(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.google.search.app.Double)
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_google_search_app_VoiceSearchRequest_descriptor;
   private static
@@ -20847,20 +20889,20 @@ public final class Voicesearch {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_google_search_app_GoogleNow_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_google_search_app_VoiceInfo_descriptor;
+    internal_static_com_google_search_app_VoiceSampling_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_google_search_app_VoiceInfo_fieldAccessorTable;
+      internal_static_com_google_search_app_VoiceSampling_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_google_search_app_SoundData_descriptor;
+    internal_static_com_google_search_app_VoiceData_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_google_search_app_SoundData_fieldAccessorTable;
+      internal_static_com_google_search_app_VoiceData_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_google_search_app_PhoneInfo_descriptor;
+    internal_static_com_google_search_app_ClientInfo_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_google_search_app_PhoneInfo_fieldAccessorTable;
+      internal_static_com_google_search_app_ClientInfo_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_google_search_app_UserPreference_descriptor;
   private static
@@ -20892,10 +20934,10 @@ public final class Voicesearch {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_google_search_app_RecogResult_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_google_search_app_SoundInfo_descriptor;
+    internal_static_com_google_search_app_VoiceRecording_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_google_search_app_SoundInfo_fieldAccessorTable;
+      internal_static_com_google_search_app_VoiceRecording_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_google_search_app_RecogSegment_descriptor;
   private static
@@ -20942,20 +20984,20 @@ public final class Voicesearch {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_google_search_app_SearchResult_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_google_search_app_SearchResource_descriptor;
+    internal_static_com_google_search_app_TtsSound_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_google_search_app_SearchResource_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_google_search_app_VSExInfo_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_google_search_app_VSExInfo_fieldAccessorTable;
+      internal_static_com_google_search_app_TtsSound_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_google_search_app_Empty_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_google_search_app_Empty_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_google_search_app_Double_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_google_search_app_Double_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -20966,83 +21008,85 @@ public final class Voicesearch {
   static {
     java.lang.String[] descriptorData = {
       "\n\021voicesearch.proto\022\025com.google.search.a" +
-      "pp\"\245\005\n\022VoiceSearchRequest\0224\n\tuser_info\030\210" +
-      "\361\021 \001(\0132\037.com.google.search.app.UserInfo\022" +
-      "6\n\nvoice_info\030\354\361\021 \001(\0132 .com.google.searc" +
-      "h.app.VoiceInfo\0226\n\nsound_data\030\355\361\021 \001(\0132 ." +
-      "com.google.search.app.SoundData\0226\n\nphone" +
-      "_info\030\360\370\021 \001(\0132 .com.google.search.app.Ph" +
-      "oneInfo\022@\n\017user_preference\030\344\374\021 \001(\0132%.com" +
-      ".google.search.app.UserPreference\0222\n\tU27" +
-      "301014\030\226\251\202\r \001(\0132\034.com.google.search.app.",
-      "Empty\0222\n\tU27423252\030\224\344\211\r \001(\0132\034.com.google" +
-      ".search.app.Empty\0222\n\tU27801516\030\254\357\240\r \001(\0132" +
-      "\034.com.google.search.app.Empty\0227\n\nget_met" +
-      "hod\030\226\330\260\020 \001(\0132 .com.google.search.app.Get" +
-      "Method\0222\n\tU61914024\030\250\367\302\035 \001(\0132\034.com.googl" +
-      "e.search.app.Empty\0222\n\tU77499489\030\341\230\372$ \001(\013" +
-      "2\034.com.google.search.app.Empty\0222\n\tU82185" +
-      "720\030\370\233\230\' \001(\0132\034.com.google.search.app.Emp" +
-      "ty\"\313\001\n\023VoiceSearchResponse\0228\n\013recog_bloc" +
-      "k\030\371\301L \001(\0132!.com.google.search.app.RecogB",
-      "lock\022=\n\rsearch_result\030\205\256\347\022 \001(\0132#.com.goo" +
-      "gle.search.app.SearchResult\022;\n\tG28599812" +
-      "\030\204\314\321\r \001(\0132%.com.google.search.app.Search" +
-      "Resource\"\247\001\n\010UserInfo\022*\n\004lang\030\002 \001(\0132\034.co" +
-      "m.google.search.app.Empty\022,\n\006locale\030\003 \001(" +
-      "\0132\034.com.google.search.app.Empty\022\013\n\003uid\030\005" +
-      " \001(\t\0224\n\ngoogle_now\030\t \001(\0132 .com.google.se" +
-      "arch.app.GoogleNow\"/\n\tGoogleNow\022\020\n\010auth_" +
-      "url\030\001 \001(\t\022\020\n\010auth_key\030\002 \001(\t\" \n\tVoiceInfo" +
-      "\022\023\n\013sample_rate\030\002 \001(\002\"\037\n\tSoundData\022\022\n\nam",
-      "r_stream\030\001 \001(\014\"m\n\tPhoneInfo\022\014\n\004type\030\002 \001(" +
-      "\t\022\022\n\nuser_agent\030\004 \001(\t\022\024\n\014support_lang\030\005 " +
-      "\003(\t\022\n\n\002os\030\010 \001(\t\022\r\n\005model\030\t \001(\t\022\r\n\005brand\030" +
-      "\013 \001(\t\"\234\001\n\016UserPreference\0223\n\tfavorites\030\001 " +
-      "\001(\0132 .com.google.search.app.Favorites\022)\n" +
-      "\003UP4\030\004 \001(\0132\034.com.google.search.app.Empty" +
-      "\022*\n\004UP25\030\031 \001(\0132\034.com.google.search.app.E" +
-      "mpty\"O\n\tFavorites\022\014\n\004lang\030\t \001(\t\0224\n\016favor" +
-      "ites_data\030\026 \003(\0132\034.com.google.search.app." +
-      "Empty\"{\n\tGetMethod\022,\n\006params\030\001 \001(\0132\034.com",
-      ".google.search.app.Empty\0222\n\007headers\030\002 \001(" +
-      "\0132!.com.google.search.app.HttpHeader\022\014\n\004" +
-      "path\030\003 \001(\t\"D\n\nHttpHeader\022\014\n\004name\030\001 \003(\t\022\022" +
-      "\n\ntext_value\030\002 \003(\t\022\024\n\014binary_value\030\004 \003(\014" +
-      "\"\243\001\n\nRecogBlock\0228\n\014recog_result\030\001 \001(\0132\"." +
-      "com.google.search.app.RecogResult\0224\n\nsou" +
-      "nd_info\030\002 \001(\0132 .com.google.search.app.So" +
-      "undInfo\022\021\n\tinputLang\030\003 \001(\t\022\022\n\nsearchLang" +
-      "\030\004 \001(\t\"\274\001\n\013RecogResult\0224\n\003can\030\003 \001(\0132\'.co" +
-      "m.google.search.app.CandidateResults\022:\n\r",
-      "recog_segment\030\004 \003(\0132#.com.google.search." +
-      "app.RecogSegment\022;\n\nembededi15\030\005 \001(\0132\'.c" +
-      "om.google.search.app.CandidateResults\"$\n" +
-      "\tSoundInfo\022\027\n\017record_interval\030\003 \001(\005\"W\n\014R" +
-      "ecogSegment\0225\n\007display\030\001 \001(\0132$.com.googl" +
-      "e.search.app.DisplayResult\022\020\n\010seg_time\030\003" +
-      " \001(\005\",\n\rDisplayResult\022\r\n\005query\030\001 \001(\t\022\014\n\004" +
-      "prob\030\002 \001(\001\"t\n\020CandidateResults\0224\n\004can3\030\003" +
-      " \001(\0132&.com.google.search.app.CandidateRe" +
-      "sult\022*\n\004can4\030\004 \001(\0132\034.com.google.search.a",
-      "pp.Empty\"v\n\017CandidateResult\022\r\n\005query\030\001 \003" +
-      "(\t\022\022\n\nqueryWords\030\014 \003(\t\022\014\n\004res2\030\002 \001(\002\0222\n\004" +
-      "res7\030\007 \003(\0132$.com.google.search.app.Candi" +
-      "dateInfo\"G\n\rCandidateInfo\0226\n\004inf1\030\001 \001(\0132" +
-      "(.com.google.search.app.CandidateInfoMor" +
-      "e\"a\n\021CandidateInfoMore\022=\n\005more1\030\001 \001(\0132.." +
-      "com.google.search.app.CandidateInfoMoreD" +
-      "etial\022\r\n\005more3\030\003 \001(\t\"\237\001\n\027CandidateInfoMo" +
-      "reDetial\022\014\n\004type\030\001 \001(\t\022\017\n\007detial2\030\002 \001(\t\022" +
-      "\017\n\007detial3\030\003 \001(\002\022C\n\007detial7\030\007 \001(\01322.com.",
-      "google.search.app.CandidateInfoMoreDetia" +
-      "lSnip\022\017\n\007detial8\030\010 \001(\t\",\n\033CandidateInfoM" +
-      "oreDetialSnip\022\r\n\005query\030\001 \001(\t\"1\n\014SearchRe" +
-      "sult\022\016\n\006header\030\001 \001(\t\022\021\n\tbodyBytes\030\003 \001(\014\"" +
-      "H\n\016SearchResource\022\013\n\003SR1\030\001 \001(\014\022)\n\003SR3\030\003 " +
-      "\001(\0132\034.com.google.search.app.Empty\"F\n\010VSE" +
-      "xInfo\022\r\n\005info1\030\001 \001(\014\022+\n\005info3\030\003 \001(\0132\034.co" +
-      "m.google.search.app.Empty\"\007\n\005Empty"
+      "pp\"\320\005\n\022VoiceSearchRequest\022\022\n\nfin_stream\030" +
+      "\003 \001(\005\0224\n\tuser_info\030\210\361\021 \001(\0132\037.com.google." +
+      "search.app.UserInfo\022>\n\016voice_sampling\030\354\361" +
+      "\021 \001(\0132$.com.google.search.app.VoiceSampl" +
+      "ing\0226\n\nvoice_data\030\355\361\021 \001(\0132 .com.google.s" +
+      "earch.app.VoiceData\0228\n\013client_info\030\360\370\021 \001" +
+      "(\0132!.com.google.search.app.ClientInfo\022@\n" +
+      "\017user_preference\030\344\374\021 \001(\0132%.com.google.se" +
+      "arch.app.UserPreference\0224\n\013VSR27301014\030\226",
+      "\251\202\r \001(\0132\034.com.google.search.app.Empty\0224\n" +
+      "\013VSR27423252\030\224\344\211\r \001(\0132\034.com.google.searc" +
+      "h.app.Empty\0225\n\013VSR27801516\030\254\357\240\r \001(\0132\035.co" +
+      "m.google.search.app.Double\0227\n\nget_method" +
+      "\030\226\330\260\020 \001(\0132 .com.google.search.app.GetMet" +
+      "hod\0224\n\013VSR61914024\030\250\367\302\035 \001(\0132\034.com.google" +
+      ".search.app.Empty\0224\n\013VSR77499489\030\341\230\372$ \001(" +
+      "\0132\034.com.google.search.app.Empty\0224\n\013VSR82" +
+      "185720\030\370\233\230\' \001(\0132\034.com.google.search.app." +
+      "Empty\"\331\001\n\023VoiceSearchResponse\022\022\n\nfin_str",
+      "eam\030\001 \001(\005\0228\n\013recog_block\030\371\301L \001(\0132!.com.g" +
+      "oogle.search.app.RecogBlock\022=\n\rsearch_re" +
+      "sult\030\205\256\347\022 \001(\0132#.com.google.search.app.Se" +
+      "archResult\0225\n\ttts_sound\030\204\314\321\r \001(\0132\037.com.g" +
+      "oogle.search.app.TtsSound\"\247\001\n\010UserInfo\022*" +
+      "\n\004lang\030\002 \001(\0132\034.com.google.search.app.Emp" +
+      "ty\022,\n\006locale\030\003 \001(\0132\034.com.google.search.a" +
+      "pp.Empty\022\013\n\003uid\030\005 \001(\t\0224\n\ngoogle_now\030\t \001(" +
+      "\0132 .com.google.search.app.GoogleNow\"/\n\tG" +
+      "oogleNow\022\020\n\010auth_url\030\001 \001(\t\022\020\n\010auth_key\030\002",
+      " \001(\t\"$\n\rVoiceSampling\022\023\n\013sample_rate\030\002 \001" +
+      "(\002\"\037\n\tVoiceData\022\022\n\namr_stream\030\001 \001(\014\"h\n\nC" +
+      "lientInfo\022\014\n\004type\030\002 \001(\t\022\022\n\nuser_agent\030\004 " +
+      "\001(\t\022\016\n\006expids\030\005 \003(\t\022\n\n\002os\030\010 \001(\t\022\r\n\005model" +
+      "\030\t \001(\t\022\r\n\005brand\030\013 \001(\t\"\234\001\n\016UserPreference" +
+      "\0223\n\tfavorites\030\001 \001(\0132 .com.google.search." +
+      "app.Favorites\022)\n\003UP4\030\004 \001(\0132\034.com.google." +
+      "search.app.Empty\022*\n\004UP25\030\031 \001(\0132\034.com.goo" +
+      "gle.search.app.Empty\"O\n\tFavorites\022\014\n\004lan" +
+      "g\030\t \001(\t\0224\n\016favorites_data\030\026 \003(\0132\034.com.go",
+      "ogle.search.app.Empty\"{\n\tGetMethod\022,\n\006pa" +
+      "rams\030\001 \001(\0132\034.com.google.search.app.Empty" +
+      "\0222\n\007headers\030\002 \001(\0132!.com.google.search.ap" +
+      "p.HttpHeader\022\014\n\004path\030\003 \001(\t\"D\n\nHttpHeader" +
+      "\022\014\n\004name\030\001 \003(\t\022\022\n\ntext_value\030\002 \003(\t\022\024\n\014bi" +
+      "nary_value\030\004 \003(\014\"\255\001\n\nRecogBlock\0228\n\014recog" +
+      "_result\030\001 \001(\0132\".com.google.search.app.Re" +
+      "cogResult\022>\n\017voice_recording\030\002 \001(\0132%.com" +
+      ".google.search.app.VoiceRecording\022\021\n\tinp" +
+      "utLang\030\003 \001(\t\022\022\n\nsearchLang\030\004 \001(\t\"\274\001\n\013Rec",
+      "ogResult\0224\n\003can\030\003 \001(\0132\'.com.google.searc" +
+      "h.app.CandidateResults\022:\n\rrecog_segment\030" +
+      "\004 \003(\0132#.com.google.search.app.RecogSegme" +
+      "nt\022;\n\nembededi15\030\005 \001(\0132\'.com.google.sear" +
+      "ch.app.CandidateResults\")\n\016VoiceRecordin" +
+      "g\022\027\n\017record_interval\030\003 \001(\005\"W\n\014RecogSegme" +
+      "nt\0225\n\007display\030\001 \001(\0132$.com.google.search." +
+      "app.DisplayResult\022\020\n\010seg_time\030\003 \001(\005\",\n\rD" +
+      "isplayResult\022\r\n\005query\030\001 \001(\t\022\014\n\004prob\030\002 \001(" +
+      "\001\"t\n\020CandidateResults\0224\n\004can3\030\003 \001(\0132&.co",
+      "m.google.search.app.CandidateResult\022*\n\004c" +
+      "an4\030\004 \001(\0132\034.com.google.search.app.Empty\"" +
+      "v\n\017CandidateResult\022\r\n\005query\030\001 \003(\t\022\022\n\nque" +
+      "ryWords\030\014 \003(\t\022\014\n\004res2\030\002 \001(\002\0222\n\004res7\030\007 \003(" +
+      "\0132$.com.google.search.app.CandidateInfo\"" +
+      "G\n\rCandidateInfo\0226\n\004inf1\030\001 \001(\0132(.com.goo" +
+      "gle.search.app.CandidateInfoMore\"a\n\021Cand" +
+      "idateInfoMore\022=\n\005more1\030\001 \001(\0132..com.googl" +
+      "e.search.app.CandidateInfoMoreDetial\022\r\n\005" +
+      "more3\030\003 \001(\t\"\237\001\n\027CandidateInfoMoreDetial\022",
+      "\014\n\004type\030\001 \001(\t\022\017\n\007detial2\030\002 \001(\t\022\017\n\007detial" +
+      "3\030\003 \001(\002\022C\n\007detial7\030\007 \001(\01322.com.google.se" +
+      "arch.app.CandidateInfoMoreDetialSnip\022\017\n\007" +
+      "detial8\030\010 \001(\t\",\n\033CandidateInfoMoreDetial" +
+      "Snip\022\r\n\005query\030\001 \001(\t\"1\n\014SearchResult\022\016\n\006h" +
+      "eader\030\001 \001(\t\022\021\n\tbodyBytes\030\003 \001(\014\"c\n\010TtsSou" +
+      "nd\022\022\n\nsound_data\030\001 \001(\014\022\022\n\nfin_stream\030\002 \001" +
+      "(\005\022/\n\tcode_rate\030\003 \001(\0132\034.com.google.searc" +
+      "h.app.Empty\"\007\n\005Empty\"\024\n\006Double\022\n\n\002d7\030\007 \001" +
+      "(\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -21061,13 +21105,13 @@ public final class Voicesearch {
     internal_static_com_google_search_app_VoiceSearchRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_google_search_app_VoiceSearchRequest_descriptor,
-        new java.lang.String[] { "UserInfo", "VoiceInfo", "SoundData", "PhoneInfo", "UserPreference", "U27301014", "U27423252", "U27801516", "GetMethod", "U61914024", "U77499489", "U82185720", });
+        new java.lang.String[] { "FinStream", "UserInfo", "VoiceSampling", "VoiceData", "ClientInfo", "UserPreference", "VSR27301014", "VSR27423252", "VSR27801516", "GetMethod", "VSR61914024", "VSR77499489", "VSR82185720", });
     internal_static_com_google_search_app_VoiceSearchResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_google_search_app_VoiceSearchResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_google_search_app_VoiceSearchResponse_descriptor,
-        new java.lang.String[] { "RecogBlock", "SearchResult", "G28599812", });
+        new java.lang.String[] { "FinStream", "RecogBlock", "SearchResult", "TtsSound", });
     internal_static_com_google_search_app_UserInfo_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_com_google_search_app_UserInfo_fieldAccessorTable = new
@@ -21080,24 +21124,24 @@ public final class Voicesearch {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_google_search_app_GoogleNow_descriptor,
         new java.lang.String[] { "AuthUrl", "AuthKey", });
-    internal_static_com_google_search_app_VoiceInfo_descriptor =
+    internal_static_com_google_search_app_VoiceSampling_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_com_google_search_app_VoiceInfo_fieldAccessorTable = new
+    internal_static_com_google_search_app_VoiceSampling_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_google_search_app_VoiceInfo_descriptor,
+        internal_static_com_google_search_app_VoiceSampling_descriptor,
         new java.lang.String[] { "SampleRate", });
-    internal_static_com_google_search_app_SoundData_descriptor =
+    internal_static_com_google_search_app_VoiceData_descriptor =
       getDescriptor().getMessageTypes().get(5);
-    internal_static_com_google_search_app_SoundData_fieldAccessorTable = new
+    internal_static_com_google_search_app_VoiceData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_google_search_app_SoundData_descriptor,
+        internal_static_com_google_search_app_VoiceData_descriptor,
         new java.lang.String[] { "AmrStream", });
-    internal_static_com_google_search_app_PhoneInfo_descriptor =
+    internal_static_com_google_search_app_ClientInfo_descriptor =
       getDescriptor().getMessageTypes().get(6);
-    internal_static_com_google_search_app_PhoneInfo_fieldAccessorTable = new
+    internal_static_com_google_search_app_ClientInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_google_search_app_PhoneInfo_descriptor,
-        new java.lang.String[] { "Type", "UserAgent", "SupportLang", "Os", "Model", "Brand", });
+        internal_static_com_google_search_app_ClientInfo_descriptor,
+        new java.lang.String[] { "Type", "UserAgent", "Expids", "Os", "Model", "Brand", });
     internal_static_com_google_search_app_UserPreference_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_com_google_search_app_UserPreference_fieldAccessorTable = new
@@ -21127,18 +21171,18 @@ public final class Voicesearch {
     internal_static_com_google_search_app_RecogBlock_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_google_search_app_RecogBlock_descriptor,
-        new java.lang.String[] { "RecogResult", "SoundInfo", "InputLang", "SearchLang", });
+        new java.lang.String[] { "RecogResult", "VoiceRecording", "InputLang", "SearchLang", });
     internal_static_com_google_search_app_RecogResult_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_com_google_search_app_RecogResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_google_search_app_RecogResult_descriptor,
         new java.lang.String[] { "Can", "RecogSegment", "Embededi15", });
-    internal_static_com_google_search_app_SoundInfo_descriptor =
+    internal_static_com_google_search_app_VoiceRecording_descriptor =
       getDescriptor().getMessageTypes().get(13);
-    internal_static_com_google_search_app_SoundInfo_fieldAccessorTable = new
+    internal_static_com_google_search_app_VoiceRecording_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_google_search_app_SoundInfo_descriptor,
+        internal_static_com_google_search_app_VoiceRecording_descriptor,
         new java.lang.String[] { "RecordInterval", });
     internal_static_com_google_search_app_RecogSegment_descriptor =
       getDescriptor().getMessageTypes().get(14);
@@ -21194,24 +21238,24 @@ public final class Voicesearch {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_google_search_app_SearchResult_descriptor,
         new java.lang.String[] { "Header", "BodyBytes", });
-    internal_static_com_google_search_app_SearchResource_descriptor =
+    internal_static_com_google_search_app_TtsSound_descriptor =
       getDescriptor().getMessageTypes().get(23);
-    internal_static_com_google_search_app_SearchResource_fieldAccessorTable = new
+    internal_static_com_google_search_app_TtsSound_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_google_search_app_SearchResource_descriptor,
-        new java.lang.String[] { "SR1", "SR3", });
-    internal_static_com_google_search_app_VSExInfo_descriptor =
-      getDescriptor().getMessageTypes().get(24);
-    internal_static_com_google_search_app_VSExInfo_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_google_search_app_VSExInfo_descriptor,
-        new java.lang.String[] { "Info1", "Info3", });
+        internal_static_com_google_search_app_TtsSound_descriptor,
+        new java.lang.String[] { "SoundData", "FinStream", "CodeRate", });
     internal_static_com_google_search_app_Empty_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_com_google_search_app_Empty_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_google_search_app_Empty_descriptor,
         new java.lang.String[] { });
+    internal_static_com_google_search_app_Double_descriptor =
+      getDescriptor().getMessageTypes().get(25);
+    internal_static_com_google_search_app_Double_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_google_search_app_Double_descriptor,
+        new java.lang.String[] { "D7", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

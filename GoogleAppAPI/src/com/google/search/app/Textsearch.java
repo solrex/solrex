@@ -62,18 +62,17 @@ public final class Textsearch {
     com.google.search.app.Textsearch.SearchResultPartOrBuilder getResultOrBuilder();
 
     /**
-     * <code>optional string unknown102 = 102;</code>
+     * <code>optional .com.google.search.app.Empty SR102 = 102;</code>
      */
-    boolean hasUnknown102();
+    boolean hasSR102();
     /**
-     * <code>optional string unknown102 = 102;</code>
+     * <code>optional .com.google.search.app.Empty SR102 = 102;</code>
      */
-    java.lang.String getUnknown102();
+    com.google.search.app.Textsearch.Empty getSR102();
     /**
-     * <code>optional string unknown102 = 102;</code>
+     * <code>optional .com.google.search.app.Empty SR102 = 102;</code>
      */
-    com.google.protobuf.ByteString
-        getUnknown102Bytes();
+    com.google.search.app.Textsearch.EmptyOrBuilder getSR102OrBuilder();
   }
   /**
    * Protobuf type {@code com.google.search.app.SearchResponse}
@@ -165,9 +164,16 @@ public final class Textsearch {
               break;
             }
             case 818: {
-              com.google.protobuf.ByteString bs = input.readBytes();
+              com.google.search.app.Textsearch.Empty.Builder subBuilder = null;
+              if (((bitField0_ & 0x00000010) == 0x00000010)) {
+                subBuilder = sR102_.toBuilder();
+              }
+              sR102_ = input.readMessage(com.google.search.app.Textsearch.Empty.PARSER, extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sR102_);
+                sR102_ = subBuilder.buildPartial();
+              }
               bitField0_ |= 0x00000010;
-              unknown102_ = bs;
               break;
             }
           }
@@ -309,46 +315,25 @@ public final class Textsearch {
       return result_;
     }
 
-    public static final int UNKNOWN102_FIELD_NUMBER = 102;
-    private java.lang.Object unknown102_;
+    public static final int SR102_FIELD_NUMBER = 102;
+    private com.google.search.app.Textsearch.Empty sR102_;
     /**
-     * <code>optional string unknown102 = 102;</code>
+     * <code>optional .com.google.search.app.Empty SR102 = 102;</code>
      */
-    public boolean hasUnknown102() {
+    public boolean hasSR102() {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>optional string unknown102 = 102;</code>
+     * <code>optional .com.google.search.app.Empty SR102 = 102;</code>
      */
-    public java.lang.String getUnknown102() {
-      java.lang.Object ref = unknown102_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (bs.isValidUtf8()) {
-          unknown102_ = s;
-        }
-        return s;
-      }
+    public com.google.search.app.Textsearch.Empty getSR102() {
+      return sR102_;
     }
     /**
-     * <code>optional string unknown102 = 102;</code>
+     * <code>optional .com.google.search.app.Empty SR102 = 102;</code>
      */
-    public com.google.protobuf.ByteString
-        getUnknown102Bytes() {
-      java.lang.Object ref = unknown102_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        unknown102_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.google.search.app.Textsearch.EmptyOrBuilder getSR102OrBuilder() {
+      return sR102_;
     }
 
     private void initFields() {
@@ -356,7 +341,7 @@ public final class Textsearch {
       msgType_ = 0;
       sug_ = com.google.search.app.Textsearch.SearchResultPart.getDefaultInstance();
       result_ = com.google.search.app.Textsearch.SearchResultPart.getDefaultInstance();
-      unknown102_ = "";
+      sR102_ = com.google.search.app.Textsearch.Empty.getDefaultInstance();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -388,7 +373,7 @@ public final class Textsearch {
         output.writeMessage(101, result_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeBytes(102, getUnknown102Bytes());
+        output.writeMessage(102, sR102_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -417,7 +402,7 @@ public final class Textsearch {
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(102, getUnknown102Bytes());
+          .computeMessageSize(102, sR102_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -530,6 +515,7 @@ public final class Textsearch {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
           getSugFieldBuilder();
           getResultFieldBuilder();
+          getSR102FieldBuilder();
         }
       }
       private static Builder create() {
@@ -554,7 +540,11 @@ public final class Textsearch {
           resultBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000008);
-        unknown102_ = "";
+        if (sR102Builder_ == null) {
+          sR102_ = com.google.search.app.Textsearch.Empty.getDefaultInstance();
+        } else {
+          sR102Builder_.clear();
+        }
         bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
@@ -611,7 +601,11 @@ public final class Textsearch {
         if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
           to_bitField0_ |= 0x00000010;
         }
-        result.unknown102_ = unknown102_;
+        if (sR102Builder_ == null) {
+          result.sR102_ = sR102_;
+        } else {
+          result.sR102_ = sR102Builder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -642,10 +636,8 @@ public final class Textsearch {
         if (other.hasResult()) {
           mergeResult(other.getResult());
         }
-        if (other.hasUnknown102()) {
-          bitField0_ |= 0x00000010;
-          unknown102_ = other.unknown102_;
-          onChanged();
+        if (other.hasSR102()) {
+          mergeSR102(other.getSR102());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -1018,80 +1010,120 @@ public final class Textsearch {
         return resultBuilder_;
       }
 
-      private java.lang.Object unknown102_ = "";
+      private com.google.search.app.Textsearch.Empty sR102_ = com.google.search.app.Textsearch.Empty.getDefaultInstance();
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.search.app.Textsearch.Empty, com.google.search.app.Textsearch.Empty.Builder, com.google.search.app.Textsearch.EmptyOrBuilder> sR102Builder_;
       /**
-       * <code>optional string unknown102 = 102;</code>
+       * <code>optional .com.google.search.app.Empty SR102 = 102;</code>
        */
-      public boolean hasUnknown102() {
+      public boolean hasSR102() {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>optional string unknown102 = 102;</code>
+       * <code>optional .com.google.search.app.Empty SR102 = 102;</code>
        */
-      public java.lang.String getUnknown102() {
-        java.lang.Object ref = unknown102_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            unknown102_ = s;
+      public com.google.search.app.Textsearch.Empty getSR102() {
+        if (sR102Builder_ == null) {
+          return sR102_;
+        } else {
+          return sR102Builder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .com.google.search.app.Empty SR102 = 102;</code>
+       */
+      public Builder setSR102(com.google.search.app.Textsearch.Empty value) {
+        if (sR102Builder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
           }
-          return s;
+          sR102_ = value;
+          onChanged();
         } else {
-          return (java.lang.String) ref;
+          sR102Builder_.setMessage(value);
         }
-      }
-      /**
-       * <code>optional string unknown102 = 102;</code>
-       */
-      public com.google.protobuf.ByteString
-          getUnknown102Bytes() {
-        java.lang.Object ref = unknown102_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          unknown102_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string unknown102 = 102;</code>
-       */
-      public Builder setUnknown102(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
-        unknown102_ = value;
-        onChanged();
+        bitField0_ |= 0x00000010;
         return this;
       }
       /**
-       * <code>optional string unknown102 = 102;</code>
+       * <code>optional .com.google.search.app.Empty SR102 = 102;</code>
        */
-      public Builder clearUnknown102() {
+      public Builder setSR102(
+          com.google.search.app.Textsearch.Empty.Builder builderForValue) {
+        if (sR102Builder_ == null) {
+          sR102_ = builderForValue.build();
+          onChanged();
+        } else {
+          sR102Builder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .com.google.search.app.Empty SR102 = 102;</code>
+       */
+      public Builder mergeSR102(com.google.search.app.Textsearch.Empty value) {
+        if (sR102Builder_ == null) {
+          if (((bitField0_ & 0x00000010) == 0x00000010) &&
+              sR102_ != com.google.search.app.Textsearch.Empty.getDefaultInstance()) {
+            sR102_ =
+              com.google.search.app.Textsearch.Empty.newBuilder(sR102_).mergeFrom(value).buildPartial();
+          } else {
+            sR102_ = value;
+          }
+          onChanged();
+        } else {
+          sR102Builder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000010;
+        return this;
+      }
+      /**
+       * <code>optional .com.google.search.app.Empty SR102 = 102;</code>
+       */
+      public Builder clearSR102() {
+        if (sR102Builder_ == null) {
+          sR102_ = com.google.search.app.Textsearch.Empty.getDefaultInstance();
+          onChanged();
+        } else {
+          sR102Builder_.clear();
+        }
         bitField0_ = (bitField0_ & ~0x00000010);
-        unknown102_ = getDefaultInstance().getUnknown102();
-        onChanged();
         return this;
       }
       /**
-       * <code>optional string unknown102 = 102;</code>
+       * <code>optional .com.google.search.app.Empty SR102 = 102;</code>
        */
-      public Builder setUnknown102Bytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
-        unknown102_ = value;
+      public com.google.search.app.Textsearch.Empty.Builder getSR102Builder() {
+        bitField0_ |= 0x00000010;
         onChanged();
-        return this;
+        return getSR102FieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .com.google.search.app.Empty SR102 = 102;</code>
+       */
+      public com.google.search.app.Textsearch.EmptyOrBuilder getSR102OrBuilder() {
+        if (sR102Builder_ != null) {
+          return sR102Builder_.getMessageOrBuilder();
+        } else {
+          return sR102_;
+        }
+      }
+      /**
+       * <code>optional .com.google.search.app.Empty SR102 = 102;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.search.app.Textsearch.Empty, com.google.search.app.Textsearch.Empty.Builder, com.google.search.app.Textsearch.EmptyOrBuilder> 
+          getSR102FieldBuilder() {
+        if (sR102Builder_ == null) {
+          sR102Builder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.search.app.Textsearch.Empty, com.google.search.app.Textsearch.Empty.Builder, com.google.search.app.Textsearch.EmptyOrBuilder>(
+                  getSR102(),
+                  getParentForChildren(),
+                  isClean());
+          sR102_ = null;
+        }
+        return sR102Builder_;
       }
 
       // @@protoc_insertion_point(builder_scope:com.google.search.app.SearchResponse)
@@ -1110,13 +1142,13 @@ public final class Textsearch {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional uint32 fin_part = 1;</code>
+     * <code>optional uint32 fin_stream = 1;</code>
      */
-    boolean hasFinPart();
+    boolean hasFinStream();
     /**
-     * <code>optional uint32 fin_part = 1;</code>
+     * <code>optional uint32 fin_stream = 1;</code>
      */
-    int getFinPart();
+    int getFinStream();
 
     /**
      * <code>optional string text_data = 2;</code>
@@ -1214,7 +1246,7 @@ public final class Textsearch {
             }
             case 8: {
               bitField0_ |= 0x00000001;
-              finPart_ = input.readUInt32();
+              finStream_ = input.readUInt32();
               break;
             }
             case 18: {
@@ -1275,19 +1307,19 @@ public final class Textsearch {
     }
 
     private int bitField0_;
-    public static final int FIN_PART_FIELD_NUMBER = 1;
-    private int finPart_;
+    public static final int FIN_STREAM_FIELD_NUMBER = 1;
+    private int finStream_;
     /**
-     * <code>optional uint32 fin_part = 1;</code>
+     * <code>optional uint32 fin_stream = 1;</code>
      */
-    public boolean hasFinPart() {
+    public boolean hasFinStream() {
       return ((bitField0_ & 0x00000001) == 0x00000001);
     }
     /**
-     * <code>optional uint32 fin_part = 1;</code>
+     * <code>optional uint32 fin_stream = 1;</code>
      */
-    public int getFinPart() {
-      return finPart_;
+    public int getFinStream() {
+      return finStream_;
     }
 
     public static final int TEXT_DATA_FIELD_NUMBER = 2;
@@ -1417,7 +1449,7 @@ public final class Textsearch {
     }
 
     private void initFields() {
-      finPart_ = 0;
+      finStream_ = 0;
       textData_ = "";
       htmlData_ = "";
       encoding_ = "";
@@ -1436,7 +1468,7 @@ public final class Textsearch {
                         throws java.io.IOException {
       getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeUInt32(1, finPart_);
+        output.writeUInt32(1, finStream_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeBytes(2, getTextDataBytes());
@@ -1458,7 +1490,7 @@ public final class Textsearch {
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, finPart_);
+          .computeUInt32Size(1, finStream_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
@@ -1589,7 +1621,7 @@ public final class Textsearch {
 
       public Builder clear() {
         super.clear();
-        finPart_ = 0;
+        finStream_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
         textData_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -1628,7 +1660,7 @@ public final class Textsearch {
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
           to_bitField0_ |= 0x00000001;
         }
-        result.finPart_ = finPart_;
+        result.finStream_ = finStream_;
         if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
           to_bitField0_ |= 0x00000002;
         }
@@ -1657,8 +1689,8 @@ public final class Textsearch {
 
       public Builder mergeFrom(com.google.search.app.Textsearch.SearchResultPart other) {
         if (other == com.google.search.app.Textsearch.SearchResultPart.getDefaultInstance()) return this;
-        if (other.hasFinPart()) {
-          setFinPart(other.getFinPart());
+        if (other.hasFinStream()) {
+          setFinStream(other.getFinStream());
         }
         if (other.hasTextData()) {
           bitField0_ |= 0x00000002;
@@ -1702,34 +1734,34 @@ public final class Textsearch {
       }
       private int bitField0_;
 
-      private int finPart_ ;
+      private int finStream_ ;
       /**
-       * <code>optional uint32 fin_part = 1;</code>
+       * <code>optional uint32 fin_stream = 1;</code>
        */
-      public boolean hasFinPart() {
+      public boolean hasFinStream() {
         return ((bitField0_ & 0x00000001) == 0x00000001);
       }
       /**
-       * <code>optional uint32 fin_part = 1;</code>
+       * <code>optional uint32 fin_stream = 1;</code>
        */
-      public int getFinPart() {
-        return finPart_;
+      public int getFinStream() {
+        return finStream_;
       }
       /**
-       * <code>optional uint32 fin_part = 1;</code>
+       * <code>optional uint32 fin_stream = 1;</code>
        */
-      public Builder setFinPart(int value) {
+      public Builder setFinStream(int value) {
         bitField0_ |= 0x00000001;
-        finPart_ = value;
+        finStream_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional uint32 fin_part = 1;</code>
+       * <code>optional uint32 fin_stream = 1;</code>
        */
-      public Builder clearFinPart() {
+      public Builder clearFinStream() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        finPart_ = 0;
+        finStream_ = 0;
         onChanged();
         return this;
       }
@@ -1973,6 +2005,319 @@ public final class Textsearch {
     // @@protoc_insertion_point(class_scope:com.google.search.app.SearchResultPart)
   }
 
+  public interface EmptyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.google.search.app.Empty)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code com.google.search.app.Empty}
+   */
+  public static final class Empty extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.google.search.app.Empty)
+      EmptyOrBuilder {
+    // Use Empty.newBuilder() to construct.
+    private Empty(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private Empty(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final Empty defaultInstance;
+    public static Empty getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public Empty getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Empty(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.google.search.app.Textsearch.internal_static_com_google_search_app_Empty_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.search.app.Textsearch.internal_static_com_google_search_app_Empty_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.search.app.Textsearch.Empty.class, com.google.search.app.Textsearch.Empty.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<Empty> PARSER =
+        new com.google.protobuf.AbstractParser<Empty>() {
+      public Empty parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Empty(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Empty> getParserForType() {
+      return PARSER;
+    }
+
+    private void initFields() {
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.google.search.app.Textsearch.Empty parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.search.app.Textsearch.Empty parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.search.app.Textsearch.Empty parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.search.app.Textsearch.Empty parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.search.app.Textsearch.Empty parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.google.search.app.Textsearch.Empty parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.google.search.app.Textsearch.Empty parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.google.search.app.Textsearch.Empty parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.google.search.app.Textsearch.Empty parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.google.search.app.Textsearch.Empty parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.google.search.app.Textsearch.Empty prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.google.search.app.Empty}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.google.search.app.Empty)
+        com.google.search.app.Textsearch.EmptyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.search.app.Textsearch.internal_static_com_google_search_app_Empty_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.search.app.Textsearch.internal_static_com_google_search_app_Empty_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.search.app.Textsearch.Empty.class, com.google.search.app.Textsearch.Empty.Builder.class);
+      }
+
+      // Construct using com.google.search.app.Textsearch.Empty.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.google.search.app.Textsearch.internal_static_com_google_search_app_Empty_descriptor;
+      }
+
+      public com.google.search.app.Textsearch.Empty getDefaultInstanceForType() {
+        return com.google.search.app.Textsearch.Empty.getDefaultInstance();
+      }
+
+      public com.google.search.app.Textsearch.Empty build() {
+        com.google.search.app.Textsearch.Empty result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.google.search.app.Textsearch.Empty buildPartial() {
+        com.google.search.app.Textsearch.Empty result = new com.google.search.app.Textsearch.Empty(this);
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.search.app.Textsearch.Empty) {
+          return mergeFrom((com.google.search.app.Textsearch.Empty)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.search.app.Textsearch.Empty other) {
+        if (other == com.google.search.app.Textsearch.Empty.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.search.app.Textsearch.Empty parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.google.search.app.Textsearch.Empty) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.google.search.app.Empty)
+    }
+
+    static {
+      defaultInstance = new Empty(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:com.google.search.app.Empty)
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_google_search_app_SearchResponse_descriptor;
   private static
@@ -1983,6 +2328,11 @@ public final class Textsearch {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_google_search_app_SearchResultPart_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_google_search_app_Empty_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_google_search_app_Empty_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1993,14 +2343,14 @@ public final class Textsearch {
   static {
     java.lang.String[] descriptorData = {
       "\n\020textsearch.proto\022\025com.google.search.ap" +
-      "p\"\270\001\n\016SearchResponse\022\021\n\tsearch_id\030\001 \002(\t\022" +
+      "p\"\321\001\n\016SearchResponse\022\021\n\tsearch_id\030\001 \002(\t\022" +
       "\020\n\010msg_type\030\004 \001(\r\0224\n\003sug\030d \001(\0132\'.com.goo" +
       "gle.search.app.SearchResultPart\0227\n\006resul" +
       "t\030e \001(\0132\'.com.google.search.app.SearchRe" +
-      "sultPart\022\022\n\nunknown102\030f \001(\t\"\\\n\020SearchRe" +
-      "sultPart\022\020\n\010fin_part\030\001 \001(\r\022\021\n\ttext_data\030" +
-      "\002 \001(\t\022\021\n\thtml_data\030\007 \001(\t\022\020\n\010encoding\030\010 \001" +
-      "(\t"
+      "sultPart\022+\n\005SR102\030f \001(\0132\034.com.google.sea" +
+      "rch.app.Empty\"^\n\020SearchResultPart\022\022\n\nfin" +
+      "_stream\030\001 \001(\r\022\021\n\ttext_data\030\002 \001(\t\022\021\n\thtml" +
+      "_data\030\007 \001(\t\022\020\n\010encoding\030\010 \001(\t\"\007\n\005Empty"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2019,13 +2369,19 @@ public final class Textsearch {
     internal_static_com_google_search_app_SearchResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_google_search_app_SearchResponse_descriptor,
-        new java.lang.String[] { "SearchId", "MsgType", "Sug", "Result", "Unknown102", });
+        new java.lang.String[] { "SearchId", "MsgType", "Sug", "Result", "SR102", });
     internal_static_com_google_search_app_SearchResultPart_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_com_google_search_app_SearchResultPart_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_google_search_app_SearchResultPart_descriptor,
-        new java.lang.String[] { "FinPart", "TextData", "HtmlData", "Encoding", });
+        new java.lang.String[] { "FinStream", "TextData", "HtmlData", "Encoding", });
+    internal_static_com_google_search_app_Empty_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_com_google_search_app_Empty_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_google_search_app_Empty_descriptor,
+        new java.lang.String[] { });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

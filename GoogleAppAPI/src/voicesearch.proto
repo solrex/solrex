@@ -1,24 +1,26 @@
 package com.google.search.app;
 
 message VoiceSearchRequest {
+    optional int32 fin_stream = 3;
     optional UserInfo user_info = 293000;
-    optional VoiceInfo voice_info = 293100;
-    optional SoundData sound_data = 293101;
-    optional PhoneInfo phone_info = 294000;
+    optional VoiceSampling voice_sampling = 293100;
+    optional VoiceData voice_data = 293101;
+    optional ClientInfo client_info = 294000;
     optional UserPreference user_preference = 294500;
-    optional Empty U27301014 = 27301014;
-    optional Empty U27423252 = 27423252;
-    optional Empty U27801516 = 27801516;
+    optional Empty VSR27301014 = 27301014;
+    optional Empty VSR27423252 = 27423252;
+    optional Double VSR27801516 = 27801516;
     optional GetMethod get_method = 34352150;
-    optional Empty U61914024 = 61914024;
-    optional Empty U77499489 = 77499489;
-    optional Empty U82185720 = 82185720;
+    optional Empty VSR61914024 = 61914024;
+    optional Empty VSR77499489 = 77499489;
+    optional Empty VSR82185720 = 82185720;
 }
 
-message VoiceSearchResponse {    
+message VoiceSearchResponse {
+    optional int32 fin_stream = 1;
     optional RecogBlock recog_block = 1253625;
     optional SearchResult search_result = 39442181;
-    optional SearchResource G28599812 = 28599812;
+    optional TtsSound tts_sound = 28599812;
 }
 
 message UserInfo {
@@ -33,18 +35,18 @@ message GoogleNow {
 	optional string auth_key = 2;
 }
 
-message VoiceInfo {
+message VoiceSampling {
     optional float sample_rate = 2;
 }
 
-message SoundData {
+message VoiceData {
     optional bytes amr_stream = 1;
 }
 
-message PhoneInfo {
+message ClientInfo {
 	optional string type = 2;
 	optional string user_agent = 4;
-	repeated string support_lang = 5;
+	repeated string expids = 5;
 	optional string os = 8;
 	optional string model = 9;
 	optional string brand = 11;
@@ -75,7 +77,7 @@ message HttpHeader {
 
 message RecogBlock {
     optional RecogResult recog_result = 1;
-    optional SoundInfo sound_info = 2;
+    optional VoiceRecording voice_recording = 2;
     optional string inputLang = 3;
     optional string searchLang = 4;
 }
@@ -86,7 +88,7 @@ message RecogResult {
     optional CandidateResults embededi15 = 5;
 }
 
-message SoundInfo {
+message VoiceRecording {
     optional int32 record_interval = 3;
 }
 
@@ -138,15 +140,15 @@ message SearchResult {
     optional bytes bodyBytes = 3;
 }
 
-message SearchResource {
-    optional bytes SR1 = 1;
-    optional Empty SR3 = 3;
-}
-
-message VSExInfo {
-    optional bytes info1 = 1;
-    optional Empty info3 = 3;
+message TtsSound {
+    optional bytes sound_data = 1;
+    optional int32 fin_stream = 2;
+    optional Empty code_rate = 3;
 }
 
 message Empty {
+}
+
+message Double {
+    optional double d7 = 7;
 }
