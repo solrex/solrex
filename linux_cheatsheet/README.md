@@ -16,4 +16,14 @@
 <p align="center"><span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/Text" property="dc:title" rel="dc:type">Solrex Linux Cheatsheet</span>（<a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/solrex/solrex/tree/master/linux_cheatsheet" property="cc:attributionName" rel="cc:attributionURL">杨文博</a>）遵从 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/cn/">Creative Commons 署名-非商业性使用-相同方式共享 2.5 中国大陆 授权协议</a>.</p>
 <hr>
 <h2 align="center">联系</h2>
-我的博客在<a href="https://yangwenbo.com">这里</a>，欢迎有空去逛逛。</p>
+<p> 我的博客在<a href="https://yangwenbo.com">这里</a>，欢迎有空去逛逛。</p>
+<hr>
+<h2 align="center">感谢</h2>
+<ul>
+<li>Yousri</li>
+<li>林健 <a href="http://blog.linjian.org">http://blog.linjian.org</a></li>
+<li>Iron_feet</li>
+<li>李凡希 <a href="http://www.freemindworld.com">http://www.freemindworld.com</a></li>
+</ul>
+<hr>
+<h2 align="center">The End</h2>
