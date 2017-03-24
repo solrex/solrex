@@ -13,34 +13,7 @@
 <h2 align="center">协议</h2>
 <p align="center"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/cn/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.5/cn/88x31.png" /></a></p>
 
-<p align="center"><span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/Text" property="dc:title" rel="dc:type">Solrex Linux Cheatsheet</span>（<a xmlns:cc="http://creativecommons.org/ns#" href="http://share.solrex.org/cheatsheet/slc/" property="cc:attributionName" rel="cc:attributionURL">杨文博</a>）遵从 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/cn/">Creative Commons 署名-非商业性使用-相同方式共享 2.5 中国大陆 授权协议</a>.</p>
+<p align="center"><span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/Text" property="dc:title" rel="dc:type">Solrex Linux Cheatsheet</span>（<a xmlns:cc="http://creativecommons.org/ns#" href="https://github.com/solrex/solrex/tree/master/linux_cheatsheet" property="cc:attributionName" rel="cc:attributionURL">杨文博</a>）遵从 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/cn/">Creative Commons 署名-非商业性使用-相同方式共享 2.5 中国大陆 授权协议</a>.</p>
 <hr>
 <h2 align="center">联系</h2>
-<p align="center">您可以在我的<a href="http://solrex.org">个人主页</a>找到我的联系方式。另外，我的博客在<a href="http://blog.solrex.org">这里</a>，欢迎有空去逛逛。</p>
-<hr>
-<h2 align="center">感谢</h2>
-<ul>
-<li>Yousri &lt;<a href="http://qingxianyan.cn/">http://qingxianyan.cn/</a>&gt;</li>
-<li>林健 &lt;<a href="http://blog.linjian.org/">http://blog.linjian.org/</a>&gt;</li>
-<li>Iron_feet &lt;<a href="http://www.iron-feet.cn/">http://www.iron-feet.cn/</a>&gt;</li>
-<li>李凡希 &lt;<a href="http://www.freemindworld.com/">http://www.freemindworld.com/</a>&gt;</li>
-</ul>
-<hr>
-<h2 align="center">The End</h2>
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-1164295-9']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-<script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2c294386cad613b9d5ec96e6d7620b4a' type='text/javascript'%3E%3C/script%3E"));
-</script>
+我的博客在<a href="https://yangwenbo.com">这里</a>，欢迎有空去逛逛。</p>
