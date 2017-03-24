@@ -1,0 +1,103 @@
+\documentclass[pdflatex,notypeinfo,oneside]{CASthesis}
+
+\graphicspath{{chapter/}{figures/}}
+
+% Set hyper link's color to black.
+%\hypersetup{colorlinks=false}
+
+% Left arrow of section title.
+%\CTEXsetup[format+={\flushleft}]{section}
+
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Cover page.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  % Chinese cover page content
+  \classification{}
+  \confidential{}
+  \UDC{}
+  \serialnumber{}
+  \title{GNU Debugger 的移植及原理分析 }
+  \author{杨文博}
+  \advisor{吴朝阳~副教授}
+  \advisorinstitute{南京大学数学系}
+  \degree{学士}
+  \major{信息与计算科学}
+  \submitdate{2007年5月}
+  \defenddate{2007年5月}
+  \institute{南京大学数学系}
+  \school{南京大学}
+  \chairman{}
+
+  % English cover page content
+  \englishtitle{Porting and Analysis of GNU Debugger}
+  \englishauthor{Wenbo Yang}
+  \englishadvisor{A/Prof. Zhaoyang Wu}
+  \englishinstitute{Department of Mathematics \\
+    Nanjing University}
+  \englishdegree{B.S.}
+  \englishmajor{Information and Computing Science}
+
+
+  % Cover
+  \maketitle
+
+  % English cover
+  \makeenglishtitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Front
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frontmatter
+
+  % Abstract
+  \include{chapter/abstract}
+
+  % Table of contents
+  \tableofcontents
+  % List of tables
+  %\listoftables
+  % List of figures
+  \listoffigures
+
+
+%%%c%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Main
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+
+  \include{chapter/chap-intro}
+  \include{chapter/chap-concept}
+  \include{chapter/chap-algorithm}
+  \include{chapter/chap-files}
+  \include{chapter/chap-analyse}
+  %\include{chapter/chap-tabfig}
+
+  % Appendix
+  %\appendix
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Appendix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\backmatter
+
+  % Bibliography
+  %\bibliography{bib/tex}
+  %\nocite{*}
+  % Don't use BibTeX
+  \include{chapter/bib}
+
+  % Articles you have published
+  %\include{chapter/pub}
+
+  % Your resume
+  %\include{chapter/resume}
+
+  % Thanks
+  \include{chapter/thanks}
+
+\end{document}

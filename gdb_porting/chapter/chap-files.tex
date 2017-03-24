@@ -1,0 +1,28 @@
+
+\chapter{移植~\texttt{GDB}~涉及到的文件}
+\label{chap:files}
+
+\texttt{GDB}~的内部结构设计和~\texttt{GCC}~类似，每个部分都分为前端和后端。其中和具体目标处理机有关的代码主要包括两个部分：特定格式二进制文件的读取和分析以及目标处理机体系结构依赖文件。
+
+\texttt{GDB}~对二进制文件的读取是依赖于~\texttt{LIB BFD(Binary File Descriptor Library)}~的，对机器指令的反汇编依赖于~\texttt{Opcode library}~。这两个库都是跟随~\texttt{GNU}~的二进制工具集~\texttt{GNU Binutils}~发行的。~\texttt{GDB}~源代码中的~\texttt{bfd}~和~\texttt{opcode}~这两个目录下的内容和~\texttt{GNU Binutils}~对应版本的源代码里的这两个目录内容是完全相同的。如何移植~\texttt{LIB BFD}~和~\texttt{Opcode}~可以参考文献《\texttt{GNU as}~的移植》\cite{chen1}和《Binary Utilities Generator for Application Specific Instruction Processor》\cite{chen2}。本文主要讨论特定计算机体系架构的~\texttt{target dependent}~部分。
+
+\texttt{GDB}~的~\texttt{target dependent}~主要包含两个部分，定义~\texttt{GDB}~的运行行为的头文件和初始化~\texttt{gdbarch}~结构的文件，这两个部分由不同的两个脚本文件来处理。下面我们用~\texttt{SRC}~表示~\texttt{GDB}~源程序的根目录：
+
+在编译时，~\texttt{"SRC/gdb"}~目录下的~\texttt{configure}~脚本会根据编译时候指定的目标处理机类型在~\texttt{"SRC/gdb/config"}~目录下寻找以对应目标处理机命名的目录，然后在相应目录下寻找~\texttt{cpuname.mt}~文件。根据~\texttt{cpuname.mt}~文件的内容找到对应于此目标处理机的
+定义~\texttt{GDB}~的头文件，然后~\texttt{configure}~会把此头文件转化为一个名为~\texttt{tm.h}~的头文件，\texttt{configure}~还会据此生成~\texttt{config.h}~文件。因为最常被包含的~\texttt{defs.h}~头文件中包含了这两个头文件，在下面的编译过程中，几乎所有的文件都会包含这两个头文件，因此在~\texttt{"SRC/config/cpuname"}目录下的头文件就能定义很多特定的宏来影响~\texttt{GDB}~的运行行为。
+
+而~\texttt{configure}~文件还会根据~\texttt{cpuname.mt}~和~\texttt{"SRC/gdb/Makefile.in"}，生成指定目标处理机的~\texttt{Makefile}~文件，这个文件中指定了目标处理机对应的~\texttt{target dependent}~文件和编译命令，并根据所知的信息生成~\texttt{"init.c"}~文件。在~\texttt{init.c}~中的函数~\texttt{initialize\_all\_files}~为~\texttt{GDB}~的很多关键部分进行初始化操作，注册相关函数。
+
+这里列出所有需要添加和修改的文件，假设我们正在为一块名为~\texttt{BOX}~的芯片移植~\texttt{GDB}~。
+
+需要添加的文件：
+
+SRC/gdb/config/box/box.mt, SRC/gdb/config/box/tm-box.h;
+
+SRC/gdb/box-tdep.h, SRC/gdb/box-tdep.c.
+
+需要修改的文件：
+
+SRC/gdb/Makefile.in, SRC/gdb/configure.host, SRC/gdb/configure.tgt;
+
+SRC/configure.in, SRC/configure.sub, SRC/readline/support/config.sub.

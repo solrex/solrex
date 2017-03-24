@@ -1,0 +1,58 @@
+
+\chapter{关于~\texttt{GDB}~的一些重要概念}
+\label{chap:concept}
+
+要想移植~\texttt{GDB}~，必须得了解一些和移植相关的概念，下面我们介绍一些和~\texttt{GDB}~移植相关的重要概念：
+
+\section{主机、目标机和跨平台开发工具链}
+
+主机~\texttt{(host)}~和目标机~\texttt{(target)}~是跨平台编译和调试中非常重要的两个概念，是构建跨平台开发工具链的方法论的基础。在这里，主机和目标机都是指某种计算机体系架构。
+
+在跨平台开发工具链中，目标机一般是指某种嵌入式系统~\texttt{(Embeded System)}~，即工具链编译出的可执行程序运行的平台。但是在通常情况下嵌入式系统的性能都比较低，有的甚至连操作系统都不支持，所以大部分嵌入式系统都没有足够的处理能力和存储空间满足程序开发人员在其上开发程序的需要，就需要将程序在其它的平台上编译成功之后下载到目标机上运行。主机就是指这种有足够处理能力和存储空间，能够运行大规模开发工具进行软件开发的计算机，一般是工作站或者个人电脑~\texttt{(PC)}~，但它的计算机体系架构和目标机又不一样。为了克服嵌入式系统资源的限制，又解决主机和目标机计算机体系架构不同的问题，通常情况下采用的方法是在主机上使用专门的开发工具生成可以在目标机上运行的二进制代码，编译成功之后再通过某些方式将可执行程序文件下载到目标机的内存上运行。调试的时候，通过主机上运行的调试器和目标机(一般是专门的开发板)进行交互式的通信来完成对程序状态的检测和对程序运行的控制。运行在主机上的开发工具集一般包括：编译器、汇编器、连接器、调试器还有库函数，它们与模拟器放在一起，被称为跨平台开发工具链。
+
+\section{符号和行信息}
+
+符号和行信息~\texttt{(SAL, symbol and line)}~是指二进制文件中为调试器提供的一些信息，在本文中可以看作是~\texttt{GDB}~能从程序二进制文件中直接得到的东西，即在程序不运行的情况下~\texttt{GDB}~对可执行文件了解多少。由于~\texttt{GDB}~是源码级调试器，在调试过程中，调试者可以直接在函数名，源程序行处设置断点，可以直接打印源程序中的变量。这样~\texttt{GDB}~就必须知道函数入口的位置，各个符号的地址、偏移量和内容，源程序的行信息，所以~\texttt{GDB}~必须通过某些方式来取得这些信息。一般情况下，这些信息都是~\texttt{GDB}~通过读入可执行的或者链接的二进制文件，对二进制文件进行分析，把对应的结构放入~\texttt{GDB}~内部的一些结构体变量中得到的。然后在运行过程中有需求时，~\texttt{GDB}~再从这些信息中寻找与被调试程序相关的部分。
+
+\texttt{GDB}~中有专门的文件来读取具体的目标文件格式，例如：\texttt{"elfread.c/h, coffread.c/h, dwarfread.c/h, dwarf2read.c/h"}~等。这些文件中提供了读取二进制文件中存储的对应该文件格式信息的函数接口。不过建立符号表的大部分工作都是通过调用~\texttt{LIB BFD}~中的工具函数来实现的。在~\texttt{GDB}~中定义的这些函数主要做的工作是给~\texttt{GDB}~提供一个接口去初始化、添加、重建和销毁符号表，以及在正确的符号列表里去寻找和解析要访问的符号。
+
+对于使用动态链接库的程序，\texttt{GDB}~会根据目标文件中包含的信息来判断要载入哪些相关的库文件。\texttt{GDB}~中有一个~\texttt{objfile}~结构的列表~\texttt{object\_files}~保存这些信息，已经被读入的目标文件会被添加到~\texttt{symbol\_objfile}~列表中。\texttt{GDB}~并不总是一下读入所有的目标文件内容，甚至可以说在一般情况下~\texttt{GDB}~不会读入所有的目标文件信息，因为那样的话会增加~\texttt{GDB}~的存储空间消耗和运行时间。~\texttt{GDB}~有三种类型的符号表：\texttt{full symbol tables(symtabs), partial symbol tables(psymtabs), minimal symbol tables(msymtabs)}。其中~\texttt{symtabs}~包含已经被完全读入的一些符号信息。在程序刚刚载入的时候，它包含的内容是很少的，会随着读入具体的符号信息变得越来越庞大；~\texttt{psymtabs}~中包含一些最主要的符号信息，一般也是最重要的符号信息，这个列表以及包含的符号在第一次读取目标文件的时候就会被构建。~\texttt{GDB}~在寻找一个~\texttt{symbol}~的时候，会首先在~\texttt{symtabs}~搜索，如果在~\texttt{symtabs}~找不到对应的符号入口，就会转而在~\texttt{psymtabs}~寻找。当在~\texttt{psymtabs}~中找到对应的符号入口之后，就调用~\texttt{PSYMTAB\_TO\_SYMTAB}~宏，如果~\texttt{psymtabs}~中对应的入口包含了到~\texttt{symtabs}~中对应入口的指针，此宏会直接返回该指针，否则调用相关函数将此符号的所有信息从可执行文件中读入到~\texttt{symtabs}~中去并把它注册到~\texttt{psymtabs}~中该符号对应入口上然后使用；~\texttt{msymtabs}~主要包含那些与调试关联比较小的通用符号信息，比如：\texttt{\_init, \_start, hlt}~这些函数入口的地址，其作用比较简单。
+
+行信息一般是伴随着相应的符号文件一起被读取的，行信息中包含了源程序文件的位置，以及源程序行和机器指令的对应关系。行信息主要用于断点和单步时候对程序中断执行位置的判断，并提供给源码级调试器源代码打印的信息。
+
+\section{Call Stack and Stack Frame}
+
+在计算机科学中，~\texttt{Call stack}~是指存放某个程序的正在运行的函数的信息的栈。~\texttt{Call stack}~由~\texttt{stack frames}~组成，每个~\texttt{stack frame}~对应于一个未完成运行的函数。
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=88mm]{frame.jpg}
+ %\includegraphics{frame.jpg}
+ \caption{Stack frame}
+ \label{fig:frame}
+\end{figure}
+
+在当今流行的计算机体系架构中，大部分计算机的参数传递，局部变量的分配和释放都是通过操纵程序栈来实现的。栈用来传递函数参数，存储返回值信息，保存寄存器以供恢复调用前处理机状态。每次调用一个函数，都要为该次调用的函数实例分配栈空间。为单个函数分配的那部分栈空间就叫做~\texttt{stack frame}~，也就是说，~\texttt{stack frame}~这个说法主要是为了描述函数调用关系的。
+
+\texttt{Stack frame}~组织方式的重要性和作用体现在两个方面：第一，它使调用者和被调用者达成某种约定。这个约定定义了函数调用时函数参数的传递方式，函数返回值的返回方式，寄存器如何在调用者和被调用者之间进行共享；第二，它定义了被调用者如何使用它自己的~\texttt{stack frame}~来完成局部变量的存储和使用。
+
+图~\ref{fig:frame}~描述的是一种典型的~\texttt{(MIPS O32)}~嵌入式芯片的~\texttt{stack frame}~组织方式\cite{mips1}。在这张图中，计算机的栈空间采用的是向下增长的方式，~\texttt{SP(stack pointer)}~就是当前函数的栈指针，它指向的是栈底的位置。~\texttt{Current Frame}~所示即为当前函数(被调用者)的~\texttt{frame}~，~\texttt{Caller's  Frame}~是当前函数的调用者的~\texttt{frame}~。每个~\texttt{frame}~中所存放的内容和存放顺序，则由目标体系架构的调用约定~\texttt{(calling convention)}~定义。如图~\ref{fig:frame}~所示，~\texttt{MIPS O32}~调用约定规定了所占空间不大于~\texttt{4}~个比特的参数应该放在从~\texttt{\$4}~到~\texttt{\$8}~的寄存器中，剩下的参数应该依次放到调用者~\texttt{stack frame}~的参数域中，并且在参数域中需要为前四个参数保留栈空间；如果被调用者需要使用~\texttt{\$16}~到~\texttt{\$23}~这些保留寄存器~\texttt{(saved register)}，就必须先将这些保留寄存器的值保存在被调用者~\texttt{stack frame}~的保留寄存器域中，当被调用者返回时恢复这些寄存器值；当被调用者不是叶子函数时，即被调用者中存在对其它函数的调用，需要将~\texttt{RA(return address)}~寄存器~\texttt{(\$31)}~值保存到被调用者~\texttt{stack frame}~的返回值域中；被调用者所需要使用的局部变量，应保存在被调用者~\texttt{stack frame}~的本地变量域中。
+
+在没有~\texttt{BP(base pointer)}~寄存器的目标架构中，进入一个函数时需要将当前栈指针向下移动~\texttt{n}~比特，这个大小为~\texttt{n}~比特的存储空间就是此函数的~\texttt{stack frame}~的存储区域。此后栈指针便不再移动，只能在函数返回时再将栈指针加上这个偏移量恢复栈现场。由于不能随便移动栈指针，所以寄存器压栈和出栈都必须指定偏移量，这与~\texttt{x86}~架构的计算机对栈的使用方式有着明显的不同。
+
+在~\texttt{RISC}~计算机中主要参与计算的是寄存器，\texttt{saved registers}~就是指在进入一个函数后，如果某个保存原函数信息的寄存器会在当前函数中被使用，就应该将此寄存器保存到堆栈上，当函数返回时恢复此寄存器值。而且由于~\texttt{RISC}~计算机大部分采用定长指令或者定变长指令，一般指令长度不会超过~\texttt{32}~个位。而现代计算机的内存地址范围已经扩展到~\texttt{32}~位，这样在一条指令里就不足以包含有效的内存地址，所以~\texttt{RISC}~计算机一般借助于一个返回地址寄存器~\texttt{RA(return address)}~来实现函数的返回。几乎在每个函数调用中都会使用到这个寄存器，所以在很多情况下~\texttt{ra}~寄存器会被保存在堆栈上以避免被后面的函数调用修改，当函数需要返回时，从堆栈上取回~\texttt{RA}~然后跳转。移动~\texttt{SP}~和保存寄存器的动作一般处在函数的开头，叫做~\texttt{function prologue}~；恢复这些寄存器状态的动作一般放在函数的最后，叫做~\texttt{function epilogue}~。
+
+\section{远程调试}
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[width=119mm]{remote.jpg}
+ %\includegraphics{remote.jpg}
+ \caption{Remote Debugging}
+ \label{fig:remote}
+\end{figure}
+在~\texttt{GDB}~的许多特性中，远程调试~\texttt{(remote debugging)}~是其中有着非常重要应用的一项。远程调试是指~\texttt{GDB}~运行在工作站上，使用串行接口、网络接口或者其它接口与运行被调试程序的平台(目标机)进行通信，实现调试功能。\cite{remote1}
+
+当进行远程调试时，~\texttt{GDB}~依赖于一个调试~\texttt{stub}~提供的功能，如图~\ref{fig:remote}~所示。~\texttt{Stub}~是指在目标机上运行的一小段代码，这一小段代码主要提供了对内存、寄存器的访问和修改以及与~\texttt{GDB}~进行通信的功能。~\texttt{GDB}~通过~\texttt{RSP(remote serial protocol)}~与它进行交流，实现调试功能。\cite{remote2}
+
+值得注意的是，~\texttt{stub}~的实现方式有多种：~\texttt{stub}~可以放在~\texttt{ROM}~上，这样~\texttt{stub}~可以作为一个守护程序来处理处理机状态；~\texttt{stub}~也可以与被调试程序编译到一起下载到内存中，但会随着应用程序的退出而退出；如果在编译时使用不同的连接脚本~\texttt{(link script)}，将~\texttt{stub}~放在不与被调试程序重叠的内存区域中，也可以实现让~\texttt{stub}~成为一个一直运行的守护程序。

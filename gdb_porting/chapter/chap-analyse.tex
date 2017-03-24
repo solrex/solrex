@@ -1,0 +1,59 @@
+
+\chapter{\texttt{GDB}~后端的编写}
+\label{chap:analyse}
+
+移植~\texttt{GDB}~其实就是为~\texttt{GDB}~编写一个新的后端，这里的后端指和计算机体系结构密切相关的那部分代码。\texttt{GDB}~依赖这部分代码来实现对~\texttt{CPU}~行为的理解和操控，所以说这部分代码被称为~\texttt{target depentdent code}~，包含这些代码的文件也被称为~\texttt{target dependent file(tdep)}~。
+
+\texttt{GDB}~内部对目标架构的抽象非常简单，它认为目标机就是一个拥有一些寄存器和一块存储空间的机器。对目标机如此简洁的抽象能让~\texttt{GDB}~得到很简单的运行时逻辑。在~\texttt{GDB}~的源代码中描述某种目标架构的抽象结构是一个~\texttt{C}~语言的结构体类型~\texttt{struct gdbarch}~。这个结构体类型，以及~\texttt{gdbarch.c/h}~中的所有内容都是由脚本文件~\texttt{gdbarch.sh}~自动生成的。这个结构体类型中的成员变量和成员函数指针完全定义了~\texttt{GDB}~所需要知道的一个目标架构底层的一切。此结构体类型一个全局的指针变量~\texttt{current\_gdbarch}~指向的结构体就是当前的目标架构相关的结构体实例。当需要使用这个结构体的成员变量和成员函数指针时，通过~\texttt{gdbarch.c/h}~中提供的函数接口进行调用。需要注意的一点是，在旧版本的~\texttt{GDB}~中，上面提到的很多方面都是通过定义宏到不同的函数上实现的，但是那样只能在编译时确定函数接口，不支持在运行时更改目标架构。
+
+跟据~\texttt{GDB}~对计算机体系架构的抽象，我们通过几个部分来探讨~\texttt{GDB}~后端的编写方法：
+
+\section{注册新后端到~\texttt{GDB}~中}
+
+要想为~\texttt{GDB}~编写新的后端，首先要弄清楚如何将新后端注册到~\texttt{GDB}~中。由于在配置文件里已经注明哪些文件是当前目标架构的~\texttt{tdep}~文件，~\texttt{Makefile}~会从对应的~\texttt{tdep}~文件中寻找以~\texttt{"\_initialize\_"}~开头的函数作为当前~\texttt{target}~的初始化函数。前面说过~\texttt{GDB}~启动时在~\texttt{initialize\_all\_files()}~中会调用这个初始化函数，所以我们需要做的就是在这个初始化函数中将新后端注册到~\texttt{GDB}~中。方法是在这个函数中调用~\texttt{"gdbarch\_register"}~函数将当前目标架构的~\texttt{bfd\_architecture}~、~\texttt{gdbarch}~的初始化和~\texttt{dump}~函数注册到~\texttt{struct gdbarch\_registration}~类型的列表~\texttt{gdbarch\_registry}的一个列表项上。这样在需要时~\texttt{GDB}~就会调用注册的~\texttt{gdbarch}~的初始化函数对~\texttt{current\_gdbarch}~分配内存和进行初始化。
+
+由于~\texttt{gdbarch}~的初始化函数负责对~\texttt{current\_gdbarch}~进行初始化，所以我们下面讨论的问题主要就和这个函数有关，即如何在这个初始化函数中为~\texttt{current\_gdbarch}~设置正确的工作正常的成员变量和成员函数指针。
+
+\section{设置目标架构基本信息}
+
+描述某种目标架构来说，总应该提供一些非常基本的信息。这些信息其中有些已经在~\texttt{LIB BFD}~的某些变量中定义过了，比如计算机体系结构名、计算机字长、计算机地址长度、每比特位数等等，~\texttt{gdbarch}~中有一个指针变量~\texttt{bfd\_arch\_info}~就直接指向~\texttt{LIB BFD}~中对应的~\texttt{struct bfd\_arch\_info}~类型的结构体实例；不过更多计算机体系架构的信息仍需要在~\texttt{gdbarch}~的初始化函数中设置。
+
+在这些设置中比较重要的有计算机字节顺序~\texttt{(byte order)}、应用二进制接口~\texttt{(ABI, Application Binary Interface)}~，还有一些与计算机体系结构特性和~\texttt{C}~语言标准密接相关的设置，如内建各种类型的比特数，内建浮点数类型的格式等等。这些以及随后所讲的成员变量和成员函数指针都可以通过~\texttt{set\_gdbarch\_xxxx}~来设置。其中~\texttt{xxxx}~指代~\texttt{struct gdbarch}~中的某个成员变量或成员函数指针，比如~\texttt{set\_gdbarch\_short\_bit(gdbarch, 16)}~就是将~\texttt{gdbarch}~指向的成员变量~\texttt{short\_bit}~置为16，意思就是指此~\texttt{gdbarch}~的~\texttt{short}~类型长度为~\texttt{16}~位。
+
+\section{设置寄存器相关信息}
+
+上面提到了，~\texttt{GDB}~把一个目标机看成一个拥有指定数量寄存器和一块存储空间的机器，不过~\texttt{GDB}~并没有简单地认为所有机器都具有相同大小的而且顺序排列的寄存器。确实，在~\texttt{GDB}~看来，目标机的寄存器是以~\texttt{current\_gdbarch}~的成员变量~\texttt{num\_regs}~为上限，从小到大编好号的一个数组，~\texttt{GDB}~在读取这些寄存器的时候也是以完全序列化的方法来读的，因为这样能够带来很大的方便。但是，由于这些寄存器在机器指令和调试信息中的编码并不一定与~\texttt{GDB}~完全一样，所以~\texttt{GDB}~中提供了一种机制使用户能将不同大小和使用方式的寄存器映射到一个线性表上去。在~\texttt{gdbarch}~结构体中有几个成员函数指针实现这个功能，分别是~\texttt{stab\_reg\_to\_regnum}~、~\texttt{stab\_reg\_to\_regnum}~、~\texttt{ dwarf\_reg\_to\_regnum}~、~\texttt{sdb\_reg\_to\_regnum}~、~\texttt{dwarf2\_reg\_to\_regnum}~，这几个函数作用都是将寄存器在某种目标文件格式中的编号映射到~\texttt{GDB}~中的编号。如果用户需要这些寄存器编号的映射，就应该把对应的映射函数设置到~\texttt{gdbarch}~的成员函数指针上。由于在调试过程中，调试者需要用某种易记的名字来代替寄存器的编号，需要设置~\texttt{gdbarch}~的一个函数指针~\texttt{register\_name}~指向一个函数来进行寄存器名与寄存器编号的转换。~\texttt{GDB}~还需要知道寄存器的大小才能正确读写和为之分配空间，需要设置~\texttt{gdbarch}~的成员函数指针~\texttt{register\_type}~指向某个可以返回寄存器的类型(用~\texttt{GDB}~的内部类型表示的大小)的函数，。
+
+对于~\texttt{GDB}~来说，要想实现调试功能，需要知道几个非常重要的寄存器编号：~\texttt{pc(program counter), sp(stack pointer), ps(processer status)}~和~\texttt{fp0(floating pointer register 0)}。~\texttt{pc}~中存储下条指令的地址，~\texttt{sp}~寄存器存储当前的栈指针，这两个寄存器是目前几乎所有~\texttt{RISC}~计算机都具备的。~\texttt{ps}~寄存器存放处理机状态字，比如~\texttt{i386}~的~\texttt{FLAGS}~寄存器。~\texttt{fp0}~为第一个浮点数寄存器，这两个寄存器是否存在视计算机体系结构而定。~\texttt{gdbarch}~有对应的成员变量~\texttt{pc\_regnum, sp\_regnum, ps\_regnum, fp0\_regnum}~保存它们的寄存器编号。如果当前~\texttt{target}~包含上述寄存器，就应将~\texttt{gdbarch}~中的对应成员变量设为对应的寄存器编号，它们的默认值为~\texttt{-1}~，即不存在。如果~\texttt{GDB}~不能直接读写~\texttt{pc}~或者不能读取~\texttt{sp}~寄存器，需要设置~\texttt{read\_pc, write\_pc}~和~\texttt{read\_sp}~指向相关函数来实现这些功能，因为对这两个寄存器的读写是~\texttt{GDB}~控制~\texttt{CPU}~运行的关键。
+
+\texttt{gdbarch}~的成员变量~\texttt{num\_regs}~和~\texttt{num\_pseudo\_regs}~指定了目标架构的寄存器数和伪寄存器数，应该按照芯片的实际情况进行设置。寄存器即是指真实的寄存器，伪寄存器是指某些目标架构为了编译时方便而虚拟出的寄存器。对真实的寄存器，~\texttt{GDB}~直接按照寄存器编号序列读取和写入，对于伪寄存器，应当设置~\texttt{gdbarch}~的两个成员函数指针：~\texttt{pseudo\_register\_read}~和~\texttt{pseudo\_register\_write}指向负责处理伪寄存器的读取和写入的函数。~\texttt{GDB}~还将寄存器分成许多组，如果需要的话，应当设置~\texttt{gdbarch}~的成员函数指针~\texttt{register\_reggroup\_p}~指向判断某个寄存器是否属于某个组的函数。
+
+\section{设置~\texttt{stack frame}~相关信息}
+
+首先，我们得确定目标架构的堆栈是向上还是向下增长的，可以设置~\texttt{gdbarch}~的成员函数指针~\texttt{inner\_than}~指向两个内建的函数~\texttt{core\_addr\_lessthan}~和~\texttt{core\_addr\_greaterthan}~其中之一，具体选择哪个由~\texttt{target}~的实际情况决定。在~\texttt{tdep}~文件中，最重要的关于~\texttt{frame}~的信息是如何~\texttt{unwind frame}~，就是设置~\texttt{gdbarch}~中的成员函数指针~\texttt{unwind\_pc}~指向行为正确的函数。
+
+~\texttt{unwind pc}~这个说法相当坳口，其实这个函数的主要作用就是为~\texttt{unwind frame}~提供足够的地址信息，简单地来说呢就是返回被~\texttt{unwind}~的~\texttt{frame}~所处函数的被调用地址，根据程序执行的顺序，一般情况下这个地址都是此函数的返回地址再减去调用指令长度。但是确定函数的返回地址在不同的计算机体系结构上并不相同，在~\texttt{RISC}~计算机中，一般情况下返回地址会放在一个专门的寄存器~\texttt{ra}~中。但是在~\texttt{unwind}~的时候~\texttt{GDB}~需要知道每个函数中~\texttt{ra}~存放的内容，仅仅取得当前~\texttt{ra}~的值是没有多大意义的。在前面我们也讲过，可执行程序也需要保存这个内容，当~\texttt{ra}~有可能被被调用函数修改时，被调用函数会把~\texttt{ra}~保存在栈上(如图~\ref{fig:frame}~)，这样通过分析~\texttt{ra}~在栈上的保存位置就能得到正确的返回地址。所以这个函数的通常做法是用~\texttt{frame\_unwind\_register\_unsigned}~函数来取得~\texttt{ra}~的值。至于它如何获得正确的寄存器值，我们下面会继续讨论，不过在这里需要注意的一点是如果~\texttt{unwind}~的是~\texttt{SENTINEL\_FRAME}~，那么就应该返回当前~\texttt{pc}~的值。
+
+下面讨论~\texttt{frame\_unwind\_register\_unsigned}~如何取得对应~\texttt{frame}~的寄存器值。在~\texttt{frame.c}~中定义了一个结构体类型~\texttt{frame\_info}~，这个结构体可以保存每个函数的~\texttt{frame}~信息。~\texttt{GDB}~对~\texttt{call frame}~的分析就是自底向上构建一个~\texttt{frame\_info}~的列表，最底层就是我们上面所说的~\texttt{SENTINEL\_FRAME}~。~\texttt{frame\_unwind\_register\_unsigned}~对寄存器的读取就是通过读取这个列表中的信息来得到的。如果这个列表没有被创建，~\texttt{GDB}~会调用一系列函数创建这个列表，而后端需要做的是实现~\texttt{frame\_sniffer}~和~\texttt{frame\_base\_sniffer}~函数并使用~\texttt{frame\_unwind\_append\_sniffer}~和~\texttt{frame\_base\_append\_sniffer}~函数将其添加到对应的~\texttt{sniffer}~列表中去。~\texttt{GDB}~会按顺序使用列表中的函数直到找到一个能正常工作的。简单的来说，这两个函数的作用就是告诉~\texttt{GDB}~参数~\texttt{next\_frame}~的上一层~\texttt{frame}~对应的函数的入口地址和~\texttt{prologue}~中对寄存器的存储。如果编译器支持~\texttt{dwarf2}~调试信息格式，那么在~\texttt{dwarf debugging information}~里的~\texttt{CFI(call frame information)}~已经提供了足够的信息来，这时候只需要把~\texttt{dwarf2.c/h}~中的~\texttt{dwarf2\_frame\_sniffer}~和~\texttt{dwarf2\_frame\_base\_sniffer}~添加到~\texttt{sniffer}~列表中即可。如果不支持调试信息，那么需要后端实现这两个函数，具体的做法可见~\texttt{mips-tdep.c}~中的实现。
+
+由于函数的~\texttt{prologue}~主要作用是保存处理机状态，是由编译器自动生成的，不对应于任何代码。所以对于调试者来说它们是没什么用处的，可以设置~\texttt{gdbarch}~的成员函数指针~\texttt{skip\_prologue}~指向跨过~\texttt{prologue}~的函数。同分析~\texttt{prologue}~一样，如果有足够的调试信息，可以调用~\texttt{skip\_prologue\_using\_sal}~得到跨过~\texttt{prologue}~后的第一条指令地址，即使用~\texttt{SAL(symtab and line)}~来确定~\texttt{prologue}~的范围，其实就是寻找函数源代码中的第一行语句对应的机器指令。如果没有足够的调试信息，也需要对机器指令进行分析来找到~\texttt{prologue}~的末尾。
+
+\section{单步和断点}
+
+单步和断点都是~\texttt{GDB}~控制~\texttt{CPU}~运行的手段。如果硬件直接支持这两个功能，在~\texttt{tdep}~文件里面不需要做什么事情。如果硬件不支持这两个功能，就需要设置相应的函数来处理这两个模块。~\texttt{breakpoint\_from\_pc}~指向的函数作用是根据~\texttt{pc}~位置的不同来选择使用哪种~\texttt{break}~指令，主要为了方便使用变长指令的计算机。~\texttt{memory\_insert\_breakpoint}~和~\texttt{memory\_remove\_breakpoint}~负责插入和删除断点。但是由于大部分计算机都支持硬件断点，或者断点由目标机端的程序进行处理，所以一般的目标架构的~\texttt{tdep}~中都没有设置这两个函数。
+
+由于单语句执行是从~\texttt{SAL}~中获得下条语句的指令地址然后插入断点，所以单步跨过语句完全依赖于断点功能和程序文件中的行信息。但软件单步跨过指令就需要对机器指令进行分析了，因为机器指令中有跳转、转移和返回指令，所以单步并不是简单地把断点设置在一条指令长度之后。一般地做法是读取当前机器指令，分析它是否属于转移指令，如果属于转移指令，就对指令进行解析，读取相应地寄存器，得到转移的地址，在转移的地址上设置断点。这个功能由~\texttt{gdbarch}~中的成员函数指针~\texttt{software\_single\_step}~指向的函数实现。如果这个函数没有被注册，则说明目标机支持硬件单指令运行。
+
+\section{虚拟函数调用}
+
+虚拟函数调用~\texttt{(dummy function call)}~就是指在~\texttt{GDB}~中使用命令：~\texttt{"print foo(args...)"}~来进行函数调用。这种调用就是前面算法分析中讲过的内部函数调用。关于设置函数参数和返回地址~\texttt{GDB}~是调用~\texttt{current\_gdbarch}~的成员函数指针~\texttt{push\_dummy\_call}~指向的函数实现的。这个函数的一个参数~\texttt{bp\_addr}~是虚拟函数调用的返回地址，这个地址也是从~\texttt{gdbarch}~的一个成员变量~\texttt{call\_dummy\_location}~的设置计算出来的，这个整型变量有三个内建值：~\texttt{ON\_STACK(1), AT\_ENTRY\_POINT(4), AT\_SYMBOL(5)}~，分别指设置返回地址在堆栈上，在程序入口地址，在~\texttt{symbol "\_\_CALL\_DUMMY\_ADDRESS"}~上。这三个宏分别定义和实现在~\texttt{inferior.h}~和~\texttt{infcall.c}~中。~\texttt{push\_dummy\_call}~需要把返回地址赋给寄存器，把参数按照目标架构的调用约定放在寄存器和堆栈上，修改~\texttt{sp}~到正确的位置。
+
+由于每个目标架构的返回值存放方式不同，需要定义~\texttt{gdbarch}~的成员函数指针~\texttt{return\_value}~指向获得或者写入返回值的函数，应该按照目标架构调用约定中的定义来写。如果没有定义~\texttt{return\_value}~，就需要分别定义~\texttt{store\_return\_value, extract\_return\_value}~分别负责写入和获得返回值，否则就没有必要重新定义这两个函数。
+
+\section{屏幕输出相关}
+
+除上面的一些函数以外，还需要自行定义打印寄存器和反汇编指令的函数。打印寄存器函数在~\texttt{gdbarch}~中的指针是~\texttt{print\_registers\_info}，这个可以按照实际需要的打印格式自行定义；反汇编机器指令函数在~\texttt{gdbarch}~中的指针是~\texttt{print\_insn}~，这个一般是直接设置为~\texttt{opcode library}~中与目标架构相关函数，即是目标架构的二进制工具~\texttt{objdump}~反汇编代码时所需使用的函数。
+
+\section{小结}
+
+\texttt{GDB}~作为开源编译器，拥有非常优秀的程序结构设计并为移植提供了非常方便的接口，而且拥有着诸多优点。本文对如何移植~\texttt{GDB}~到一个新的~\texttt{target}~上做了非常清晰的描述，并且对简约纳公司生产的芯片进行了移植，结果显示本文的方法能够快速成功地将~\texttt{GDB}~移植到目标架构上。

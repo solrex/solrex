@@ -1,0 +1,22 @@
+
+\begin{abstract}
+
+当前嵌入式系统领域处在一个飞速发展的阶段，各种各样功能和性能的芯片层出不穷，和芯片相关的跨平台开发工具链的研发也自然有着很迫切的需求。为了提升芯片相关软件设计的效率，并且降低开发上的成本，很多企业选择采用移植开源工具链来获得最好的效果。
+
+而调试器是其中不可缺少的一环，当把工具链提供给程序设计人员使用时，有一个功能强大使用方便的调试器是保证程序员开发出工作正常的程序和快速找出程序中缺陷的必要条件。~\texttt{GNU project}~提供了包括编译器、汇编器、链接器和调试器的跨平台开发工具链。~\texttt{GNU}~的源码级调试器~\texttt{GNU Debugger}~可以工作在多种平台上，并且有通用的机器语言接口~\texttt{(MI,mechine interface)}~，可以集成在~\texttt{Eclipse, DDD, Insight}~等多种集成开发环境中。
+
+本文分析了~\texttt{GDB}~内部的算法逻辑，指出了移植的关键之处，并给出移植的详细方法。为了验证我们方法的正确性，我们对北京简约纳公司生产的基带通信和视频编解码芯片进行移植，结果显示我们的方法能快速准确地为嵌入式芯片开发一个正确的跨平台调试器。
+
+\keywords{跨平台工具链，调试器，GDB，移植}
+\end{abstract}
+
+\begin{englishabstract}
+
+Embedded system industry is growing rapidly. More and more chips with different functions and performances are developed. So the related cross-platform development toolchains are under urgent demands. To upgrade the chip software design efficiency and cut the costs of development, many enterprises opt for porting the open-source toolchain to persue the maximum benefit.
+
+Debugger is an indispensable part of the tools. When provide a cross-platform development toolchain to programmers, a powerful and easy-to-use debugger can help programmers to develop right programs and identify the bugs quickly. GNU project provids a toolkit with compiler, assembler, linker and debugger. GNU source-level debugger GDB can work in a variety of platforms, with a common MI(machine interface). GDB can be integrated into the Eclipse, DDD, Insight, and other IDEs(integrated development environment).
+	
+This thesis analyzes the GDB internal algorithms, points out the key parts and gives the detailed methodology for porting GDB. In order to verify the validity of our approach, we ported GDB to the base-band communication and video codec chips of Beijing Simplight Nanoelectronics. The results show that this method can quickly and accurately develop a correct cross-platform debugger for embedded chips. 
+
+\englishkeywords{Cross-platform toolchain, Debugger, GDB, porting, retarget}
+\end{englishabstract}
