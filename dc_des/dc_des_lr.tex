@@ -1,0 +1,299 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{ifpdf}
+\ifpdf
+  \usepackage[pdftex]{graphicx}
+  \graphicspath{{images/}}
+\else
+  \RequirePackage[dvipdfmx, CJKbookmarks, bookmarks=true, bookmarksnumbered=true,%
+                unicode,%
+             colorlinks,%
+         citecolor=blue,%
+             hyperindex,%
+       plainpages=false,%
+      pdfstartview=FitH]{hyperref}
+  \AtBeginDvi{\special{pdf:tounicode UTF8-UCS2}}
+  \usepackage[dvipdfmx]{graphicx}
+  \graphicspath{{images/}}
+  \DeclareGraphicsExtensions{.eps}
+\fi
+
+\RequirePackage{amsmath,amssymb,amsfonts,bm,manfnt}
+\usepackage{longtable,verbatim,fancyvrb}
+\usepackage[left=2.54cm,right=2.54cm,top=3.3cm,bottom=2.6cm]{geometry}
+\setlength{\parskip}{0.75ex plus .2ex minus .5ex}
+
+\begin{document}
+
+\title{Differential Cryptanalytic Attacks of 3-Round DES\footnote{This is a lab report. If you want the \LaTeX{} source code of this article, please refer \url{https://github.com/solrex/solrex/tree/master/dc_des}}}
+\author{Wenbo Yang\\Email: \url{http://yangwenbo.com}\\The State Key Laboratory of Information Security\\Chinese Academy of Sciences, Beijing, P.R. China}
+\date{Oct 25, 2007}
+
+\maketitle
+
+\setlength{\parskip}{1ex}
+
+\begin{abstract}
+
+This lab report decribes how to do differential cryptanalytic attacking to 3-round DES(Data Encryption Standard\cite{DES}). We provide the whole process and source code to attacking 3-round DES with DC.
+ 
+\end{abstract}
+
+\section{Introduction}
+
+Differential cryptanalysis is a chosen plaintext attack, which tracks the difference of plaintext pairs across all the rounds to find useful information of the subkey. The first using of it to attack DES is introduced by Biham and Sharmir\cite{BIHA91} at 1990. The full attacking method to reduced-round DES can be found in \cite{BIHA93}.
+
+Here we will not provide the background of differential cryptanalysis of DES, which you can refer to \cite{BIHA93} for more information. The main content of this L.R. is about the implementation details and the results of attacking on DES with 3 rounds.
+
+Partly following \cite{BIHA91}, we introduce the notations bellow:
+
+\begin{description}
+ \item[$n_x$:] An hexadecimal number is denoted by a subscript $x$ (i.e., $10_x=16$).
+
+ \item[$X_i, X_i^*, X_i^`$:] At any intermediate point during the encryption of pairs of messages, $X_i$ and $X_i^*$ are the correspoding intermediate values after the $i$ round executions of the algorithm, and $X_i^`$ is defined to be $X_i^`=X_i \oplus X_i^*$.
+
+ \item[$(L_i,R_i), (L_i^*,R_i^*), (L_i^`,R_i^`)$:] The left and right halves of the intermediate value after the $i$ round execution are denoted by $L_i$ and $R_i$ respectively, and $X_i=L_i \parallel R_i$. So as to $(L_i^*,R_i^*), (L_i^`,R_i^`)$.
+
+ \item[$K_i$:] The subkey used in $i$ round execution is denoted by $K_i$.
+
+ \item[$F(X,K_i)$:] The $F$ function.
+
+ \item[$P(X)$:] The $P$ permutation.
+
+ \item[$E(X)$:] The $E$ expansion.
+
+ \item[$IP(X)$:] The initial permutation. The existence of $IP$ and $IP^{-1}$ is ignored in this L.R.
+
+ \item[$P$:] The plaintext(after the known initial permutation $IP$) is denoted by $P$. $P^*$ is the other plaintext in the pair and $P^`=P \oplus P^*$ is the plaintexts $XOR$.
+
+ \item[$T$:] The ciphertexts of the corresponding plaintexts $P$, $P^*$(before the inverse initial permutation $IP^{-1}$) are denoted by $T$ and $T^*$. $T^`=T \oplus T^*$ is the ciphertexts $XOR$.
+
+ \item[$Sn$:] The S boxes.
+
+ \item[$Sn_{Ei}, Sn_{Ki}, Sn_{Ii}, Sn_{Oi}$:] The input of $Sn$ in round $i$ is denoted by $Sn_{Ii}$ for $i\in\{1_x, 2_x, \ldots, f_x\}$. The output of $Sn$ in round $i$ is denoted by $Sn_{Oi}$. The value of the six subkey bits entering the S box $Sn$ is denoted by $Sn_{Ki}$ and the value of the six input bits of the expanded data ($E(R_i)$) which are $XOR$ed with $Sn_{Ki}$ to form $Sn_{Ei}$. The S box number $n$ and the round marker $i$ are optional. For example $S1_{E1}$ denotes the first six bits of $E(R_1)$. $S1_{K1}$ denotes the first six bits of the subkey $K1$. $S1_{I1}$ denotes the input of the S box S1 which is $S1_{I1}=S1_{E1} \oplus S1_{K1}$. $S1_{O1}$ denotes the output of S1 which is $S1_{O1}=S1(S1_{I1})$.
+
+ \item[$S_{Ei}, S_{Ki}, S_{Ii}, S_{Oi}$:] $S_{Ei} = S1_{Ei} \parallel S2_{Ei} \parallel \cdots \parallel S8_{Ei}$, so as the other three.
+
+\end{description}
+
+\section{3-rounds DES Attacking}
+
+In DES reduced to 3 rounds, we can deduce following equations which is the foundation of 3-R attack:
+
+\begin{equation}
+  \begin{split}
+  R_3 &= L_2 \oplus F(R_2,K_3)\\
+      &= R_1 \oplus F(R_2,K_3) \\
+      &= L_0 \oplus F(R_0,K_1) \oplus F(R_2,K_3)
+  \end{split}
+\end{equation}
+and samely
+\begin{equation}
+  R_3^*=L_0^* \oplus F(R_0^*, K_1^*) \oplus F(R_2^*,K_3^*)
+\end{equation}
+So that
+\begin{equation}
+  \begin{split}
+  R_3^`&= R_3 \oplus R_3^*\\
+       &= L_0^` \oplus f(R_0,K_1) \oplus f(R_0^*,K_1) \oplus f(R_2,K_3) \oplus f(R_2^*,K_3) 
+  \end{split}
+\end{equation}
+We now choose plaintext pair $(L_0,R_0)$ and $(L_0^*,R_0^*)$ to satisfy $R_0 = R_0^*$, i.e. $R_0^` = R_0 \oplus R_0^* = 00\cdots0$, then we obtain
+\begin{equation*}
+  R_3^` = L_0^` \oplus F(R_2,K_3) \oplus F(R_2^*,K_3)\\
+\end{equation*}
+i.e.
+\begin{equation}
+  F(R_2,K_3) \oplus F(R_2^*,K_3) = R_3^` \oplus L_0^`
+\end{equation}
+Since
+\begin{equation*}
+  F(R_2,K_3) = P(S_{O3}), F(R_2^*,K_3)=P(S_{O3}^*)
+\end{equation*}
+we get
+\begin{equation*}
+  P(S_{O3}) \oplus P(S_{O3}^*) = R_3^` \oplus L_0^`
+\end{equation*}
+Because $XOR$ stays valid after $P(X)$, and $P(X)$ is invertible, so
+\begin{equation}
+  S_{O3}^` = S_{O3} \oplus S_{O3}^* = P^{-1}(R_3^` \oplus L_0^`)
+\end{equation}
+hence we get S-boxes output $XOR$ $S_{O3}^`$ of the 3rd round.
+
+We also have
+\begin{equation*}
+  R_2 = L_3, R_2^* = L_3^*
+\end{equation*}
+so the S-boxes input $XOR$ $S_{I3}^`$ of the 3rd round can be deduced by
+\begin{equation} 
+  \begin{split}
+  S_{I3}^` &= S_{I3} \oplus S_{I3}^* \\
+           &= E(R_2) \oplus E(R_2^*) \\
+           &= E(L_3) \oplus E(L_3^*)
+  \end{split}
+\end{equation} 
+
+Here we got the S-boxes input and output $XOR$ of the 3rd round, then we can use them to compute the subkey $K_3$ with method introduced in Example 7 of \cite{BIHA91}.
+
+\noindent\textbf{Example\footnote{We copy this example from \cite{FENG00} because it is easy to check whether our algorithm is right or not. You can choose other pairs of course.}} Assume we have 3 pairs of chosen plaintext and ciphertext encrypted with the same key as bellow(From \cite{FENG00}, encryption using 3 round, no initial and final permutation, no last interchanging of left and right):
+
+\begin{center}\begin{longtable}{p{1cm}cp{1cm}|p{1cm}cp{1cm}}
+\hline
+ &\textsc{Plaintext}& & &\textsc{Ciphtertext}&\\
+\hline
+ &\texttt{748502cd38451097}& & &\texttt{03C70306D8A09F10}&\\
+ &\texttt{3874756438451097}& & &\texttt{78560a0960e6d4cb}&\\
+\hline
+ &\texttt{486911026acdff31}& & &\texttt{78560a0960e6d4cb}&\\
+ &\texttt{375bd31f6acdff31}& & &\texttt{134f7915ac253457}&\\
+\hline
+ &\texttt{357418da013fec86}& & &\texttt{d8a31b2f28bbc5cf}&\\
+ &\texttt{12549847013fec86}& & &\texttt{0f317ac2b23cb944}&\\
+\hline
+\end{longtable}\end{center}
+
+\noindent\textsf{Step 1:} Get input of S box in 3rd round, which we get:
+
+\begin{center}\begin{longtable}{c|c}
+\hline
+\textsc{Pair} & \textsc{Input of $S_{I3}$}\\
+\hline
+1&\texttt{00000000 01111110 00001110 10000000 01101000 00001100}\\
+1&\texttt{10111111 00000010 10101100 00000101 01000000 01010010}\\
+\hline
+2&\texttt{10100000 10111111 11110100 00010101 00000010 11110110}\\
+2&\texttt{10001010 01101010 01011110 10111111 00101000 10101010}\\
+\hline
+3&\texttt{11101111 00010101 00000110 10001111 01101001 01011111}\\
+3&\texttt{00000101 11101001 10100010 10111111 01010110 00000100}\\
+\hline
+\end{longtable}\end{center}
+
+\noindent\textsf{Step 2:} Get input and output difference of S box in 3rd round, which we get:
+\begin{center}\begin{longtable}{c|c}
+\hline
+\textsc{Pair} & \textsc{Input Diff of $S_{I3}$}\\
+\hline
+1&\texttt{10111111 01111100 10100010 10000101 00101000 01011110}\\
+\hline
+2&\texttt{00101010 11010101 10101010 10101010 00101010 01011100}\\
+\hline
+3&\texttt{11101010 11111100 10100100 00110000 00111111 01011011}\\
+\hline
+\end{longtable}\end{center}
+
+\begin{center}\begin{longtable}{c|c}
+\hline
+\textsc{Pair} & \textsc{Output Diff of $S_{I3}$}\\
+\hline
+1&\texttt{10010110 01011101 01011011 01100111}\\
+\hline
+2&\texttt{10011100 10011100 00011111 01010110}\\
+\hline
+3&\texttt{11010101 01110101 11011011 00101011}\\
+\hline
+\end{longtable}\end{center}
+
+\noindent\textsf{Step 3:} Calculate the subkey with J matrix introduce in \cite{FENG00}:
+
+\begin{center}\begin{longtable}{c|c}
+\hline
+\textsc{S box} & \textsc{J Matrix}\\
+\hline
+1&\texttt{1 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0}\\ 
+&\texttt{0 0 0 0 0 1 1 0 0 0 0 1 1 0 0 0}\\
+&\texttt{0 1 0 0 0 1 0 0 1 0 0 0 0 0 0 3}\\
+&\texttt{0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1}\\
+\hline
+2&\texttt{0 0 0 1 0 3 0 0 1 0 0 1 0 0 0 0}\\ 
+&\texttt{0 1 0 0 0 2 0 0 0 0 0 0 1 0 0 0}\\
+&\texttt{0 0 0 0 0 1 0 0 1 0 1 0 0 0 1 0}\\
+&\texttt{0 0 1 1 0 0 0 0 1 0 1 0 2 0 0 0}\\
+\hline
+3&\texttt{0 0 0 0 1 1 0 0 0 0 0 0 0 0 1 0}\\ 
+&\texttt{0 0 0 3 0 0 0 0 0 0 0 0 0 0 1 1}\\
+&\texttt{0 2 0 0 0 0 0 0 0 0 0 0 1 1 0 0}\\
+&\texttt{0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0}\\
+\hline
+4&\texttt{3 1 0 0 0 0 0 0 0 0 2 2 0 0 0 0}\\ 
+&\texttt{0 0 0 0 1 1 0 0 0 0 0 0 1 0 1 1}\\
+&\texttt{1 1 1 0 1 0 0 0 0 1 1 1 0 0 1 0}\\
+&\texttt{00 0 0 0 1 1 0 0 0 0 0 0 0 0 2 1}\\
+\hline
+5&\texttt{0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0}\\ 
+&\texttt{0 0 0 0 2 0 0 0 3 0 0 0 0 0 0 0}\\
+&\texttt{0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}\\
+&\texttt{0 0 2 0 0 0 0 0 0 1 0 0 0 0 2 0}\\
+\hline
+6&\texttt{1 0 0 1 1 0 0 3 0 0 0 0 1 0 0 1}\\ 
+&\texttt{0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0}\\
+&\texttt{0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0}\\
+&\texttt{1 0 0 1 1 0 1 1 0 0 0 0 0 0 0 0}\\
+\hline
+7&\texttt{0 0 2 1 0 1 0 3 0 0 0 1 1 0 0 0}\\ 
+&\texttt{0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1}\\
+&\texttt{0 0 2 0 0 0 2 0 0 0 0 1 2 1 1 0}\\
+&\texttt{0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1}\\
+\hline
+8&\texttt{0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}\\ 
+&\texttt{0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}\\
+&\texttt{0 0 0 0 0 0 0 0 1 0 1 0 0 1 0 1}\\
+&\texttt{0 3 0 0 0 0 1 0 0 0 0 0 0 0 0 0}\\
+\hline
+\end{longtable}\end{center}
+
+So the $i$ which $J[i] = 3$ gives us the subkey(48 bits) of the 3rd round:
+\begin{center}
+\texttt{10111100 01010100 11000000}\\
+\texttt{01100000 01110001 11110001}
+\end{center}
+
+\noindent\textsf{Step 4:} Generate the key schedule intermediate halves(56 bits) with subkey(48 bits) by reverse PC-2 permute\cite{DES}:
+\begin{center}
+\texttt{10001101 01100100 00100001 0100}\\
+\texttt{00111100 00000100 11010001 1001}
+\end{center}
+Where bits \texttt{9 18 22 25 35 38 43 54} were undetermined.
+
+Then we got the key(64 bits without check sum) by right shift 4 bits and reverse PC-1 permute\cite{DES}:
+\begin{center}
+\texttt{00011010 01100010 01001000 10001000}\\
+\texttt{01010010 00000000 11101100 01000110}
+\end{center}
+Where bits: \texttt{26 19 52 57 46 22 45 55} were undetermined.
+
+Here we got a 64 bits key with 8 bits undetermined. So it is easily to implement a exhaustive key search which requires only $2^8=256$ encryptions.
+
+\section{Conclusion}
+
+In this L.R, we implemented a real DC attack to 3 round DES. Base on this method, attacking more round DES can be realized by the intruction of \cite{BIHA91}.
+
+\section{C Source Code}
+
+Bellow is the entire sourcode of DES codec and DC attacking to 3-Round DES. If you want an ASCII C source file copy, please refer \url{https://github.com/solrex/solrex/tree/master/dc_des}.
+
+\VerbatimInput[fontfamily=tt,fontsize=\footnotesize,frame=single, framerule=0.4mm, rulecolor=\color{red}]{des.c}
+
+\begin{thebibliography}{4}
+
+\bibitem{DES}
+\newblock {\em Data Encryption Standard},
+\newblock NIST, FIPS PUB 46-3, pp. 19-21, 1999
+
+\bibitem{BIHA91}
+Eli Biham, Adi Shamir, 
+\newblock {\em Differential Cryptanalysis of DES-like Cryptosystems},
+\newblock Journal of Cryptology, Vol. 4, No. 1, pp.3-72, 1991. The extended abstract appears in Advances in cryptology, proceeding of CRYPTO'90, pp. 2-21, 1990.
+
+\bibitem{BIHA93}
+Eli Biham, Adi Shamir,
+\newblock {\em Differential Cryptanalysis of the Data Encryption Standard},
+\newblock New York:Springer-Verlag, ISBN: 0-387-97930-1, pp. 33-69, 1993
+
+\bibitem{FENG00}
+Dengguo Feng,
+\newblock {\em Cryptanalysis},
+\newblock Beijing:Tsinghua Pub, ISBN: 7-302-03976-3, pp. 17-22, 1993
+\end{thebibliography}
+
+\end{document}
