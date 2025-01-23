@@ -27,7 +27,7 @@ def print_tensor_tsv(model_dir, depth):
                 # Limit prefix to dep
                 dep = min(len(lst), depth+1) if depth > 0 else len(lst)
                 # Get summary of prefixes
-                for prefix in ['.'.join(lst[:i]) for i in range(1, dep)]:
+                for prefix in ['.'.join(lst[:i]) for i in range(0, dep)]:
                     summary[f'{tclass}[{prefix}]'] = summary.get(f'{tclass}[{prefix}]', 0) + tensor.numel()
     for key in sorted(summary):
         print(f'Summary\t{key}\t{summary[key]}\t\t')
