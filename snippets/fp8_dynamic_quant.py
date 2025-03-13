@@ -36,7 +36,7 @@ def apply_fp8_quant_to_llm(model_dir, output_dir):
         input_ids=inputs['input_ids'],
         attention_mask=inputs['attention_mask'],
         streamer=streamer,
-        max_new_tokens=800)
+        max_new_tokens=400)
     print("==========================================")
     
     # Configure the quantization algorithm and scheme.
@@ -52,6 +52,12 @@ def apply_fp8_quant_to_llm(model_dir, output_dir):
     # Apply quantization and save to disk in compressed-tensors format.
     oneshot(model=model, recipe=recipe, tokenizer=tokenizer, output_dir=output_dir)
     tokenizer.save_pretrained(output_dir)
+
+    # Load output model
+    model = AutoModelForCausalLM.from_pretrained(
+        output_dir, device_map="auto", torch_dtype="auto"
+    )
+    tokenizer = AutoTokenizer.from_pretrained(output_dir)
     
     # Confirm generations of the quantized model look sane.
     print("========== SAMPLE AFTER QUANT ==============")
@@ -61,7 +67,7 @@ def apply_fp8_quant_to_llm(model_dir, output_dir):
         input_ids=inputs['input_ids'].to('cuda'),
         attention_mask=inputs['attention_mask'].to('cuda'),
         streamer=streamer,
-        max_new_tokens=800)
+        max_new_tokens=400)
     print("==========================================")
 
 if __name__ == '__main__':
