@@ -53,9 +53,11 @@ def apply_fp8_quant_to_llm(model_dir, output_dir, device_map):
     tokenizer.save_pretrained(output_dir)
 
     # Load output model
+    del model
     model = AutoModelForCausalLM.from_pretrained(
         model_dir, device_map=device_map, torch_dtype="auto"
     )
+    del tokenizer
     tokenizer = AutoTokenizer.from_pretrained(model_dir)
     
     # Confirm generations of the quantized model look sane.
