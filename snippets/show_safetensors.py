@@ -8,9 +8,8 @@ from safetensors import safe_open
 def print_tensor_tsv(model_dir, depth):
     '''Print tensor info in .safetensors into tsv format'''
     TENSOR_CLASS = {
-        'weight': 'weight',
-        'e_score_correction_bias': 'weight',
-        'weight_scale_inv': 'scale'
+        'weight_scale_inv': 'scale',
+        'weight_scale': 'scale'
     }
     print('SafetensorsFile\tTensorKey\tTensorParams\tTensorType\tTensorShape')
     safetensor_files = sorted([f for f in os.listdir(model_dir) if f.endswith('.safetensors')])
@@ -23,7 +22,7 @@ def print_tensor_tsv(model_dir, depth):
                 print(f'{filename}\t{key}\t{tensor.numel()}\t{tensor.dtype}\t{tensor.shape}')
                 lst = key.split('.')
                 # Get suffix: .weight or .weight_scale_inv
-                tclass = TENSOR_CLASS[lst[-1]]
+                tclass = TENSOR_CLASS[lst[-1]] if lst[-1] in TENSOR_CLASS else 'weight'
                 # Limit prefix to dep
                 dep = min(len(lst), depth+1) if depth > 0 else len(lst)
                 # Get summary of prefixes
