@@ -3,7 +3,10 @@ import sys
 import argparse
 import torch
 
-from transformers import AutoTokenizer, AutoModelForCausalLM, TextStreamer
+from transformers import AutoTokenizer, TextStreamer
+# Change the model if needed
+from transformers import AutoModelForCausalLM as TheModel
+#from transformers import Qwen2_5_VLForConditionalGeneration as TheModel
 
 from llmcompressor import oneshot
 from llmcompressor.modifiers.quantization import QuantizationModifier
@@ -13,7 +16,7 @@ def apply_fp8_quant_to_llm(model_dir, output_dir, device_map, max_sample_token):
         output_dir = model_dir.rstrip("/") + "-FP8-Dynamic"
 
     # Load model.
-    model = AutoModelForCausalLM.from_pretrained(
+    model = TheModel.from_pretrained(
         model_dir, device_map=device_map, torch_dtype=torch.bfloat16
     )
     tokenizer = AutoTokenizer.from_pretrained(model_dir)
@@ -55,7 +58,7 @@ def apply_fp8_quant_to_llm(model_dir, output_dir, device_map, max_sample_token):
 
     # Load output model
     del model
-    model = AutoModelForCausalLM.from_pretrained(
+    model = TheModel.from_pretrained(
         output_dir, device_map=device_map, torch_dtype=torch.bfloat16
     )
     del tokenizer
