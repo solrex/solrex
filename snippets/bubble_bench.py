@@ -3,33 +3,37 @@
 批量对多服务器、多测试配置执行 sglang.bench_serving 压测，并根据压测结果绘制气泡图。
 
 生成配置：
-./bubble_bench.py --print-config > config.json
+./bubble_bench.py -p > config.json
 
 根据压测需求修改配置，然后执行压力测试（耗时较长，最好后台执行）：
 ./bubble_bench.py -c config.json &
 
-压力测试报告将生成在 bubble_bench_report.html ，打开文件即是压力测试的 ECharts 图表。
+压力测试报告将生成在 bubble_bench_report.html ，打开文件即是压力测试的 ECharts 图表。因为渲染图表需要
+下载 echarts js，所以需要联网。
 
 如果压测环境允许对不同的 endpoint 并行发压，可以传入并行发压参数 -j ：
 ./bubble_bench.py -c config.json -j 3 &
 
 如果希望将多个压测配置在同一个目录下的压测结果统一生成报告，可以在执行完所有的压测后，对目录下所有文件生成报告：
 （注意：所有 config*.json 中的 endpoints 不得同名，否则压测结果文件会被下一次压测清空导致丢失结果）
+
 ./bubble_bench.py -c config-1.json -j 3
 ./bubble_bench.py -c config-2.json -j 3
 ./bubble_bench.py -c config-3.json -j 3
-./bubble_bench.py --gen-report
+./bubble_bench.py -g
+
+在压测执行过程中，也可以随时通过 ./bubble_bench.py -g 生成基于当前压测结果的部分结果报告。
 """
 
 import glob
 import json
 import os
+import pandas as pd
 import re
 import subprocess
 from argparse import ArgumentParser
 from collections import defaultdict
 from multiprocessing import Pool
-
 from tqdm import tqdm
 
 # 默认配置
@@ -115,7 +119,7 @@ def benchmark_one(sglang_bench_cmd, endpoint, concurrency, repeat, verbose=False
         result = json.load(f)
     with open(output_file, "a") as f:
         result["_throughput_scale"] = throughput_scale
-        result["_endpoing_name"] = endpoint_name
+        result["_endpoint_name"] = endpoint_name
         json.dump(result, f)
         f.write("\n")
     if os.path.isfile(tmp_file):
@@ -191,157 +195,352 @@ def gen_report(bench_config=None):
     else:
         bench_results = glob.glob("*.bench")
 
-    # 解析 JSON 文件并提取所需字段
+    # 读取并解析所有 JSON 数据
+    data = []
     for file in bench_results:
-        try:
-            with open(file, "r") as f:
-                for line in f:
-                    line = line.strip()
-                    if line:
-                        json_data = json.loads(line)
-                        endpoint_name = json_data["_endpoing_name"]
-                        throughput_scale = json_data["_throughput_scale"]
-                        concur = json_data["max_concurrency"]
-                        qps = json_data["request_throughput"] * throughput_scale
-                        tpot = json_data["mean_tpot_ms"]
-                        ttft = json_data["mean_ttft_ms"]
-                        data[endpoint_name].append((concur, tpot, ttft, qps))
-        except json.JSONDecodeError:
-            print(f"Error decoding JSON in file: {file}")
-            continue
+        with open(file, 'r', encoding='utf-8') as f:
+            for line in f:
+                try:
+                    json_data = json.loads(line.strip())
+                    data.append(json_data)
+                except json.JSONDecodeError as e:
+                    print(f"Warning: Failed to parse line in {file}: {e}")
 
-    # 按并发数降序
-    for endpoint_name in data:
-        data[endpoint_name].sort(key=lambda x: x[0])
+    # 转换为 DataFrame
+    df = pd.DataFrame(data)
 
-    endpoints = sorted(data.keys())
-    concur_values = [r for endpoint_name in data for r, _, _, _ in data[endpoint_name]]
-    tpot_values = [t for endpoint_name in data for _, t, _, _ in data[endpoint_name]]
-    ttft_values = [t for endpoint_name in data for _, _, t, _ in data[endpoint_name]]
-    qps_values = [q for endpoint_name in data for _, _, _, q in data[endpoint_name]]
+    # 确保所需字段存在
+    required_fields = [
+        'max_concurrency', '_endpoint_name', 'mean_itl_ms', 'request_throughput', '_throughput_scale',
+        'median_itl_ms', 'p95_itl_ms', 'p99_itl_ms', 'std_itl_ms', 'mean_ttft_ms', 'median_ttft_ms',
+        'p99_ttft_ms', 'std_ttft_ms', 'mean_e2e_latency_ms', 'median_e2e_latency_ms', 'p99_e2e_latency_ms',
+        'input_throughput', 'output_throughput', 'concurrency', 'total_input_tokens', 'total_output_tokens'
+    ]
+    missing_fields = [field for field in required_fields if field not in df.columns]
+    if missing_fields:
+        raise ValueError(f"Missing required fields in data: {missing_fields}")
 
-    concur_max = max(concur_values)
-    ttft_min = min(ttft_values, default=0)
-    ttft_max = max(ttft_values)
-    qps_min = min(qps_values, default=0)
-    qps_max = max(qps_values)
+    # 获取所有唯一的分组和端点名称
+    endpoints = df['_endpoint_name'].unique().tolist()
+    max_concurrencies = [int(x) for x in sorted(df['max_concurrency'].unique().tolist())]
 
-    # 定义 schema
-    schema = [
-        {"name": "并发", "index": 0, "text": "请求并发"},
-        {"name": "tpot", "index": 1, "text": "Mean TPOT (ms)"},
-        {"name": "ttft", "index": 2, "text": "Mean TTFT (ms)"},
-        {"name": "qps", "index": 3, "text": "每卡吞吐 (req/s/GPU)"},
+    # 生成 ECharts 配置
+    charts = []
+
+    # 计算 request_throughput * _throughput_scale 的范围
+    throughput_scaled = df['request_throughput'] * df['_throughput_scale']
+    throughput_scaled = throughput_scaled.replace([float('inf'), -float('inf')], float('nan')).dropna()
+    if throughput_scaled.empty:
+        raise ValueError("No valid throughput data after filtering")
+    visual_map_min = max(throughput_scaled.min(), 1e-6)  # 避免 min 为 0
+    visual_map_max = throughput_scaled.max()
+
+    # 图表 1: mean_itl_ms 气泡图
+    scatter_itl = {
+        "title": {"text": "平均 ITL vs 并发", "left": "center"},
+        'legend': {
+            'top': 30,
+            'data': endpoints,
+        },
+        'grid': {
+            'top': 100,
+            'left': 140
+        },
+        "tooltip": {"trigger": "item"},  # Formatter will be set in JavaScript
+        "xAxis": {"name": "并发", "type": "value", "data": max_concurrencies},
+        "yAxis": {"name": "平均 ITL (ms)", "type": "value"},
+        "series": [],
+        "visualMap": {
+            'top': 30,
+            "itemWidth": 25,
+            'text': ['气泡大小\n(QPS/GPU)'],
+            'textGap': 20,
+            'calculable': True,
+            'precision': 0.1,
+            "inRange": {"symbolSize": [5, 70]},
+            "min": visual_map_min,
+            "max": visual_map_max,
+            "dimension": 6,
+        }
+    }
+    for endpoint in endpoints:
+        endpoint_data = df[df['_endpoint_name'] == endpoint]
+        series_data = [
+            [
+                row['max_concurrency'],
+                row['mean_itl_ms'],
+                row['median_itl_ms'],
+                row['p95_itl_ms'],
+                row['p99_itl_ms'],
+                row['std_itl_ms'],
+                row['request_throughput'] * row['_throughput_scale']
+            ]
+            for _, row in endpoint_data.iterrows()
+        ]
+        scatter_itl["series"].append({
+            "name": endpoint,
+            "type": "scatter",
+            "data": series_data
+        })
+    charts.append(scatter_itl)
+
+    # 图表 2: mean_ttft_ms 气泡图
+    scatter_ttft = {
+        "title": {"text": "平均 TTFT vs 并发", "left": "center"},
+        'legend': {
+            'top': 30,
+            'data': endpoints,
+        },
+        'grid': {
+            'top': 100,
+            'left': 140
+        },
+        "tooltip": {"trigger": "item"},
+        "xAxis": {"name": "并发", "type": "value", "data": max_concurrencies},
+        "yAxis": {"name": "平均 TTFT (s)", "type": "value"},
+        "series": [],
+        "visualMap": {
+            'top': 30,
+            "itemWidth": 25,
+            'text': ['气泡大小\n(QPS/GPU)'],
+            'textGap': 20,
+            'calculable': True,
+            'precision': 0.1,
+            "inRange": {"symbolSize": [5, 70]},
+            "min": visual_map_min,
+            "max": visual_map_max,
+            "dimension": 5
+        }
+    }
+    for endpoint in endpoints:
+        endpoint_data = df[df['_endpoint_name'] == endpoint]
+        series_data = [
+            [
+                row['max_concurrency'],
+                row['mean_ttft_ms'] / 1000,
+                row['median_ttft_ms'] / 1000,
+                row['p99_ttft_ms'] / 1000,
+                row['std_ttft_ms'] / 1000,
+                row['request_throughput'] * row['_throughput_scale']
+            ]
+            for _, row in endpoint_data.iterrows()
+        ]
+        scatter_ttft["series"].append({
+            "name": endpoint,
+            "type": "scatter",
+            "data": series_data
+        })
+    charts.append(scatter_ttft)
+
+    # 图表 3: mean_e2e_latency_ms 气泡图
+    scatter_e2e = {
+        "title": {"text": "平均 E2E 延迟 vs 并发", "left": "center"},
+        'legend': {
+            'top': 30,
+            'data': endpoints,
+        },
+        'grid': {
+            'top': 100,
+            'left': 140
+        },
+        "tooltip": {"trigger": "item"},
+        "xAxis": {"name": "并发", "type": "value", "data": max_concurrencies},
+        "yAxis": {"name": "平均 E2E 延迟 (s)", "type": "value"},
+        "series": [],
+        "visualMap": {
+            'top': 30,
+            "itemWidth": 25,
+            'text': ['气泡大小\n(QPS/GPU)'],
+            'textGap': 20,
+            'calculable': True,
+            'precision': 0.1,
+            "inRange": {"symbolSize": [5, 70]},
+            "min": visual_map_min,
+            "max": visual_map_max,
+            "dimension": 4
+        }
+    }
+    for endpoint in endpoints:
+        endpoint_data = df[df['_endpoint_name'] == endpoint]
+        series_data = [
+            [
+                row['max_concurrency'],
+                row['mean_e2e_latency_ms'] / 1000,
+                row['median_e2e_latency_ms'] / 1000,
+                row['p99_e2e_latency_ms'] / 1000,
+                row['request_throughput'] * row['_throughput_scale']
+            ]
+            for _, row in endpoint_data.iterrows()
+        ]
+        scatter_e2e["series"].append({
+            "name": endpoint,
+            "type": "scatter",
+            "data": series_data
+        })
+    charts.append(scatter_e2e)
+
+    # 其他折线图
+    metrics = [
+        ("request_throughput", "QPS", "吞吐(QPS)"),
+        ("input_throughput", "输入Token吞吐", "吞吐(token/s)"),
+        ("output_throughput", "生成Token吞吐", "吞吐(token/s)"),
+        ("concurrency", "服务端并发", "服务端并发"),
+        ("total_io_throughput", "总Token吞吐", "吞吐(token/s)"),
+        ("total_input_tokens", "总输入Token数", "Tokens"),
+        ("total_output_tokens", "总生成Token数", "Tokens")
     ]
 
-    # 生成 ECharts HTML 代码
+    for metric, title, y_axis_name in metrics:
+        line_chart = {
+            "title": {"text": f"{title} vs 并发", "left": "center"},
+            'legend': {
+                'top': 30,
+                'data': endpoints,
+            },
+            'grid': {
+                'top': 60,
+                'left': 140
+            },
+            "tooltip": {"trigger": "axis"},
+            "xAxis": {"name": "并发", "type": "value", "data": max_concurrencies},
+            "yAxis": {"name": y_axis_name, "type": "value"},
+            "series": []
+        }
+        for endpoint in endpoints:
+            endpoint_data = df[df['_endpoint_name'] == endpoint].sort_values('max_concurrency')
+            if metric == "total_io_throughput":
+                values = (endpoint_data['input_throughput'] + endpoint_data['output_throughput']).tolist()
+            else:
+                values = endpoint_data[metric].tolist()
+            series_data = [[int(row['max_concurrency']), round(float(row['value']), 2)] for _, row in endpoint_data[['max_concurrency']].assign(value=values).iterrows()]
+            line_chart["series"].append({
+                "name": endpoint,
+                "type": "line",
+                "data": series_data
+            })
+        charts.append(line_chart)
+
+    # 定义 JavaScript formatter 函数
+    formatter_js = """
+    const formatters = [
+        // Formatter for 平均 ITL vs 并发
+        function(params) {
+            var v = params.value;
+            return `
+                Endpoint: ${params.seriesName}<br/>
+                并发: ${v[0].toFixed(2)}<br/>
+                平均 ITL: ${v[1].toFixed(2)} ms<br/>
+                中位数 ITL: ${v[2].toFixed(2)} ms<br/>
+                P95 ITL: ${v[3].toFixed(2)} ms<br/>
+                P99 ITL: ${v[4].toFixed(2)} ms<br/>
+                标准差 ITL: ${v[5].toFixed(2)} ms<br/>
+                QPS/GPU: ${v[6].toFixed(2)}
+            `;
+        },
+        // Formatter for 平均 TTFT vs 并发
+        function(params) {
+            var v = params.value;
+            return `
+                Endpoint: ${params.seriesName}<br/>
+                并发: ${v[0].toFixed(2)}<br/>
+                平均 TTFT: ${v[1].toFixed(2)} s<br/>
+                中位数 TTFT: ${v[2].toFixed(2)} s<br/>
+                P99 TTFT: ${v[3].toFixed(2)} s<br/>
+                标准差 TTFT: ${v[4].toFixed(2)} s<br/>
+                QPS/GPU: ${v[5].toFixed(2)}
+            `;
+        },
+        // Formatter for 平均 E2E 延迟 vs 并发
+        function(params) {
+            var v = params.value;
+            return `
+                Endpoint: ${params.seriesName}<br/>
+                并发: ${v[0].toFixed(2)}<br/>
+                平均 E2E 延迟: ${v[1].toFixed(2)} s<br/>
+                中位数 E2E 延迟: ${v[2].toFixed(2)} s<br/>
+                P99 E2E 延迟: ${v[3].toFixed(2)} s<br/>
+                QPS/GPU: ${v[4].toFixed(2)}
+            `;
+        }
+    ];
+    """
+
+    # 生成 HTML 文件
     html_content = f"""
     <!DOCTYPE html>
     <html>
     <head>
-        <title>Performance Bubble Chart</title>
-        <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+        <meta charset="utf-8" />
+        <title>Bubble Bench Charts</title>
+        <script src="https://fastly.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+        <style>
+            body {{ margin-right: 15px; padding: 0;}}
+            .chart {{ width: 100%; height: 400px; margin-bottom: 20px; box-sizing: border-box; }}
+        </style>
     </head>
     <body>
-        <div id="chart" style="width: 100%; height: 600px;"></div>
-        <script type="text/javascript">
-            var chartDom = document.getElementById('chart');
-            var myChart = echarts.init(chartDom);
-            var option;
+        <div id="charts"></div>
+        <script>
+            {formatter_js}
+            const charts = {json.dumps(charts, indent=2, ensure_ascii=False)};
+            const chartDoms = [];
+            const chartContainer = document.getElementById('charts');
 
-            const schema = {json.dumps(schema)};
-            const itemStyle = {{
-                opacity: 0.8,
-                shadowBlur: 10,
-                shadowOffsetX: 0,
-                shadowOffsetY: 0,
-                shadowColor: 'rgba(0,0,0,0.3)'
-            }};
+            charts.forEach((_, index) => {{
+                const div = document.createElement('div');
+                div.id = `chart${{index}}`;
+                div.className = 'chart';
+                chartContainer.appendChild(div);
+                chartDoms.push(echarts.init(div, null, {{renderer: 'canvas'}}));
+            }});
 
-            option = {{
-                legend: {{
-                    top: 10,
-                    data: {endpoints},
-                    textStyle: {{ fontSize: 16 }}
-                }},
-                grid: {{
-                    left: '10%',
-                    right: 150,
-                    top: '18%',
-                    bottom: '10%'
-                }},
-                tooltip: {{
-                    backgroundColor: 'rgba(255,255,255,0.7)',
-                    formatter: function (param) {{
-                        var value = param.value;
-                        return '<div style="border-bottom: 1px solid rgba(255,255,255,.3); font-size: 18px;padding-bottom: 7px;margin-bottom: 7px">'
-                            + param.seriesName + ' Request Rate ' + value[0] + '</div>'
-                            + schema[1].text + ': ' + value[1].toFixed(2) + '<br>'
-                            + schema[2].text + ': ' + value[2].toFixed(2) + '<br>'
-                            + schema[3].text + ': ' + value[3].toFixed(2) + '<br>';
-                    }}
-                }},
-                xAxis: {{
-                    type: 'value',
-                    name: '并发',
-                    nameGap: 16,
-                    nameTextStyle: {{ fontSize: 16 }},
-                    max: {concur_max},
-                    splitLine: {{ show: false }}
-                }},
-                yAxis: {{
-                    type: 'value',
-                    name: 'Mean TPOT (ms)',
-                    nameLocation: 'end',
-                    nameGap: 20,
-                    nameTextStyle: {{ fontSize: 16 }},
-                    splitLine: {{ show: false }}
-                }},
-                visualMap: [
-                    {{
-                        left: 'right',
-                        top: '10%',
-                        dimension: 3,
-                        min: {qps_min},
-                        max: {qps_max},
-                        itemWidth: 30,
-                        itemHeight: 120,
-                        calculable: true,
-                        precision: 0.1,
-                        text: ['气泡大小: 每卡吞吐 req/s/GPU'],
-                        textGap: 30,
-                        inRange: {{ symbolSize: [10, 70] }},
-                        outOfRange: {{ symbolSize: [10, 70], color: ['rgba(255,255,255,0.4)'] }},
-                        controller: {{ inRange: {{ color: ['#c23531'] }}, outOfRange: {{ color: ['#999'] }} }}
-                    }},
-                    {{
-                        left: 'right',
-                        bottom: '5%',
-                        dimension: 2,
-                        min: {ttft_min},
-                        max: {ttft_max},
-                        itemHeight: 120,
-                        text: ['颜色深浅: Mean TTFT'],
-                        textGap: 30,
-                        inRange: {{ colorLightness: [0.9, 0.5] }},
-                        outOfRange: {{ color: ['rgba(255,255,255,0.4)'] }},
-                        controller: {{ inRange: {{ color: ['#c23531'] }}, outOfRange: {{ color: ['#999'] }} }}
-                    }}
-                ],
-                series: [
-                    {','.join([
-                        f"{{name: '{endpoint_name}', type: 'scatter', itemStyle: itemStyle, " +
-                        "data: [" +
-                        ','.join([
-                            f"[{concur}, {tpot:.2f}, {ttft}, {qps:.2f}]"
-                            for concur, tpot, ttft, qps in sorted(data[endpoint_name], key=lambda x: x[0])
-                        ]) +
-                        "]}"
-                        for endpoint_name in endpoints
-                    ])}
-                ]
-            }};
-            option && myChart.setOption(option);
+            charts.forEach((option, index) => {{
+                if (index < 3 && formatters[index]) {{
+                    option.tooltip.formatter = formatters[index];
+                }}
+                if (option.visualMap) {{
+                    option.visualMap.formatter = function (v) {{
+                        return v.toFixed(2);
+                    }};
+                }}
+                option.toolbox = {{ feature: {{ saveAsImage: {{}} }} }};
+                option.dataZoom = [
+                    {{ type: 'slider', xAxisIndex: 0, filterMode: 'none' }},
+                    {{ type: 'inside', xAxisIndex: 0, filterMode: 'none' }}
+                ];
+                chartDoms[index].setOption(option);
+            }});
+
+            function debounce(fn, delay) {{
+                let timeout
+                return function(...args) {{
+                    clearTimeout(timeout);
+                    timeout = setTimeout(() => fn.apply(this, args), delay);
+                }};
+            }}
+
+            chartDoms.forEach(chart => {{
+                chart.on('mouseover', debounce(function(param) {{
+                    chartDoms.forEach(c => {{
+                        if (c !== chart) {{
+                            c.dispatchAction({{
+                                type: 'highlight',
+                                seriesIndex: param.seriesIndex,
+                                dataIndex: param.dataIndex
+                            }});
+                        }}
+                    }});
+                }}, 100));
+                chart.on('mouseout', debounce(function(param) {{
+                    chartDoms.forEach(c => {{
+                        c.dispatchAction({{
+                            type: 'downplay',
+                            seriesIndex: param.seriesIndex,
+                            dataIndex: param.dataIndex
+                        }});
+                    }});
+                }}, 100));
+            }});
         </script>
     </body>
     </html>
@@ -381,11 +580,13 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--print-config",
+        "-p",
         action="store_true",
         help="Print config template for subsequent editing.",
     )
     parser.add_argument(
         "--gen-report",
+        "-g",
         action="store_true",
         help="Generate report for all .json files in current directory.",
     )
