@@ -78,7 +78,7 @@ def get_endpoint_name(endpoint):
         else endpoint["base_url"]
     )
     endpoint_name = re.sub(r"^https?://", "", endpoint_name)
-    endpoint_name = re.sub(r"[:-]", ".", endpoint_name)
+    endpoint_name = re.sub(r"[:]", "-", endpoint_name)
     return endpoint_name
 
 
