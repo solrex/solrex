@@ -387,6 +387,7 @@ def gen_report(bench_config=None):
         ("total_io_throughput", "总Token吞吐", "吞吐(token/s)"),
         ("total_input_tokens", "总输入Token数", "Tokens"),
         ("total_output_tokens", "总生成Token数", "Tokens"),
+        ("completed", "完成请求数", "Requests"),
         ("mean_input_tokens", "单请求平均输入Token数", "Tokens"),
         ("mean_output_tokens", "单请求平均生成Token数", "Tokens"),
     ]
