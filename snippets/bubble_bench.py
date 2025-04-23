@@ -133,14 +133,17 @@ def benchmark_target(job_arg):
     if os.path.isfile(output_file):
         os.remove(output_file)
 
-    for i, concurrency in tqdm(
-        enumerate(concurrencies),
-        desc=f"Benching {endpoint_name}",
-        total=len(concurrencies),
-        position=job_id,
-    ):
+    if isinstance(repeats, list):
+        total_requests = sum(concur * repeat for concur, repeat in zip(concurrencies, repeats))
+    else:
+        total_requests = sum(concurrencies) * repeats
+
+    process_bar = tqdm(total=total_requests, desc=f"{endpoint_name}", position=job_id, unit=" req")
+    for i, concurrency in enumerate(concurrencies):
         repeat = repeats[i] if isinstance(repeats, list) else repeats
+        process_bar.set_postfix({"case": f"\"concur {concurrency} req repeat {repeat} times\""})
         benchmark_one(sglang_bench_cmd, endpoint, concurrency, repeat, verbose)
+        process_bar.update(concurrency * repeat)
 
 
 def run_benchmark(bench_config, parallel_jobs, verbose=False):
