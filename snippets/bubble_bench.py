@@ -188,10 +188,9 @@ def gen_report(bench_config=None):
     if bench_config:
         for endpoint in bench_config["endpoints"]:
             endpoint_name = get_endpoint_name(endpoint)
-            for concurrency in bench_config["concurs"]:
-                fname = f"{endpoint_name}.bench"
-                if os.path.isfile(fname):
-                    bench_results.append(fname)
+            fname = f"{endpoint_name}.bench"
+            if os.path.isfile(fname):
+                bench_results.append(fname)
     else:
         bench_results = glob.glob("*.bench")
 
@@ -486,6 +485,7 @@ def gen_report(bench_config=None):
             const chartDoms = [];
             const chartContainer = document.getElementById('charts');
 
+            // 创建图表容器
             charts.forEach((_, index) => {{
                 const div = document.createElement('div');
                 div.id = `chart${{index}}`;
@@ -494,6 +494,7 @@ def gen_report(bench_config=None):
                 chartDoms.push(echarts.init(div, null, {{renderer: 'canvas'}}));
             }});
 
+            // 配置图表
             charts.forEach((option, index) => {{
                 if (index < 3 && formatters[index]) {{
                     option.tooltip.formatter = formatters[index];
@@ -506,19 +507,27 @@ def gen_report(bench_config=None):
                 option.toolbox = {{ feature: {{ saveAsImage: {{}} }} }};
                 option.dataZoom = [
                     {{ type: 'slider', xAxisIndex: 0, filterMode: 'none' }},
-                    {{ type: 'inside', xAxisIndex: 0, filterMode: 'none' }}
+                    {{ 
+                        type: 'inside', 
+                        xAxisIndex: 0, 
+                        filterMode: 'none',
+                        zoomOnMouseWheel: false, // 禁用滚轮缩放
+                        moveOnMouseWheel: false  // 禁用滚轮平移
+                    }}
                 ];
                 chartDoms[index].setOption(option);
             }});
 
+            // 防抖函数
             function debounce(fn, delay) {{
-                let timeout
+                let timeout;
                 return function(...args) {{
                     clearTimeout(timeout);
                     timeout = setTimeout(() => fn.apply(this, args), delay);
                 }};
             }}
 
+            // 高亮联动
             chartDoms.forEach(chart => {{
                 chart.on('mouseover', debounce(function(param) {{
                     chartDoms.forEach(c => {{
@@ -538,6 +547,24 @@ def gen_report(bench_config=None):
                             seriesIndex: param.seriesIndex,
                             dataIndex: param.dataIndex
                         }});
+                    }});
+                }}, 100));
+            }});
+
+            // dataZoom 同步
+            chartDoms.forEach((chart, index) => {{
+                chart.on('dataZoom', debounce(function(param) {{
+                    const option = chart.getOption();
+                    const dataZoom = option.dataZoom[0]; // 获取 slider 的 dataZoom 配置
+                    chartDoms.forEach((otherChart, otherIndex) => {{
+                        if (otherIndex !== index) {{
+                            otherChart.setOption({{
+                                dataZoom: [
+                                    {{ start: dataZoom.start, end: dataZoom.end }},
+                                    {{ start: dataZoom.start, end: dataZoom.end }}
+                                ]
+                            }});
+                        }}
                     }});
                 }}, 100));
             }});
