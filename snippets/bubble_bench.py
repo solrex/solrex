@@ -47,25 +47,25 @@ DEFAULT_CONFIG_JSON = """{
     // concurs：最大并发数：每个最大并发代表一次 benchmark
     // repeats：并发重复次数：与最大并发数相乘等于每次推理的总样本数。repeats 可以是单个数值，比如 10，或者一个列表。
     // 当它是一个列表时，列表大小必须与 "concurs" 完全一致，代表对应于每个并发的重复次数。
-    "concurs": [ 1, 2, 4, 8,10,12,16,20,24,28,32,40,48,56,64,80,96,112,128],
-    "repeats": [10,10,10,10,10, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 5, 5,  5,  5],
+    "concurs": [ 1, 2, 4, 8,10,12,16,20,24,28,32,40,48,56,64,80,96,112,128,144,160,176,192,208],
+    "repeats": [10,10,10,10,10, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 5, 5,  5,  5,  5,  4,  4,  4,  4],
     "endpoints": [
         {
             "base_url": "http://localhost:8080",
             // 吞吐的缩放系数：当计算多卡性能时，可通过该系数归一化到单卡性能，不提供时默认为 1.0
             "throughput_scale": 0.25,
             // 图例名：标识压测结果属于哪个曲线，可以不提供，默认使用简化后的 base_url
-            "name": "TP4"
+            "name": "MODEL-NAME.TP4"
         },
         {
             "base_url": "http://localhost:8084",
             "throughput_scale": 0.5,
-            "name": "TP2"
+            "name": "MODEL-NAME.TP2"
         },
         {
             "base_url": "http://localhost:8086",
             "throughput_scale": 1.0,
-            "name": "TP1"
+            "name": "MODEL-NAME.TP1"
         }
     ]
 }"""
