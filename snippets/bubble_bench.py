@@ -236,7 +236,7 @@ def gen_report(bench_config=None):
 
     # 图表 1: mean_itl_ms 气泡图
     scatter_itl = {
-        "title": {"text": "平均 ITL vs 并发", "left": "center"},
+        "title": {"text": "平均 ITL (Inter-Token Latency)", "left": "center"},
         'legend': {
             'top': 30,
             'data': endpoints,
@@ -285,7 +285,7 @@ def gen_report(bench_config=None):
 
     # 图表 2: mean_ttft_ms 气泡图
     scatter_ttft = {
-        "title": {"text": "平均 TTFT vs 并发", "left": "center"},
+        "title": {"text": "平均 TTFT (Time to First Token)", "left": "center"},
         'legend': {
             'top': 30,
             'data': endpoints,
@@ -333,7 +333,7 @@ def gen_report(bench_config=None):
 
     # 图表 3: mean_e2e_latency_ms 气泡图
     scatter_e2e = {
-        "title": {"text": "平均 E2E 延迟 vs 并发", "left": "center"},
+        "title": {"text": "平均 E2E 延迟", "left": "center"},
         'legend': {
             'top': 30,
             'data': endpoints,
@@ -380,18 +380,20 @@ def gen_report(bench_config=None):
 
     # 其他折线图
     metrics = [
-        ("request_throughput", "QPS", "吞吐(QPS)"),
+        ("request_throughput", "QPS (未平均到 GPU)", "吞吐(QPS)"),
         ("input_throughput", "输入Token吞吐", "吞吐(token/s)"),
         ("output_throughput", "生成Token吞吐", "吞吐(token/s)"),
         ("concurrency", "服务端并发", "服务端并发"),
         ("total_io_throughput", "总Token吞吐", "吞吐(token/s)"),
         ("total_input_tokens", "总输入Token数", "Tokens"),
-        ("total_output_tokens", "总生成Token数", "Tokens")
+        ("total_output_tokens", "总生成Token数", "Tokens"),
+        ("mean_input_tokens", "单请求平均输入Token数", "Tokens"),
+        ("mean_output_tokens", "单请求平均生成Token数", "Tokens"),
     ]
 
     for metric, title, y_axis_name in metrics:
         line_chart = {
-            "title": {"text": f"{title} vs 并发", "left": "center"},
+            "title": {"text": f"{title}", "left": "center"},
             'legend': {
                 'top': 30,
                 'data': endpoints,
@@ -409,6 +411,10 @@ def gen_report(bench_config=None):
             endpoint_data = df[df['_endpoint_name'] == endpoint].sort_values('max_concurrency')
             if metric == "total_io_throughput":
                 values = (endpoint_data['input_throughput'] + endpoint_data['output_throughput']).tolist()
+            elif metric == "mean_input_tokens":
+                values = (endpoint_data['total_input_tokens'] / endpoint_data['completed']).tolist()
+            elif metric == "mean_output_tokens":
+                values = (endpoint_data['total_output_tokens'] / endpoint_data['completed']).tolist()
             else:
                 values = endpoint_data[metric].tolist()
             series_data = [[int(row['max_concurrency']), round(float(row['value']), 2)] for _, row in endpoint_data[['max_concurrency']].assign(value=values).iterrows()]
@@ -422,7 +428,7 @@ def gen_report(bench_config=None):
     # 定义 JavaScript formatter 函数
     formatter_js = """
     const formatters = [
-        // Formatter for 平均 ITL vs 并发
+        // Formatter for 平均 ITL
         function(params) {
             var v = params.value;
             return `
@@ -436,7 +442,7 @@ def gen_report(bench_config=None):
                 QPS/GPU: ${v[6].toFixed(2)}
             `;
         },
-        // Formatter for 平均 TTFT vs 并发
+        // Formatter for 平均 TTFT
         function(params) {
             var v = params.value;
             return `
@@ -449,7 +455,7 @@ def gen_report(bench_config=None):
                 QPS/GPU: ${v[5].toFixed(2)}
             `;
         },
-        // Formatter for 平均 E2E 延迟 vs 并发
+        // Formatter for 平均 E2E 延迟
         function(params) {
             var v = params.value;
             return `
