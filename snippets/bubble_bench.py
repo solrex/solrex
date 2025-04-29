@@ -28,22 +28,26 @@
 import glob
 import json
 import os
-import pandas as pd
 import re
 import subprocess
 from argparse import ArgumentParser
 from collections import defaultdict
 from multiprocessing import Pool
+
+import pandas as pd
+import requests
+from torch.utils import collect_env
 from tqdm import tqdm
 
 # 默认配置
 DEFAULT_CONFIG_JSON = """{
     "sglang_bench_cmd": [
-        "OPENAI_API_KEY=null python3 -m sglang.bench_serving --backend sglang-oai --disable-tqdm",
+        "python3 -m sglang.bench_serving --backend sglang-oai --disable-tqdm",
         "--dataset-path /workspace/ShareGPT_Vicuna_unfiltered/ShareGPT_V3_unfiltered_cleaned_split.json",
         "--dataset-name random --random-range-ratio 1",
         "--random-input-len 2300 --random-output-len 700"
     ],
+    "api_key": null,
     // concurs：最大并发数：每个最大并发代表一次 benchmark
     // repeats：并发重复次数：与最大并发数相乘等于每次推理的总样本数。repeats 可以是单个数值，比如 10，或者一个列表。
     // 当它是一个列表时，列表大小必须与 "concurs" 完全一致，代表对应于每个并发的重复次数。
@@ -134,14 +138,20 @@ def benchmark_target(job_arg):
         os.remove(output_file)
 
     if isinstance(repeats, list):
-        total_requests = sum(concur * repeat for concur, repeat in zip(concurrencies, repeats))
+        total_requests = sum(
+            concur * repeat for concur, repeat in zip(concurrencies, repeats)
+        )
     else:
         total_requests = sum(concurrencies) * repeats
 
-    process_bar = tqdm(total=total_requests, desc=f"{endpoint_name}", position=job_id, unit=" req")
+    process_bar = tqdm(
+        total=total_requests, desc=f"{endpoint_name}", position=job_id, unit=" req"
+    )
     for i, concurrency in enumerate(concurrencies):
         repeat = repeats[i] if isinstance(repeats, list) else repeats
-        process_bar.set_postfix({"case": f"\"concur {concurrency} req repeat {repeat} times\""})
+        process_bar.set_postfix(
+            {"case": f'"concur {concurrency} req repeat {repeat} times"'}
+        )
         benchmark_one(sglang_bench_cmd, endpoint, concurrency, repeat, verbose)
         process_bar.update(concurrency * repeat)
 
@@ -163,6 +173,8 @@ def run_benchmark(bench_config, parallel_jobs, verbose=False):
         if "name" in ep and ep["name"] is not None:
             assert ep["name"] not in names, f"Duplicate endpoint.name {ep}"
             names.add(ep["name"])
+    if "api_key" in bench_config and bench_config["api_key"] is not None:
+        bench_config["sglang_bench_cmd"].insert(0, f"OPENAI_API_KEY={bench_config['api_key']}")
 
     print(
         "BubbleBenchmarking for endpoints: "
@@ -188,50 +200,114 @@ def gen_report(bench_config=None):
     data = defaultdict(list)
     bench_results = []
 
+    endpoint_serverinfo = {}
     if bench_config:
         for endpoint in bench_config["endpoints"]:
             endpoint_name = get_endpoint_name(endpoint)
             fname = f"{endpoint_name}.bench"
             if os.path.isfile(fname):
                 bench_results.append(fname)
+            # 这部分信息允许获取不到，不影响报告生成
+            try:
+                url = endpoint["base_url"] + "/get_server_info"
+                if "api_key" in bench_config and bench_config["api_key"] is not None:
+                    res = requests.get(
+                        url,
+                        headers={"Authorization": f"Bearer {bench_config['api_key']}"},
+                    )
+                else:
+                    res = requests.get(url)
+                if res.status_code == 200:
+                    res_data = json.loads(res.text)
+                    # TODO 当 tp_size 与 throughput_scale 冲突时，报个错
+                    endpoint_serverinfo[endpoint_name] = res_data
+            except:
+                pass
     else:
         bench_results = glob.glob("*.bench")
 
     # 读取并解析所有 JSON 数据
     data = []
     for file in bench_results:
-        with open(file, 'r', encoding='utf-8') as f:
+        with open(file, "r", encoding="utf-8") as f:
             for line in f:
                 try:
                     json_data = json.loads(line.strip())
                     data.append(json_data)
                 except json.JSONDecodeError as e:
                     print(f"Warning: Failed to parse line in {file}: {e}")
+    system_info = ""
+    if bench_config:
+        system_info += "压测配置:\n" + json.dumps(bench_config, indent=2) + "\n\n"
+    if len(endpoint_serverinfo) > 0:
+        system_info += (
+            "压测目标服务器信息:\n" + json.dumps(endpoint_serverinfo, indent=2) + "\n\n"
+        )
+    
+    env_info = collect_env.get_env_info()
+    # CPU 信息太啰嗦了，这里精简一下
+    cpu_info_lines = env_info.cpu_info.splitlines()
+    cpu_info = ""
+    for line in cpu_info_lines:
+        if any(key in line for key in ["name:", "MHz:", "NUMA", "cache:", "Socket", "socket", "CPU(s): "]):
+            cpu_info += line + "\n"
+    _, pip_list_output = collect_env.get_pip_packages(
+        collect_env.run,
+        ["sgl-kernel", "sglang", "torch", "flashinfer-python", "transformers"],
+    )
+    env_info = env_info._replace(
+        cpu_info=cpu_info,
+        cudnn_version=None,
+        pip_packages=pip_list_output + env_info.pip_packages,
+    )
+    system_info += "压测脚本执行环境:\n"
+    system_info += collect_env.pretty_str(env_info)
 
     # 转换为 DataFrame
     df = pd.DataFrame(data)
 
     # 确保所需字段存在
     required_fields = [
-        'max_concurrency', '_endpoint_name', 'mean_itl_ms', 'request_throughput', '_throughput_scale',
-        'median_itl_ms', 'p95_itl_ms', 'p99_itl_ms', 'std_itl_ms', 'mean_ttft_ms', 'median_ttft_ms',
-        'p99_ttft_ms', 'std_ttft_ms', 'mean_e2e_latency_ms', 'median_e2e_latency_ms', 'p99_e2e_latency_ms',
-        'input_throughput', 'output_throughput', 'concurrency', 'total_input_tokens', 'total_output_tokens'
+        "max_concurrency",
+        "_endpoint_name",
+        "mean_itl_ms",
+        "request_throughput",
+        "_throughput_scale",
+        "median_itl_ms",
+        "p95_itl_ms",
+        "p99_itl_ms",
+        "std_itl_ms",
+        "mean_ttft_ms",
+        "median_ttft_ms",
+        "p99_ttft_ms",
+        "std_ttft_ms",
+        "mean_e2e_latency_ms",
+        "median_e2e_latency_ms",
+        "p99_e2e_latency_ms",
+        "input_throughput",
+        "output_throughput",
+        "concurrency",
+        "total_input_tokens",
+        "total_output_tokens",
     ]
     missing_fields = [field for field in required_fields if field not in df.columns]
     if missing_fields:
         raise ValueError(f"Missing required fields in data: {missing_fields}")
 
     # 获取所有唯一的分组和端点名称
-    endpoints = df['_endpoint_name'].unique().tolist()
-    max_concurrencies = [int(x) for x in sorted(df['max_concurrency'].unique().tolist())]
+    endpoints = df["_endpoint_name"].unique().tolist()
+    max_concurrencies = [
+        int(x) for x in sorted(df["max_concurrency"].unique().tolist())
+    ]
 
     # 生成 ECharts 配置
     charts = []
 
     # 计算 request_throughput * _throughput_scale 的范围
-    throughput_scaled = df['request_throughput'] * df['_throughput_scale']
-    throughput_scaled = throughput_scaled.replace([float('inf'), -float('inf')], float('nan')).dropna()
+    throughput_scaled = df["request_throughput"] * df["_throughput_scale"]
+    throughput_scaled = throughput_scaled.replace(
+        [float("inf"), -float("inf")], float("nan")
+    ).dropna()
     if throughput_scaled.empty:
         raise ValueError("No valid throughput data after filtering")
     visual_map_min = max(throughput_scaled.min(), 1e-6)  # 避免 min 为 0
@@ -240,145 +316,130 @@ def gen_report(bench_config=None):
     # 图表 1: mean_itl_ms 气泡图
     scatter_itl = {
         "title": {"text": "平均 ITL (Inter-Token Latency)", "left": "center"},
-        'legend': {
-            'top': 30,
-            'data': endpoints,
+        "legend": {
+            "top": 30,
+            "data": endpoints,
         },
-        'grid': {
-            'top': 100,
-            'left': 140
-        },
+        "grid": {"top": 100, "left": 140},
         "tooltip": {"trigger": "item"},  # Formatter will be set in JavaScript
         "xAxis": {"name": "并发", "type": "value", "data": max_concurrencies},
         "yAxis": {"name": "平均 ITL (ms)", "type": "value"},
         "series": [],
         "visualMap": {
-            'top': 30,
+            "top": 30,
             "itemWidth": 25,
-            'text': ['气泡大小\n(QPS/GPU)'],
-            'textGap': 20,
-            'calculable': True,
-            'precision': 0.1,
+            "text": ["气泡大小\n(QPS/GPU)"],
+            "textGap": 20,
+            "calculable": True,
+            "precision": 0.1,
             "inRange": {"symbolSize": [5, 70]},
             "min": visual_map_min,
             "max": visual_map_max,
             "dimension": 6,
-        }
+        },
     }
     for endpoint in endpoints:
-        endpoint_data = df[df['_endpoint_name'] == endpoint]
+        endpoint_data = df[df["_endpoint_name"] == endpoint]
         series_data = [
             [
-                row['max_concurrency'],
-                row['mean_itl_ms'],
-                row['median_itl_ms'],
-                row['p95_itl_ms'],
-                row['p99_itl_ms'],
-                row['std_itl_ms'],
-                row['request_throughput'] * row['_throughput_scale']
+                row["max_concurrency"],
+                row["mean_itl_ms"],
+                row["median_itl_ms"],
+                row["p95_itl_ms"],
+                row["p99_itl_ms"],
+                row["std_itl_ms"],
+                row["request_throughput"] * row["_throughput_scale"],
             ]
             for _, row in endpoint_data.iterrows()
         ]
-        scatter_itl["series"].append({
-            "name": endpoint,
-            "type": "scatter",
-            "data": series_data
-        })
+        scatter_itl["series"].append(
+            {"name": endpoint, "type": "scatter", "data": series_data}
+        )
     charts.append(scatter_itl)
 
     # 图表 2: mean_ttft_ms 气泡图
     scatter_ttft = {
         "title": {"text": "平均 TTFT (Time to First Token)", "left": "center"},
-        'legend': {
-            'top': 30,
-            'data': endpoints,
+        "legend": {
+            "top": 30,
+            "data": endpoints,
         },
-        'grid': {
-            'top': 100,
-            'left': 140
-        },
+        "grid": {"top": 100, "left": 140},
         "tooltip": {"trigger": "item"},
         "xAxis": {"name": "并发", "type": "value", "data": max_concurrencies},
         "yAxis": {"name": "平均 TTFT (s)", "type": "value"},
         "series": [],
         "visualMap": {
-            'top': 30,
+            "top": 30,
             "itemWidth": 25,
-            'text': ['气泡大小\n(QPS/GPU)'],
-            'textGap': 20,
-            'calculable': True,
-            'precision': 0.1,
+            "text": ["气泡大小\n(QPS/GPU)"],
+            "textGap": 20,
+            "calculable": True,
+            "precision": 0.1,
             "inRange": {"symbolSize": [5, 70]},
             "min": visual_map_min,
             "max": visual_map_max,
-            "dimension": 5
-        }
+            "dimension": 5,
+        },
     }
     for endpoint in endpoints:
-        endpoint_data = df[df['_endpoint_name'] == endpoint]
+        endpoint_data = df[df["_endpoint_name"] == endpoint]
         series_data = [
             [
-                row['max_concurrency'],
-                row['mean_ttft_ms'] / 1000,
-                row['median_ttft_ms'] / 1000,
-                row['p99_ttft_ms'] / 1000,
-                row['std_ttft_ms'] / 1000,
-                row['request_throughput'] * row['_throughput_scale']
+                row["max_concurrency"],
+                row["mean_ttft_ms"] / 1000,
+                row["median_ttft_ms"] / 1000,
+                row["p99_ttft_ms"] / 1000,
+                row["std_ttft_ms"] / 1000,
+                row["request_throughput"] * row["_throughput_scale"],
             ]
             for _, row in endpoint_data.iterrows()
         ]
-        scatter_ttft["series"].append({
-            "name": endpoint,
-            "type": "scatter",
-            "data": series_data
-        })
+        scatter_ttft["series"].append(
+            {"name": endpoint, "type": "scatter", "data": series_data}
+        )
     charts.append(scatter_ttft)
 
     # 图表 3: mean_e2e_latency_ms 气泡图
     scatter_e2e = {
         "title": {"text": "平均 E2E 延迟", "left": "center"},
-        'legend': {
-            'top': 30,
-            'data': endpoints,
+        "legend": {
+            "top": 30,
+            "data": endpoints,
         },
-        'grid': {
-            'top': 100,
-            'left': 140
-        },
+        "grid": {"top": 100, "left": 140},
         "tooltip": {"trigger": "item"},
         "xAxis": {"name": "并发", "type": "value", "data": max_concurrencies},
         "yAxis": {"name": "平均 E2E 延迟 (s)", "type": "value"},
         "series": [],
         "visualMap": {
-            'top': 30,
+            "top": 30,
             "itemWidth": 25,
-            'text': ['气泡大小\n(QPS/GPU)'],
-            'textGap': 20,
-            'calculable': True,
-            'precision': 0.1,
+            "text": ["气泡大小\n(QPS/GPU)"],
+            "textGap": 20,
+            "calculable": True,
+            "precision": 0.1,
             "inRange": {"symbolSize": [5, 70]},
             "min": visual_map_min,
             "max": visual_map_max,
-            "dimension": 4
-        }
+            "dimension": 4,
+        },
     }
     for endpoint in endpoints:
-        endpoint_data = df[df['_endpoint_name'] == endpoint]
+        endpoint_data = df[df["_endpoint_name"] == endpoint]
         series_data = [
             [
-                row['max_concurrency'],
-                row['mean_e2e_latency_ms'] / 1000,
-                row['median_e2e_latency_ms'] / 1000,
-                row['p99_e2e_latency_ms'] / 1000,
-                row['request_throughput'] * row['_throughput_scale']
+                row["max_concurrency"],
+                row["mean_e2e_latency_ms"] / 1000,
+                row["median_e2e_latency_ms"] / 1000,
+                row["p99_e2e_latency_ms"] / 1000,
+                row["request_throughput"] * row["_throughput_scale"],
             ]
             for _, row in endpoint_data.iterrows()
         ]
-        scatter_e2e["series"].append({
-            "name": endpoint,
-            "type": "scatter",
-            "data": series_data
-        })
+        scatter_e2e["series"].append(
+            {"name": endpoint, "type": "scatter", "data": series_data}
+        )
     charts.append(scatter_e2e)
 
     # 其他折线图
@@ -398,35 +459,44 @@ def gen_report(bench_config=None):
     for metric, title, y_axis_name in metrics:
         line_chart = {
             "title": {"text": f"{title}", "left": "center"},
-            'legend': {
-                'top': 30,
-                'data': endpoints,
+            "legend": {
+                "top": 30,
+                "data": endpoints,
             },
-            'grid': {
-                'top': 60,
-                'left': 140
-            },
+            "grid": {"top": 60, "left": 140},
             "tooltip": {"trigger": "axis"},
             "xAxis": {"name": "并发", "type": "value", "data": max_concurrencies},
             "yAxis": {"name": y_axis_name, "type": "value"},
-            "series": []
+            "series": [],
         }
         for endpoint in endpoints:
-            endpoint_data = df[df['_endpoint_name'] == endpoint].sort_values('max_concurrency')
+            endpoint_data = df[df["_endpoint_name"] == endpoint].sort_values(
+                "max_concurrency"
+            )
             if metric == "total_io_throughput":
-                values = (endpoint_data['input_throughput'] + endpoint_data['output_throughput']).tolist()
+                values = (
+                    endpoint_data["input_throughput"]
+                    + endpoint_data["output_throughput"]
+                ).tolist()
             elif metric == "mean_input_tokens":
-                values = (endpoint_data['total_input_tokens'] / endpoint_data['completed']).tolist()
+                values = (
+                    endpoint_data["total_input_tokens"] / endpoint_data["completed"]
+                ).tolist()
             elif metric == "mean_output_tokens":
-                values = (endpoint_data['total_output_tokens'] / endpoint_data['completed']).tolist()
+                values = (
+                    endpoint_data["total_output_tokens"] / endpoint_data["completed"]
+                ).tolist()
             else:
                 values = endpoint_data[metric].tolist()
-            series_data = [[int(row['max_concurrency']), round(float(row['value']), 2)] for _, row in endpoint_data[['max_concurrency']].assign(value=values).iterrows()]
-            line_chart["series"].append({
-                "name": endpoint,
-                "type": "line",
-                "data": series_data
-            })
+            series_data = [
+                [int(row["max_concurrency"]), round(float(row["value"]), 2)]
+                for _, row in endpoint_data[["max_concurrency"]]
+                .assign(value=values)
+                .iterrows()
+            ]
+            line_chart["series"].append(
+                {"name": endpoint, "type": "line", "data": series_data}
+            )
         charts.append(line_chart)
 
     # 定义 JavaScript formatter 函数
@@ -485,11 +555,30 @@ def gen_report(bench_config=None):
         <style>
             body {{ margin-right: 15px; padding: 0;}}
             .chart {{ width: 100%; height: 400px; margin-bottom: 20px; box-sizing: border-box; }}
+            .collapsible {{ margin: 0 50px; }}
+            .collapsible-content {{ position: relative; max-height: 9em; overflow: hidden; transition: max-height 0.3s ease; }}
+            .collapsible-content pre {{background-color: #f0f8ff; padding: 10px; margin: 0; border: 1px solid #ccc; border-radius: 4px; white-space: pre-wrap; column-count: 2; column-gap: 20px; column-rule: 1px solid #ddd;}}
+            .collapsible-content.expanded {{ max-height: none; }}
+            .toggle-button {{ position: absolute; top: 5px; right: 10px; cursor: pointer; font-size: 16px; user-select: none; background: #fff; padding: 2px 6px; border: 1px solid #ccc; border-radius: 3px; }}
+            h2 {{ text-align: center; }}
         </style>
     </head>
     <body>
+        <h2> 压测配置和压测环境 </h2>
+        <div id="system_info" class="collapsible">
+            <div class="collapsible-content">
+                <pre>{system_info}</pre>
+                <span class="toggle-button" onclick="toggleCollapse(this)">▼</span>
+            </div>
+        </div>
+        <h2> 压测报告 </h2>
         <div id="charts"></div>
         <script>
+            function toggleCollapse(button) {{
+                const content = button.parentElement;
+                content.classList.toggle('expanded');
+                button.textContent = content.classList.contains('expanded') ? '▲' : '▼';
+            }}
             {formatter_js}
             const charts = {json.dumps(charts, indent=2, ensure_ascii=False)};
             const chartDoms = [];
@@ -517,9 +606,9 @@ def gen_report(bench_config=None):
                 option.toolbox = {{ feature: {{ saveAsImage: {{}} }} }};
                 option.dataZoom = [
                     {{ type: 'slider', xAxisIndex: 0, filterMode: 'none' }},
-                    {{ 
-                        type: 'inside', 
-                        xAxisIndex: 0, 
+                    {{
+                        type: 'inside',
+                        xAxisIndex: 0,
                         filterMode: 'none',
                         zoomOnMouseWheel: false, // 禁用滚轮缩放
                         moveOnMouseWheel: false  // 禁用滚轮平移
@@ -591,19 +680,23 @@ def gen_report(bench_config=None):
 
 def main(args):
     config_str = DEFAULT_CONFIG_JSON
-    if args.print_config:
-        print(config_str)
-        return 0
-    elif args.gen_report:
-        return gen_report()
-
     if args.config:
         with open(args.config, "r") as f:
             config_str = f.read()
     # 过滤掉整行注释
     json_str = re.sub(r"(?m)^\s*//.*\n", "", config_str)
-    config = json.loads(json_str)
 
+    if args.print_config:
+        print(config_str)
+        return 0
+    elif args.gen_report:
+        if args.config:
+            config = json.loads(json_str)
+            return gen_report(config)
+        else:
+            return gen_report()
+
+    config = json.loads(json_str)
     run_benchmark(config, args.jobs, args.verbose)
     gen_report(config)
 
