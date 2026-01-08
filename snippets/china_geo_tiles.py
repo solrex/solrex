@@ -42,7 +42,7 @@ def main():
         if elem.tag == "SourceFilename":
             path = elem.text
             # 这里的正则只负责抓取数字，不负责判断范围
-            match = re.search(r'N(\d{2,3})[WE](\d{3})', path) 
+            match = re.search(r'N(\d{2,3})[E](\d{3})', path) 
             if match:
                 lat = int(match.group(1))
                 lon = int(match.group(2))
